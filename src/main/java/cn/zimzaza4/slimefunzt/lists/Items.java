@@ -93,26 +93,26 @@ public class Items {
                 ElectricAxe.addUnsafeEnchantment(Enchantment.DIG_SPEED, 20);
         }
 
-        public static final SlimefunItemStack Ender_feet = new SlimefunItemStack("ENDER_BOOT", Material.IRON_BOOTS,
+        public static final SlimefunItemStack Ender_feet = new SlimefunItemStack("Z_ENDER_BOOT", Material.IRON_BOOTS,
                         "&6紫影胸甲");
         static {
 
                 Ender_feet.addUnsafeEnchantment(Enchantment.PROTECTION_ENVIRONMENTAL, 5);
         }
 
-        public static final SlimefunItemStack Ender_Leg = new SlimefunItemStack("ENDER_LEG", Material.IRON_LEGGINGS,
+        public static final SlimefunItemStack Ender_Leg = new SlimefunItemStack("Z_ENDER_LEG", Material.IRON_LEGGINGS,
                         "&6紫影头盔");
         static {
                 Ender_Leg.addUnsafeEnchantment(Enchantment.PROTECTION_ENVIRONMENTAL, 5);
         }
-        public static final SlimefunItemStack Ender_Chest = new SlimefunItemStack("ENDER_CHEST",
+        public static final SlimefunItemStack Ender_Chest = new SlimefunItemStack("Z_ENDER_CHEST",
                         Material.IRON_CHESTPLATE, "&6紫影胸甲");
         static {
 
                 Ender_Chest.addUnsafeEnchantment(Enchantment.PROTECTION_ENVIRONMENTAL, 5);
         }
 
-        public static final SlimefunItemStack Ender_Head = new SlimefunItemStack("ENDER_HELMET", Material.IRON_HELMET,
+        public static final SlimefunItemStack Ender_Head = new SlimefunItemStack("Z_ENDER_HELMET", Material.IRON_HELMET,
                         "&6紫影头盔");
         static {
                 Ender_Head.addUnsafeEnchantment(Enchantment.PROTECTION_ENVIRONMENTAL, 5);
