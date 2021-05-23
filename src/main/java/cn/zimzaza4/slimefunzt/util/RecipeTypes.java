@@ -8,9 +8,7 @@ import org.bukkit.NamespacedKey;
 
 public class RecipeTypes {
 
-    public static final RecipeType KillEliteMobs =  new RecipeType(
-            new NamespacedKey(SlimefunZT.getInstance(), "KILL_EM_MOB"),
-            new CustomItem(Material.IRON_SWORD, "&a击杀精英怪")
-    );
+    public static final RecipeType KillEliteMobs = new RecipeType(
+            new NamespacedKey(SlimefunZT.getInstance(), "KILL_EM_MOB"), new CustomItem(Material.IRON_SWORD, "&a击杀精英怪"));
 
 }

@@ -1,34 +1,26 @@
 package cn.zimzaza4.slimefunzt.machines;
 
-import cn.zimzaza4.slimefunzt.SlimefunZT;
-import com.destroystokyo.paper.ParticleBuilder;
 import io.github.mooy1.infinityexpansion.InfinityExpansion;
-import io.github.mooy1.infinitylib.slimefun.abstracts.AbstractTicker;
+import io.github.mooy1.infinityexpansion.infinitylib.slimefun.abstracts.AbstractTicker;
 import io.github.thebusybiscuit.slimefun4.core.attributes.EnergyNetComponent;
 import io.github.thebusybiscuit.slimefun4.core.networks.energy.EnergyNetComponentType;
+
 import me.mrCookieSlime.CSCoreLibPlugin.Configuration.Config;
 import me.mrCookieSlime.Slimefun.Lists.RecipeType;
 import me.mrCookieSlime.Slimefun.Objects.Category;
 import me.mrCookieSlime.Slimefun.api.SlimefunItemStack;
+
 import org.bukkit.Color;
 import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.Particle;
 import org.bukkit.block.Block;
-import org.bukkit.entity.Damageable;
 import org.bukkit.entity.Entity;
 import org.bukkit.entity.LivingEntity;
-import org.bukkit.entity.Projectile;
-import org.bukkit.event.block.BlockCanBuildEvent;
 import org.bukkit.inventory.ItemStack;
-import org.bukkit.projectiles.ProjectileSource;
 
 import javax.annotation.Nonnull;
-import java.lang.reflect.Type;
-import java.util.ArrayList;
 import java.util.Collection;
-import java.util.List;
-import java.util.stream.Collectors;
 
 /**
  * A block that becomes bedrock when powered, for decoration of course
@@ -45,10 +37,11 @@ public final class Antier extends AbstractTicker implements EnergyNetComponent {
     private final Material after;
     private final float size;
 
-    public Antier(Category category, SlimefunItemStack item, RecipeType type, ItemStack[] recipe, int energy, float damage, int lon, Color color, Material before, Material after,  float size) {
-        super (category, item, type, recipe);
+    public Antier(Category category, SlimefunItemStack item, RecipeType type, ItemStack[] recipe, int energy,
+            float damage, int lon, Color color, Material before, Material after, float size) {
+        super(category, item, type, recipe);
         this.energy = energy;
-        this.damage =  damage;
+        this.damage = damage;
         this.lon = lon;
         this.color = color;
         this.after = after;
@@ -69,33 +62,31 @@ public final class Antier extends AbstractTicker implements EnergyNetComponent {
 
     @Override
     protected void tick(@Nonnull Block block, @Nonnull Config config) {
-        if ((InfinityExpansion.inst().getGlobalTick() & 3) == 0  || block.getType() == Material.AIR) {
+        if ((InfinityExpansion.inst().getGlobalTick() & 3) == 0 || block.getType() == Material.AIR) {
             return;
-
         }
         Location l = block.getLocation();
         if (getCharge(l) < energy) {
-            if (block.getType() !=  before) {
+            if (block.getType() != before) {
                 block.setType(before);
             }
         } else {
-            if (block.getType() !=  after) {
-                block.setType( after);
-
+            if (block.getType() != after) {
+                block.setType(after);
             }
             Location loc = block.getLocation();
 
-            for (int i = 0; i<lon;i++){
+            for (int i = 0; i < lon; i++) {
                 Location a = loc;
 
-                a.add(0,0.4,0);
-                Particle per = Particle.REDSTONE;
-               Particle.DustOptions d = new Particle.DustOptions( color, size);
+                a.add(0, 0.4, 0);
+                Particle.DustOptions d = new Particle.DustOptions(color, size);
 
-                a.getWorld().spawnParticle(Particle.REDSTONE, a.getBlockX()+0.5,a.getBlockY(),a. getBlockZ()+ 0.5, 1, d);
-                Collection<Entity> p = a.getWorld().getNearbyEntities(a, 0.5,1,0.5);
+                a.getWorld().spawnParticle(Particle.REDSTONE, a.getBlockX() + 0.5, a.getBlockY(), a.getBlockZ() + 0.5,
+                        1, d);
+                Collection<Entity> p = a.getWorld().getNearbyEntities(a, 0.5, 1, 0.5);
 
-                for (Entity num : p ) {
+                for (Entity num : p) {
 
                     if (num instanceof LivingEntity) {
                         LivingEntity nu = (LivingEntity) num;

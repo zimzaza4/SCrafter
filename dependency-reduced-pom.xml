@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
-  <groupId>org.zimzaza4.SCraft</groupId>
-  <artifactId>ZIMSlime</artifactId>
-  <version>1.0-SNAPSHOT</version>
+  <groupId>cn.zimzaza4</groupId>
+  <artifactId>slimefunzt</artifactId>
+  <version>1.0.0</version>
   <build>
     <sourceDirectory>${basedir}/src/main/java</sourceDirectory>
-    <defaultGoal>clean package</defaultGoal>
     <resources>
       <resource>
         <filtering>true</filtering>
@@ -41,7 +40,7 @@
       </plugin>
       <plugin>
         <artifactId>maven-shade-plugin</artifactId>
-        <version>3.1.0</version>
+        <version>3.2.4</version>
         <executions>
           <execution>
             <phase>package</phase>
@@ -85,60 +84,12 @@
       <artifactId>paper-api</artifactId>
       <version>1.16.5-R0.1-SNAPSHOT</version>
       <scope>provided</scope>
-      <exclusions>
-        <exclusion>
-          <artifactId>adventure-api</artifactId>
-          <groupId>net.kyori</groupId>
-        </exclusion>
-        <exclusion>
-          <artifactId>adventure-text-serializer-gson</artifactId>
-          <groupId>net.kyori</groupId>
-        </exclusion>
-        <exclusion>
-          <artifactId>adventure-text-serializer-legacy</artifactId>
-          <groupId>net.kyori</groupId>
-        </exclusion>
-        <exclusion>
-          <artifactId>adventure-text-serializer-plain</artifactId>
-          <groupId>net.kyori</groupId>
-        </exclusion>
-        <exclusion>
-          <artifactId>commons-lang</artifactId>
-          <groupId>commons-lang</groupId>
-        </exclusion>
-        <exclusion>
-          <artifactId>json-simple</artifactId>
-          <groupId>com.googlecode.json-simple</groupId>
-        </exclusion>
-        <exclusion>
-          <artifactId>guava</artifactId>
-          <groupId>com.google.guava</groupId>
-        </exclusion>
-        <exclusion>
-          <artifactId>gson</artifactId>
-          <groupId>com.google.code.gson</groupId>
-        </exclusion>
-        <exclusion>
-          <artifactId>bungeecord-chat</artifactId>
-          <groupId>net.md-5</groupId>
-        </exclusion>
-        <exclusion>
-          <artifactId>snakeyaml</artifactId>
-          <groupId>org.yaml</groupId>
-        </exclusion>
-        <exclusion>
-          <artifactId>slf4j-api</artifactId>
-          <groupId>org.slf4j</groupId>
-        </exclusion>
-        <exclusion>
-          <artifactId>asm</artifactId>
-          <groupId>org.ow2.asm</groupId>
-        </exclusion>
-        <exclusion>
-          <artifactId>asm-commons</artifactId>
-          <groupId>org.ow2.asm</groupId>
-        </exclusion>
-      </exclusions>
+    </dependency>
+    <dependency>
+      <groupId>org.projectlombok</groupId>
+      <artifactId>lombok</artifactId>
+      <version>1.18.12</version>
+      <scope>provided</scope>
     </dependency>
     <dependency>
       <groupId>com.github.Slimefun</groupId>
@@ -157,20 +108,19 @@
       <artifactId>InfinityExpansion</artifactId>
       <version>MODIFIED</version>
       <scope>system</scope>
-      <systemPath>${project.basedir}/libs/IE.jar</systemPath>
+      <systemPath>${project.basedir}/lib/IE.jar</systemPath>
     </dependency>
     <dependency>
       <groupId>com.magmaguy.elitemobs</groupId>
       <artifactId>EliteMobs</artifactId>
       <version>7.2.33</version>
       <scope>system</scope>
-      <systemPath>${project.basedir}/libs/EliteMobs.jar</systemPath>
+      <systemPath>${project.basedir}/lib/EliteMobs.jar</systemPath>
     </dependency>
   </dependencies>
   <properties>
-    <maven.compiler.target>1.8</maven.compiler.target>
-    <maven.compiler.source>1.8</maven.compiler.source>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <maven.compiler.source>1.8</maven.compiler.source>
+    <maven.compiler.target>1.8</maven.compiler.target>
   </properties>
 </project>
-
