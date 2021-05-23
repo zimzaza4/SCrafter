@@ -1,0 +1,7 @@
+name: SlimefunZT
+version: 1.0-SNAPSHOT
+author: zimzaza4
+main: cn.zimzaza4.slimefunzt.SlimefunZT
+depend: [Slimefun]
+
+api-version: 1.15
