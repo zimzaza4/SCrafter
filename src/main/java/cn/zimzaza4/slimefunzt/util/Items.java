@@ -26,7 +26,7 @@ public class Items {
 
 
 
-    public static ItemStack ZM_MI = new CustomItem(Material.DIAMOND, "&e&l远古钻石", "材料..? ");
+    
     public static ItemStack APPLE = new ItemStack(Material.APPLE);
     public static ItemStack FruitMachine = new CustomItem(Material.GRAY_STAINED_GLASS, "&e糖提取机", "&a 从水果里提取糖", "30J/s    300J可储存");
     public static ItemStack ShaiKTQMachine = new CustomItem(Material.IRON_BLOCK, "&a筛矿提取机 &eI", "&e 从原石提取筛矿 每两秒5个", "3J/s    300J可储存");
@@ -93,7 +93,7 @@ public class Items {
 
 
 
-    public static final SlimefunItemStack Ender_feet = new SlimefunItemStack("ENDER_BOOT", Material.IRON_BOOTS, "&6紫影胸甲");
+    public static final SlimefunItemStack Ender_feet = new SlimefunItemStack("Z_ENDER_BOOT", Material.IRON_BOOTS, "&6紫影胸甲");
     static {
 
         Ender_feet.addUnsafeEnchantment(Enchantment.PROTECTION_ENVIRONMENTAL, 5);
@@ -101,11 +101,11 @@ public class Items {
 
 
 
-    public static final SlimefunItemStack Ender_Leg = new SlimefunItemStack("ENDER_LEG", Material.IRON_LEGGINGS, "&6紫影头盔");
+    public static final SlimefunItemStack Ender_Leg = new SlimefunItemStack("Z_ENDER_LEG", Material.IRON_LEGGINGS, "&6紫影头盔");
     static {
         Ender_Leg.addUnsafeEnchantment(Enchantment.PROTECTION_ENVIRONMENTAL, 5);
     }
-    public static final SlimefunItemStack Ender_Chest = new SlimefunItemStack("ENDER_CHEST", Material.IRON_CHESTPLATE, "&6紫影胸甲");
+    public static final SlimefunItemStack Ender_Chest = new SlimefunItemStack("Z_ENDER_CHEST", Material.IRON_CHESTPLATE, "&6紫影胸甲");
     static {
 
         Ender_Chest.addUnsafeEnchantment(Enchantment.PROTECTION_ENVIRONMENTAL, 5);
@@ -113,7 +113,7 @@ public class Items {
 
 
 
-    public static final SlimefunItemStack Ender_Head = new SlimefunItemStack("ENDER_HELMET", Material.IRON_HELMET, "&6紫影头盔");
+    public static final SlimefunItemStack Ender_Head = new SlimefunItemStack("Z_ENDER_HELMET", Material.IRON_HELMET, "&6紫影头盔");
     static {
         Ender_Head.addUnsafeEnchantment(Enchantment.PROTECTION_ENVIRONMENTAL, 5);
     }
