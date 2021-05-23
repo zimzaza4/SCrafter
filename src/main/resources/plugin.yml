@@ -1,6 +1,6 @@
 # yaml-language-server: $schema=https://json.schemastore.org/bukkit-plugin
 
-name: SlimefunSCraft
+name: SlimefunZT
 version: ${project.version}
 author: zimzaza4
 main: cn.zimzaza4.slimefunzt.SlimefunZT
