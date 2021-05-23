@@ -1,4 +1,4 @@
-package cn.zimzaza4.slimefunzt.Items.material;
+package cn.zimzaza4.slimefunzt.items.material;
 
 import io.github.thebusybiscuit.slimefun4.api.geo.GEOResource;
 import org.bukkit.NamespacedKey;
@@ -9,17 +9,17 @@ import org.bukkit.plugin.Plugin;
 
 import javax.annotation.Nonnull;
 
-public class EnderOre implements GEOResource {
+public class NetherOre implements GEOResource {
     public final  NamespacedKey key;
     public final  ItemStack item;
 
-    public EnderOre(Plugin plugin, ItemStack item) {
-        this.key = new NamespacedKey(plugin, "zim_ender_ore");
+    public NetherOre(Plugin plugin, ItemStack item) {
+        this.key = new NamespacedKey(plugin, "zim_nether_ore");
         this.item = item;
     }
     @Override
     public int getDefaultSupply(@Nonnull World.Environment environment, @Nonnull Biome biome) {
-        if (environment == World.Environment.THE_END) {
+        if (environment == World.Environment.NETHER) {
             return 10;
         }
         else {
@@ -35,7 +35,7 @@ public class EnderOre implements GEOResource {
     @Nonnull
     @Override
     public String getName() {
-        return "紫影矿";
+        return "熔岩矿";
     }
 
     @Nonnull

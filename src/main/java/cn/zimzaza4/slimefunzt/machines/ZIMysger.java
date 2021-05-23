@@ -10,7 +10,7 @@ import org.bukkit.Material;
 import org.bukkit.inventory.ItemStack;
 
 public class ZIMysger extends AGenerator {
-    public ZIMysger(Category category,String id,ItemStack item , RecipeType recipeType, ItemStack[] recipe) {
+    public ZIMysger(Category category, String id, ItemStack item, RecipeType recipeType, ItemStack[] recipe) {
         super(category, new SlimefunItemStack(id, item), recipeType, recipe);
     }
 
@@ -30,7 +30,7 @@ public class ZIMysger extends AGenerator {
         this.registerFuel(new MachineFuel(1, new ItemStack(Material.OAK_LOG, 2)));
         this.registerFuel(new MachineFuel(1, new ItemStack(Material.STONE, 1)));
         this.registerFuel(new MachineFuel(1, new ItemStack(Material.COBBLESTONE, 2)));
-        this.registerFuel(new MachineFuel(1, SlimefunItems. STONE_CHUNK));
+        this.registerFuel(new MachineFuel(1, SlimefunItems.STONE_CHUNK));
         this.registerFuel(new MachineFuel(1, new ItemStack(Material.DIRT, 2)));
     }
 
