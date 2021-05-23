@@ -1,9 +1,0 @@
-# yaml-language-server: $schema=https://json.schemastore.org/bukkit-plugin
-
-name: SlimefunSCraft
-version: 1.0.0
-author: zimzaza4
-main: cn.zimzaza4.slimefunzt.SlimefunZT
-depend: [Slimefun]
-
-api-version: 1.15
