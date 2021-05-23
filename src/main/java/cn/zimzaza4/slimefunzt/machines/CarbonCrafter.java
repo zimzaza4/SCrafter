@@ -1,6 +1,5 @@
 package cn.zimzaza4.slimefunzt.machines;
 
-import io.github.thebusybiscuit.slimefun4.implementation.SlimefunItems;
 import me.mrCookieSlime.Slimefun.Lists.RecipeType;
 import me.mrCookieSlime.Slimefun.Objects.Category;
 import me.mrCookieSlime.Slimefun.Objects.SlimefunItem.abstractItems.AContainer;
@@ -10,9 +9,10 @@ import org.bukkit.inventory.ItemStack;
 
 public class CarbonCrafter extends AContainer {
 
-    public CarbonCrafter(Category category, String id , ItemStack item, RecipeType recipeType, ItemStack[] recipe) {
+    public CarbonCrafter(Category category, String id, ItemStack item, RecipeType recipeType, ItemStack[] recipe) {
         super(category, new SlimefunItemStack(id, item), recipeType, recipe);
     }
+
     @Override
     public ItemStack getProgressBar() {
         return new ItemStack(Material.COAL);
@@ -38,8 +38,10 @@ public class CarbonCrafter extends AContainer {
         return 200;
 
     }
-    public void registerDefaultRecipes(){
 
-      this.registerRecipe(8,new ItemStack[] {new ItemStack(Material.DIAMOND)}, new ItemStack[]{new ItemStack(Material.COAL , 64), new ItemStack(Material.COAL, 64)});
+    public void registerDefaultRecipes() {
+
+        this.registerRecipe(8, new ItemStack[] { new ItemStack(Material.DIAMOND) },
+                new ItemStack[] { new ItemStack(Material.COAL, 64), new ItemStack(Material.COAL, 64) });
     }
 }

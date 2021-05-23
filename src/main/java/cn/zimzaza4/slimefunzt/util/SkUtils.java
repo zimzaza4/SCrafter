@@ -10,9 +10,8 @@ import org.bukkit.inventory.ItemStack;
 public class SkUtils {
     public static void regitem(String id, ItemStack item, Category category, RecipeType rt, ItemStack[] recipe) {
         SlimefunItemStack sfi = new SlimefunItemStack(id, item);
-        SlimefunItem snr = new SlimefunItem( category, sfi, rt, recipe);
+        SlimefunItem snr = new SlimefunItem(category, sfi, rt, recipe);
         snr.register(SlimefunZT.getInstance());
-    
+
     }
 }
-

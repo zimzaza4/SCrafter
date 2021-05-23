@@ -1,7 +1,6 @@
-package cn.zimzaza4.slimefunzt.Items;
+package cn.zimzaza4.slimefunzt.items;
 
 import cn.zimzaza4.slimefunzt.SlimefunZT;
-import cn.zimzaza4.slimefunzt.machines.IE.NewSingConer;
 import io.github.mooy1.infinityexpansion.InfinityExpansion;
 import io.github.mooy1.infinityexpansion.categories.Categories;
 import me.mrCookieSlime.Slimefun.Lists.RecipeType;
@@ -20,29 +19,26 @@ public class IEItem {
         System.out.println("Loading... ");
     }
 
-
-    public static SlimefunItemStack SingCrafter = new SlimefunItemStack("ZIM_SING_CRAFTER", Material.GRAY_STAINED_GLASS, "&cSC奇点构造器",
-            "",
-            "&c疯狂, 更加疯狂",
-            ""
-
+    public static SlimefunItemStack SingCrafter = new SlimefunItemStack("ZIM_SING_CRAFTER", Material.GRAY_STAINED_GLASS,
+            "&cSC奇点构造器", "", "&c疯狂, 更加疯狂", ""
     );
 
-    private static void register(SlimefunItemStack itemStack, RecipeType type, ItemStack[] recipe) {
+    public static void register(SlimefunItemStack itemStack, RecipeType type, ItemStack[] recipe) {
         register(Categories.MAIN_MATERIALS, itemStack, type, recipe);
     }
 
-    private static void register(Category category, SlimefunItemStack item, RecipeType recipeType, ItemStack[] recipe) {
+    public static void register(Category category, SlimefunItemStack item, RecipeType recipeType, ItemStack[] recipe) {
         new SlimefunItem(category, item, recipeType, recipe).register(InfinityExpansion.inst());
     }
-    private static ItemStack[] makeRecipe(ItemStack item, int amount) {
+
+    public static ItemStack[] makeRecipe(ItemStack item, int amount) {
 
         List<ItemStack> recipe = new ArrayList<>();
 
         int stacks = (int) Math.floor(amount / 64D);
         int extra = amount % 64;
 
-        for (int i = 0 ; i < stacks ; i++) {
+        for (int i = 0; i < stacks; i++) {
             recipe.add(new CustomItem(item, 64));
         }
 
@@ -55,4 +51,3 @@ public class IEItem {
         return recipe.toArray(new ItemStack[9]);
     }
 }
-

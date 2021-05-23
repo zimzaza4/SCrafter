@@ -9,9 +9,10 @@ import org.bukkit.Material;
 import org.bukkit.inventory.ItemStack;
 
 public class CarbonCrafterII extends AContainer {
-    public CarbonCrafterII(Category category, String id , ItemStack item, RecipeType recipeType, ItemStack[] recipe) {
+    public CarbonCrafterII(Category category, String id, ItemStack item, RecipeType recipeType, ItemStack[] recipe) {
         super(category, new SlimefunItemStack(id, item), recipeType, recipe);
     }
+
     @Override
     public ItemStack getProgressBar() {
         return new ItemStack(Material.COAL);
@@ -37,10 +38,12 @@ public class CarbonCrafterII extends AContainer {
         return 400;
 
     }
-    public void registerDefaultRecipes(){
 
-        this.registerRecipe(8, new ItemStack(Material.DIAMOND), new SlimefunItemStack(SlimefunItems.CARBON,12));
-        this.registerRecipe(12, new ItemStack[]{new ItemStack(Material.COAL, 64), new ItemStack(Material.COAL, 64)}, new ItemStack[]{new SlimefunItemStack(SlimefunItems.CARBON, 12)});
+    public void registerDefaultRecipes() {
+
+        this.registerRecipe(8, new ItemStack(Material.DIAMOND), new SlimefunItemStack(SlimefunItems.CARBON, 12));
+        this.registerRecipe(12, new ItemStack[] { new ItemStack(Material.COAL, 64), new ItemStack(Material.COAL, 64) },
+                new ItemStack[] { new SlimefunItemStack(SlimefunItems.CARBON, 12) });
     }
 
 }
