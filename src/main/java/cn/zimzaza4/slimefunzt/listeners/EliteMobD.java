@@ -12,7 +12,7 @@ public class EliteMobD implements Listener {
     @EventHandler
     public void EliteMobDeath(EliteMobDeathEvent e) {
        if (e.getEntity() instanceof LivingEntity) {
-           if (e.getEliteMobEntity()==null){
+           if (e.getEliteMobEntity()!=null){
 
 
         int level = e.getEliteMobEntity().getLevel();
