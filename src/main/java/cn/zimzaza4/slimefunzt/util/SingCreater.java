@@ -20,7 +20,7 @@ import java.util.List;
  */
 public final class SingCreater extends UnplaceableBlock {
 
-    private static final double COST_MULTIPLIER = InfinityExpansion.inst().getConfig().getDouble("balance-options.singularity-cost-multiplier", 0.1, 100);
+    private static final double COST_MULTIPLIER = 1.0;
 
     public SingCreater(SlimefunItemStack item, ItemStack it, int amount) {
         super(Items.IE, item, NewSingConer.TYPE, makeRecipe( it, (int) (amount * COST_MULTIPLIER)));
