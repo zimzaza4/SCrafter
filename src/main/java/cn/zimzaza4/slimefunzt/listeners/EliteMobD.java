@@ -11,7 +11,12 @@ public class EliteMobD implements Listener {
 
     @EventHandler
     public void EliteMobDeath(EliteMobDeathEvent e) {
+       if (e.getEntity() instanceof LivingEntity) {
+           if (e.getEliteMobEntity()==null){
+
+
         int level = e.getEliteMobEntity().getLevel();
+
         LivingEntity le = (LivingEntity) e.getEntity();
         if (le.getKiller().getPlayer() != null) {
             int number = (int) Math.floor(level / 3);
@@ -22,7 +27,8 @@ public class EliteMobD implements Listener {
 
             for (int i = 0; i < number; i++) {
                 e.getEntity().getWorld().dropItem(e.getEntity().getLocation(), Items.EM_dust);
-            }
+                }
+            }}
         }
     }
 
