@@ -1,22 +1,31 @@
 package cn.zimzaza4.slimefunzt.items;
 
 import cn.zimzaza4.slimefunzt.SlimefunZT;
+import cn.zimzaza4.slimefunzt.lists.Items;
+import cn.zimzaza4.slimefunzt.machines.BasicEliteCrafter;
+import cn.zimzaza4.slimefunzt.machines.ie.NewSingConer;
+import cn.zimzaza4.slimefunzt.util.SingCreater;
 import io.github.mooy1.infinityexpansion.InfinityExpansion;
 import io.github.mooy1.infinityexpansion.categories.Categories;
+import io.github.mooy1.infinityexpansion.implementation.materials.Materials;
 import me.mrCookieSlime.Slimefun.Lists.RecipeType;
 import me.mrCookieSlime.Slimefun.Objects.Category;
 import me.mrCookieSlime.Slimefun.Objects.SlimefunItem.SlimefunItem;
 import me.mrCookieSlime.Slimefun.api.SlimefunItemStack;
-import me.mrCookieSlime.Slimefun.cscorelib2.item.CustomItem;
 import org.bukkit.Material;
 import org.bukkit.inventory.ItemStack;
-
-import java.util.ArrayList;
-import java.util.List;
 
 public class IEItem {
     public static void setup(SlimefunZT zt) {
         System.out.println("Loading... ");
+        new SingCreater(Items.Ender_Singularity, Items.Ender_ingot, 600).register(SlimefunZT.getInstance());
+
+        new NewSingConer(Items.IE, IEItem.SingCrafter, BasicEliteCrafter.TYPE, new ItemStack[]{
+                Materials.VOID_INGOT, Materials.VOID_INGOT, Materials.MAGSTEEL, Materials.MAGSTEEL,
+                Materials.MACHINE_PLATE, Materials.MACHINE_CORE, Materials.MACHINE_PLATE,
+                Items.GhostIngot, Items.GhostIngot, Items.GhostIngot
+
+        }, 200, 2).register(SlimefunZT.getInstance());
     }
 
     public static SlimefunItemStack SingCrafter = new SlimefunItemStack("ZIM_SING_CRAFTER", Material.GRAY_STAINED_GLASS,
@@ -31,23 +40,4 @@ public class IEItem {
         new SlimefunItem(category, item, recipeType, recipe).register(InfinityExpansion.inst());
     }
 
-    public static ItemStack[] makeRecipe(ItemStack item, int amount) {
-
-        List<ItemStack> recipe = new ArrayList<>();
-
-        int stacks = (int) Math.floor(amount / 64D);
-        int extra = amount % 64;
-
-        for (int i = 0; i < stacks; i++) {
-            recipe.add(new CustomItem(item, 64));
-        }
-
-        recipe.add(new CustomItem(item, extra));
-
-        while (recipe.size() < 9) {
-            recipe.add(null);
-        }
-
-        return recipe.toArray(new ItemStack[9]);
-    }
 }

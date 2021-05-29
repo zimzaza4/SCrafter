@@ -1,5 +1,4 @@
 package cn.zimzaza4.slimefunzt.machines;
-
 import io.github.thebusybiscuit.slimefun4.implementation.SlimefunItems;
 import me.mrCookieSlime.Slimefun.Lists.RecipeType;
 import me.mrCookieSlime.Slimefun.Objects.Category;

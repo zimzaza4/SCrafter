@@ -47,13 +47,19 @@ public class Items {
         public static final SlimefunItemStack Nether_ingot = new SlimefunItemStack("ZIM_NETHER_INGOT",
                         Material.NETHERITE_INGOT, "&c&l熔岩锭", "&c火热!");
 
+
+        public static final SlimefunItemStack FastIngotFactory = new SlimefunItemStack("ZIM_FAST_INGOT_FACTORY",  new CustomItem(Material.SMITHING_TABLE, "&a加强电动铸锭机 &c- I", "&7效率更高", "","&c512J可储存", "&c30J/s"));
+
+        public static final SlimefunItemStack FastIngotFactory_II = new SlimefunItemStack("ZIM_FAST_INGOT_FACTORY_2",  new CustomItem(Material.SMITHING_TABLE, "&a加强电动铸锭机 &c- II", "&7效率++", "","&c1024J可储存", "&c40J/s"));
+
         public static final SlimefunItemStack Ender_Singularity = new SlimefunItemStack("ZIM_ENDER_SINGULARITY",
                         Material.IRON_INGOT, "&b&l紫影奇点");
 
         public static ItemStack ZIMysger = new CustomItem(Material.BLACK_STAINED_GLASS, "&a&l&o元素发电机", "",
                         "&a&l将石头, 泥土, 沙子等 作为燃料", "&e9J / 2s", "&a500 J 可储存"
-
         );
+        public static SlimefunItemStack GhostIngot = new SlimefunItemStack("Z_GHOST_INGOT", new CustomItem(Material.IRON_INGOT, "&7魂锭"));
+
         public static SlimefunItemStack ArmorCrafter = new SlimefunItemStack("ARMOR_CRAFTER",
                         new CustomItem(Material.BLACK_STAINED_GLASS, "&cSC装备制作机 - I", "",
 

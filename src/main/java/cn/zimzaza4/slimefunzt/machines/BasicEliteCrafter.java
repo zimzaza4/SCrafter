@@ -32,13 +32,13 @@ public class BasicEliteCrafter extends AbstractEnergyCrafter {
 
     public static final int[] INPUT_SLOTS = {
 
-            10, 11, 12, 19, 20, 21, 28, 29, 30
+            10, 11, 12, 13, 19, 20, 21,22, 28, 29, 30, 31
 
     };
 
     private static final int[] OUTPUT_SLOTS = { MenuPreset.slot3 + 27 };
     private static final int STATUS_SLOT = MenuPreset.slot3;
-    private static final int[] STATUS_BORDER = { 0, 1, 2, 3, 4, 5, 9, 13, 14, 18, 22, 23, 27, 31, 32, 36, 37, 38, 39,
+    private static final int[] STATUS_BORDER = { 0, 1, 2, 3, 4, 5, 9,  14, 18,  23, 27,  32, 36, 37, 38, 39,
             40, 41, 45, 46, 47, 48, 49, 50, 6, 8, 15, 17, 24, 25, 26 };
     private static final int RECIPE_SLOT = 7;
 

@@ -1,6 +1,7 @@
 package cn.zimzaza4.slimefunzt.machines;
 
 import io.github.mooy1.infinityexpansion.InfinityExpansion;
+
 import io.github.mooy1.infinityexpansion.infinitylib.slimefun.abstracts.AbstractTicker;
 import io.github.thebusybiscuit.slimefun4.core.attributes.EnergyNetComponent;
 import io.github.thebusybiscuit.slimefun4.core.networks.energy.EnergyNetComponentType;

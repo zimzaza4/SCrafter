@@ -6,6 +6,7 @@ import cn.zimzaza4.slimefunzt.machines.*;
 
 import io.github.thebusybiscuit.slimefun4.implementation.SlimefunItems;
 
+import io.github.thebusybiscuit.slimefun4.implementation.items.electric.machines.ElectricIngotFactory;
 import me.mrCookieSlime.Slimefun.Lists.RecipeType;
 import me.mrCookieSlime.Slimefun.api.SlimefunItemStack;
 
@@ -88,6 +89,18 @@ public class RegSFMachine {
                                 RecipeType.ENHANCED_CRAFTING_TABLE, ZIM_CARBON_CRAFTER_II)
                                                 .register(SlimefunZT.getInstance());
 
+                new ElectricIngotFactory(Items.Cate, Items.FastIngotFactory, RecipeType.ENHANCED_CRAFTING_TABLE,
+                        new ItemStack[]{
+                        SlimefunItems.LEAD_INGOT, Items.EM_sp, SlimefunItems.LEAD_INGOT,
+                        SlimefunItems.HEATING_COIL, SlimefunItems.ELECTRIC_INGOT_FACTORY_3, SlimefunItems.HEATING_COIL,
+                        new ItemStack(Material.NETHERITE_BLOCK),SlimefunItems.BLISTERING_INGOT_3, new ItemStack (Material.NETHERITE_BLOCK)
+                } ).setCapacity(512).setEnergyConsumption(30).setProcessingSpeed(12).register(SlimefunZT.getInstance());
+                new ElectricIngotFactory(Items.Cate, Items.FastIngotFactory, RecipeType.ENHANCED_CRAFTING_TABLE,
+                        new ItemStack[]{
+                                SlimefunItems.REINFORCED_ALLOY_INGOT, Items.EM_soul, SlimefunItems.REINFORCED_ALLOY_INGOT,
+                                SlimefunItems.HEATING_COIL, Items.FastIngotFactory, SlimefunItems.HEATING_COIL,
+                                new ItemStack(Material.NETHERITE_INGOT),SlimefunItems.SMALL_CAPACITOR, new ItemStack (Material.NETHERITE_INGOT)
+                } ).setCapacity(1024).setEnergyConsumption(40).setProcessingSpeed(20).register(SlimefunZT.getInstance());
                 /*
                  * new SoulCrafter( Items.Cate, Items.SoulCrafter,
                  * RecipeType.ENHANCED_CRAFTING_TABLE, ZIM_SOUL_CRAFTER)
