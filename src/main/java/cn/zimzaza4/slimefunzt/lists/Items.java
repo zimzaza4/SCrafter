@@ -30,7 +30,7 @@ public class Items {
         public static ItemStack FruitMachine = new CustomItem(Material.GRAY_STAINED_GLASS, "&e糖提取机", "&a 从水果里提取糖",
                         "30J/s    300J可储存");
         public static ItemStack ShaiKTQMachine = new CustomItem(Material.IRON_BLOCK, "&a筛矿提取机 &eI", "&e 从原石提取筛矿 每两秒5个",
-                        "3J/s    300J可储存");
+                        "3J/s     300J可储存");
         public static ItemStack ShaiKTQMachineII = new CustomItem(Material.GOLD_BLOCK, "&a筛矿提取机 &eII",
                         "&e 从原石提取筛矿 每秒10个", "6J/s    500J可储存");
 
