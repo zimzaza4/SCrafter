@@ -45,10 +45,10 @@ public class RegSFItem {
                 .register(SlimefunZT.getInstance());
 
         new SlimefunItem(Items.MatCate, Items.Ender_ingot, RecipeType.SMELTERY,
-                new ItemStack[] { Items.EnderOre, null, null, null, null, null, null, null, null, null })
+                new ItemStack[] { Items.EnderOre, null, null, null, null, null, null, null, null })
                         .register(SlimefunZT.getInstance());
         new SlimefunItem(Items.MatCate, Items.Nether_ingot, RecipeType.SMELTERY,
-                new ItemStack[] { Items.NetherOre, null, null, null, null, null, null, null, null, null })
+                new ItemStack[] { Items.NetherOre, null, null, null, null, null, null, null, null})
                         .register(plugin);
 
         new EnderGear(Items.ToolCate, Items.Ender_Head, SCArmorCrafter.TYPE, Helmet(Items.Ender_ingot),
@@ -64,9 +64,9 @@ public class RegSFItem {
         SoulMatReg(Items.EM_dust, Items.EM_bit);
         SoulMatReg(Items.EM_bit, Items.EM_sp);
         SoulMatReg(Items.EM_sp, Items.EM_soul);
-        new SlimefunItem(Items.MatCate, Items.GhostIngot, ZMCrafter.TYPE, new ItemStack[]{
+        new SlimefunItem(Items.MatCate, Items.GhostIngot,RecipeType.SMELTERY, new ItemStack[]{
                 Items.Ender_ingot, Items.EM_soul,  Items. EM_soul
-               , null, Items.EM_soul,null,
+               , Items.EM_soul,null,null,
                 null,null,null
         }).register(SlimefunZT.getInstance());
         new ElectricAxe(Items.ToolCate, Items.ElectricAxe, RecipeType.ENHANCED_CRAFTING_TABLE,
