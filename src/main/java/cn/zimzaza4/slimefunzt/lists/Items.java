@@ -25,8 +25,8 @@ public class Items {
                         new CustomItem(Material.NETHERITE_BLOCK, "&e&l SC拓展 - &c疯狂无限"));
         // ------ 分割线
 
-        public static ItemStack ZM_MI = new CustomItem(Material.DIAMOND, "&e&l远古钻石", "材料..? ");
-        public static ItemStack APPLE = new ItemStack(Material.APPLE);
+
+
         public static ItemStack FruitMachine = new CustomItem(Material.GRAY_STAINED_GLASS, "&e糖提取机", "&a 从水果里提取糖",
                         "30J/s    300J可储存");
         public static ItemStack ShaiKTQMachine = new CustomItem(Material.IRON_BLOCK, "&a筛矿提取机 &eI", "&e 从原石提取筛矿 每两秒5个",
@@ -123,4 +123,9 @@ public class Items {
         static {
                 Ender_Head.addUnsafeEnchantment(Enchantment.PROTECTION_ENVIRONMENTAL, 5);
         }
+        public static final SlimefunItemStack Soul_Sword = new SlimefunItemStack("ZIM_SOUL_SWOED", Material.IRON_SWORD, "&7魂剑", "&c提高灵魂粉末的掉落数量");
+        static {
+                Soul_Sword.addUnsafeEnchantment(Enchantment.DAMAGE_ALL, 2);
+        }
+
 }
