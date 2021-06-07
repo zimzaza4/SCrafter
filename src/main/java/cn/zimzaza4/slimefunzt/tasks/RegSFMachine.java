@@ -8,6 +8,7 @@ import io.github.thebusybiscuit.slimefun4.implementation.SlimefunItems;
 
 import io.github.thebusybiscuit.slimefun4.implementation.items.electric.machines.ElectricIngotFactory;
 import me.mrCookieSlime.Slimefun.Lists.RecipeType;
+import me.mrCookieSlime.Slimefun.Objects.SlimefunItem.abstractItems.AContainer;
 import me.mrCookieSlime.Slimefun.api.SlimefunItemStack;
 
 import org.bukkit.Color;
@@ -101,11 +102,7 @@ public class RegSFMachine {
                                 SlimefunItems.HEATING_COIL, Items.FastIngotFactory, SlimefunItems.HEATING_COIL,
                                 new ItemStack(Material.NETHERITE_INGOT),SlimefunItems.SMALL_CAPACITOR, new ItemStack (Material.NETHERITE_INGOT)
                 } ).setCapacity(1024).setEnergyConsumption(40).setProcessingSpeed(20).register(SlimefunZT.getInstance());
-                /*
-                 * new SoulCrafter( Items.Cate, Items.SoulCrafter,
-                 * RecipeType.ENHANCED_CRAFTING_TABLE, ZIM_SOUL_CRAFTER)
-                 * .register(SlimefunZT.getInstance());
-                 */
+
                 new Antier(Items.ToolCate, Items.Antier, RecipeType.ENHANCED_CRAFTING_TABLE, ZIM_ANTIER, 60, 8, 13,
                                 Color.RED, Material.IRON_BLOCK, Material.REDSTONE_BLOCK, 1)
                                                 .register(SlimefunZT.getInstance());
@@ -113,6 +110,14 @@ public class RegSFMachine {
                                 ZIM_ARMOR_CRAFTER, 100);
                 new ZMCrafter(Items.Cate, Items.SoulCrafter, RecipeType.ENHANCED_CRAFTING_TABLE, ZIM_SOUL_CRAFTER, 50)
                                 .register(SlimefunZT.getInstance());
+
+                AContainer autosoulcraft = new AutoSoulCrafter(Items.Cate, Items.AutoSoulCrafter, RecipeType.ENHANCED_CRAFTING_TABLE, new ItemStack[]{null, SlimefunItems.ADVANCED_CIRCUIT_BOARD, null,
+                null, Items.SoulCrafter, null,
+                null, SlimefunItems.SMALL_CAPACITOR, new ItemStack(Material.IRON_BLOCK)}).setCapacity(512).setEnergyConsumption(50);
+                        autosoulcraft.registerRecipe(3, new SlimefunItemStack(Items.EM_dust, 9), Items.EM_bit);
+                        autosoulcraft.registerRecipe(3, new SlimefunItemStack(Items.EM_bit, 9), Items.EM_sp);
+                        autosoulcraft.registerRecipe(5, new SlimefunItemStack(Items.EM_sp, 9), Items.EM_soul);
+                        autosoulcraft.register(SlimefunZT.getInstance());
         };
 
 }

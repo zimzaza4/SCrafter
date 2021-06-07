@@ -18,7 +18,6 @@ import org.bukkit.inventory.ItemStack;
 public class IEItem {
     public static void setup(SlimefunZT zt) {
         System.out.println("Loading... ");
-        new SingCreater(Items.Ender_Singularity, Items.Ender_ingot, 600).register(SlimefunZT.getInstance());
 
         new NewSingConer(Items.IE, IEItem.SingCrafter, BasicEliteCrafter.TYPE, new ItemStack[]{
                 Materials.VOID_INGOT, Materials.VOID_INGOT, Materials.MAGSTEEL, Materials.MAGSTEEL,
@@ -26,6 +25,9 @@ public class IEItem {
                 Items.GhostIngot, Items.GhostIngot, Items.GhostIngot
 
         }, 200, 2).register(SlimefunZT.getInstance());
+        new SingCreater(Items.Ender_Singularity, Items.Ender_ingot, 600).register(SlimefunZT.getInstance());
+        new SingCreater(Items.Nether_Singularity, Items.Nether_ingot, 600).register(SlimefunZT.getInstance());
+        new SingCreater(Items.Soul_Singularity, Items.GhostIngot, 300).register(SlimefunZT.getInstance());
     }
 
     public static SlimefunItemStack SingCrafter = new SlimefunItemStack("ZIM_SING_CRAFTER", Material.GRAY_STAINED_GLASS,

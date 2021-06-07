@@ -2,6 +2,7 @@ package cn.zimzaza4.slimefunzt.lists;
 
 import cn.zimzaza4.slimefunzt.SlimefunZT;
 
+import io.github.thebusybiscuit.slimefun4.implementation.items.blocks.UnplaceableBlock;
 import io.github.thebusybiscuit.slimefun4.utils.LoreBuilder;
 import me.mrCookieSlime.Slimefun.Objects.Category;
 import me.mrCookieSlime.Slimefun.api.SlimefunItemStack;
@@ -53,11 +54,16 @@ public class Items {
         public static final SlimefunItemStack FastIngotFactory_II = new SlimefunItemStack("ZIM_FAST_INGOT_FACTORY_2",  new CustomItem(Material.SMITHING_TABLE, "&a加强电动铸锭机 &c- II", "&7效率++", "","&c1024J可储存", "&c40J/s"));
 
         public static final SlimefunItemStack Ender_Singularity = new SlimefunItemStack("ZIM_ENDER_SINGULARITY",
-                        Material.IRON_INGOT, "&b&l紫影奇点");
-
+                        Material.IRON_BLOCK, "&b&l紫影奇点");
+        public static final SlimefunItemStack Nether_Singularity = new  SlimefunItemStack("ZIM_NETHER_SINGULARITY",
+                                 Material.NETHERITE_BLOCK, "&b&l熔岩奇点");
+    public static final SlimefunItemStack Soul_Singularity = new SlimefunItemStack("ZIM_SOUL_SINGULARITY",
+            Material.BLUE_WOOL, "&b&l魂奇点");
         public static ItemStack ZIMysger = new CustomItem(Material.BLACK_STAINED_GLASS, "&a&l&o元素发电机", "",
                         "&a&l将石头, 泥土, 沙子等 作为燃料", "&e9J / 2s", "&a500 J 可储存"
         );
+        public static SlimefunItemStack AutoSoulCrafter = new SlimefunItemStack("Z_AUTOSOULCRAFTER", Material.IRON_BLOCK, "&c自动灵魂处理", "&7 512J可储存" );
+
         public static SlimefunItemStack GhostIngot = new SlimefunItemStack("Z_GHOST_INGOT", new CustomItem(Material.IRON_INGOT, "&7魂锭"));
 
         public static SlimefunItemStack ArmorCrafter = new SlimefunItemStack("ARMOR_CRAFTER",
@@ -72,7 +78,6 @@ public class Items {
                                         "&e50J /s", "&a200 J 可储存"
 
                         ));
-
         public static SlimefunItemStack Antier = new SlimefunItemStack(" ZIM_ANTIER_I", Material.IRON_BLOCK,
                         "&e激光射线&c - I", "&c防御性机器", "50 J / s");
         public static ItemStack GoldCrafter = new CustomItem(Material.GOLD_BLOCK, "&e&l24K金制造机", "&a自动将金粉转为24K金",

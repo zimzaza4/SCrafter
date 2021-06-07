@@ -7,6 +7,7 @@ import cn.zimzaza4.slimefunzt.items.gear.EnderGear;
 import cn.zimzaza4.slimefunzt.items.material.EnderOre;
 import cn.zimzaza4.slimefunzt.items.material.NetherOre;
 import cn.zimzaza4.slimefunzt.lists.Items;
+import cn.zimzaza4.slimefunzt.machines.AutoSoulCrafter;
 import cn.zimzaza4.slimefunzt.machines.SCArmorCrafter;
 import cn.zimzaza4.slimefunzt.machines.ZMCrafter;
 import cn.zimzaza4.slimefunzt.util.RecipeTypes;
@@ -15,6 +16,7 @@ import io.github.thebusybiscuit.slimefun4.api.SlimefunAddon;
 import io.github.thebusybiscuit.slimefun4.implementation.SlimefunItems;
 import me.mrCookieSlime.Slimefun.Lists.RecipeType;
 import me.mrCookieSlime.Slimefun.Objects.SlimefunItem.SlimefunItem;
+import me.mrCookieSlime.Slimefun.Objects.SlimefunItem.abstractItems.AContainer;
 import me.mrCookieSlime.Slimefun.api.SlimefunItemStack;
 import org.bukkit.Material;
 import org.bukkit.inventory.ItemStack;
@@ -68,6 +70,14 @@ public class RegSFItem {
                 Items.Ender_ingot, Items.EM_soul,  Items. EM_soul
                , Items.EM_soul,null,null,
                 null,null,null
+
+
+        }).register(SlimefunZT.getInstance());
+
+        new SlimefunItem(Items.ToolCate, Items.Soul_Sword, RecipeType.ARMOR_FORGE, new ItemStack[]{
+                null, Items.GhostIngot, null
+                ,null , Items.GhostIngot, null,
+                null, new ItemStack(Material.STICK), null
         }).register(SlimefunZT.getInstance());
         new ElectricAxe(Items.ToolCate, Items.ElectricAxe, RecipeType.ENHANCED_CRAFTING_TABLE,
                 new ItemStack[] { SlimefunItems.REINFORCED_ALLOY_INGOT, SlimefunItems.REINFORCED_ALLOY_INGOT,

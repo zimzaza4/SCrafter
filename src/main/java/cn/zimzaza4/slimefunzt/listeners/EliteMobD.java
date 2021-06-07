@@ -40,7 +40,7 @@ public class EliteMobD implements Listener {
             }
 
             if(le.getKiller().getPlayer().getEquipment().getItemInMainHand()!=null&&SlimefunItem.getByItem(le.getKiller().getPlayer().getEquipment().getItemInMainHand()).getId()=="ZIM_SOUL_SWORD"){
-                number = (int) (number*1.5);
+                number = (int) Math.floor(number*1.5);
             }
 
 
