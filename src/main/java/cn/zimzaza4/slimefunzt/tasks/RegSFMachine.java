@@ -113,7 +113,8 @@ public class RegSFMachine {
 
                 AContainer autosoulcraft = new AutoSoulCrafter(Items.Cate, Items.AutoSoulCrafter, RecipeType.ENHANCED_CRAFTING_TABLE, new ItemStack[]{null, SlimefunItems.ADVANCED_CIRCUIT_BOARD, null,
                 null, Items.SoulCrafter, null,
-                null, SlimefunItems.SMALL_CAPACITOR, new ItemStack(Material.IRON_BLOCK)}).setCapacity(512).setEnergyConsumption(50);
+                null, SlimefunItems.SMALL_CAPACITOR, new ItemStack(Material.IRON_BLOCK)}).setCapacity(512).setProcessingSpeed(1)
+                        .setEnergyConsumption(50);
                         autosoulcraft.registerRecipe(3, new SlimefunItemStack(Items.EM_dust, 9), Items.EM_bit);
                         autosoulcraft.registerRecipe(3, new SlimefunItemStack(Items.EM_bit, 9), Items.EM_sp);
                         autosoulcraft.registerRecipe(5, new SlimefunItemStack(Items.EM_sp, 9), Items.EM_soul);
