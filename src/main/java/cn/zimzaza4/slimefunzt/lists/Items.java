@@ -95,7 +95,7 @@ public class Items {
                         "&7一种材料");
         public static SlimefunItemStack EM_soul = new SlimefunItemStack("EM_SOUL", Material.HEART_OF_THE_SEA, "&b灵魂",
                         "&7闪耀着微弱的光");
-
+        public static SlimefunItemStack EM_boss_soul = new SlimefunItemStack("EM_BOSS_SOUL", Material.HEART_OF_THE_SEA, "&4亡魂");
         public static SlimefunItemStack Tester = new SlimefunItemStack("TESTER_SAVE",
                         new CustomItem(Material.GOLD_BLOCK, "ok", ":P"));
         public static final SlimefunItemStack ElectricAxe = new SlimefunItemStack("ELECTRIC_AXE",
@@ -133,4 +133,5 @@ public class Items {
                 Soul_Sword.addUnsafeEnchantment(Enchantment.DAMAGE_ALL, 2);
         }
 
+        public static final SlimefunItemStack Soul_ece = new SlimefunItemStack("ZIM_SOUL_ECT", Material.NETHERITE_BLOCK,"&c灵魂鼓舞室", "速度x10!");
 }

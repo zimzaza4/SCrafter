@@ -2,12 +2,11 @@ package cn.zimzaza4.slimefunzt.items;
 
 import cn.zimzaza4.slimefunzt.SlimefunZT;
 import cn.zimzaza4.slimefunzt.lists.Items;
-import cn.zimzaza4.slimefunzt.machines.BasicEliteCrafter;
 import cn.zimzaza4.slimefunzt.machines.ie.NewSingConer;
 import cn.zimzaza4.slimefunzt.util.SingCreater;
 import io.github.mooy1.infinityexpansion.InfinityExpansion;
 import io.github.mooy1.infinityexpansion.categories.Categories;
-import io.github.mooy1.infinityexpansion.implementation.materials.Materials;
+import io.github.mooy1.infinityexpansion.items.Materials;
 import me.mrCookieSlime.Slimefun.Lists.RecipeType;
 import me.mrCookieSlime.Slimefun.Objects.Category;
 import me.mrCookieSlime.Slimefun.Objects.SlimefunItem.SlimefunItem;
@@ -19,7 +18,7 @@ public class IEItem {
     public static void setup(SlimefunZT zt) {
         System.out.println("Loading... ");
 
-        new NewSingConer(Items.IE, IEItem.SingCrafter, BasicEliteCrafter.TYPE, new ItemStack[]{
+        new NewSingConer(Items.IE, IEItem.SingCrafter, RecipeType.ENHANCED_CRAFTING_TABLE, new ItemStack[]{
                 Materials.VOID_INGOT, Materials.VOID_INGOT, Materials.MAGSTEEL, Materials.MAGSTEEL,
                 Materials.MACHINE_PLATE, Materials.MACHINE_CORE, Materials.MACHINE_PLATE,
                 Items.GhostIngot, Items.GhostIngot, Items.GhostIngot

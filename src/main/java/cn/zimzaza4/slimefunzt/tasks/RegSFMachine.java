@@ -11,9 +11,14 @@ import me.mrCookieSlime.Slimefun.Lists.RecipeType;
 import me.mrCookieSlime.Slimefun.Objects.SlimefunItem.abstractItems.AContainer;
 import me.mrCookieSlime.Slimefun.api.SlimefunItemStack;
 
+import org.bukkit.Bukkit;
 import org.bukkit.Color;
 import org.bukkit.Material;
 import org.bukkit.inventory.ItemStack;
+import org.bukkit.plugin.java.JavaPlugin;
+import space.kiichan.geneticchickengineering.GeneticChickengineering;
+import space.kiichan.geneticchickengineering.items.GCEItems;
+import space.kiichan.geneticchickengineering.machines.ExcitationChamber;
 
 public class RegSFMachine {
 
@@ -119,6 +124,11 @@ public class RegSFMachine {
                         autosoulcraft.registerRecipe(3, new SlimefunItemStack(Items.EM_bit, 9), Items.EM_sp);
                         autosoulcraft.registerRecipe(5, new SlimefunItemStack(Items.EM_sp, 9), Items.EM_soul);
                         autosoulcraft.register(SlimefunZT.getInstance());
+
+
+                        new ExcitationChamber(JavaPlugin.getPlugin(GeneticChickengineering.class), Items.Cate, Items.Soul_ece,0,14, RecipeType.ENHANCED_CRAFTING_TABLE, new ItemStack[]
+                     {SlimefunItems.REINFORCED_ALLOY_INGOT, Items.EM_soul, SlimefunItems.REINFORCED_ALLOY_INGOT
+                     , null, GCEItems.EXCITATION_CHAMBER_2, null, null, new ItemStack(Material.NETHERITE_BLOCK), null}).setCapacity(1000).setEnergyConsumption(15).setProcessingSpeed(10).register(SlimefunZT.getInstance());
         };
 
 }

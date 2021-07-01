@@ -56,11 +56,23 @@
       <systemPath>${project.basedir}/lib/IE.jar</systemPath>
     </dependency>
     <dependency>
+      <groupId>space.kiichan</groupId>
+      <artifactId>GeneticChickengineering</artifactId>
+      <version>1.2.1</version>
+      <scope>system</scope>
+      <systemPath>${project.basedir}/lib/GC.jar</systemPath>
+    </dependency>
+    <dependency>
       <groupId>com.magmaguy.elitemobs</groupId>
       <artifactId>EliteMobs</artifactId>
       <version>7.2.33</version>
       <scope>system</scope>
       <systemPath>${project.basedir}/lib/EliteMobs.jar</systemPath>
+    </dependency>
+    <dependency>
+      <groupId>io.github.mooy1</groupId>
+      <artifactId>InfinityLib</artifactId>
+      <version>84a3ce8</version>
     </dependency>
   </dependencies>
 

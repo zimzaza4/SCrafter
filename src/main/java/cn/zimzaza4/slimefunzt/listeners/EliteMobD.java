@@ -24,7 +24,9 @@ public class EliteMobD implements Listener {
                 if(p.getEquipment().getItemInMainHand()!=null&&SlimefunItem.getByItem(p.getEquipment().getItemInMainHand())!=null
                         &&SlimefunItem.getByItem(p.getEquipment().getItemInMainHand()).getId()=="ZIM_SOUL_SWORD")
                     e.getEntity().getLocation().getWorld().spawnParticle(Particle.SOUL, e.getEntity().getLocation(), 1,1);
-                }
+                }else if(e.getEntity().getName()!=null&&e.getEntity().getName().contains("§4魂")){
+               e.setDamage(e.getDamage()/2);
+       }
             }
     @EventHandler
     public void EliteMobDeath(EliteMobDeathEvent e) {
@@ -35,20 +37,25 @@ public class EliteMobD implements Listener {
                    int level = e.getEliteMobEntity().getLevel();
 
         LivingEntity le = (LivingEntity) e.getEntity();
-        if (le.getKiller().getPlayer() != null) {
+        if (le.getKiller()!=null&&le.getKiller().getPlayer() != null) {
             int number = (int) Math.floor(level / 3);
 
             if (number > 40) {
                 number = 40;
             }
-
-            if(le.getKiller().getPlayer().getEquipment().getItemInMainHand()!=null&&SlimefunItem.getByItem(le.getKiller().getPlayer().getEquipment().getItemInMainHand())!=null&&SlimefunItem.getByItem(le.getKiller().getPlayer().getEquipment().getItemInMainHand()).getId()=="ZIM_SOUL_SWORD"){
+            if (e.getEntity().getName().contains("§4魂")){
                 number = (int) Math.floor(number*1.5);
+            }
+            if(le.getKiller().getPlayer().getEquipment().getItemInMainHand()!=null&&SlimefunItem.getByItem(le.getKiller().getPlayer().getEquipment().getItemInMainHand())!=null&&SlimefunItem.getByItem(le.getKiller().getPlayer().getEquipment().getItemInMainHand()).getId()=="ZIM_SOUL_SWORD"){
+                number = (int) Math.floor(number*1.8);
             }
 
 
-            for (int i = 0; i < number; i++) {
-                e.getEntity().getWorld().dropItem(e.getEntity().getLocation(), Items.EM_dust);
+             if (number > 0){
+
+                e.getEntity().getWorld().dropItem(e.getEntity().getLocation(), new SlimefunItemStack(Items.EM_dust, number ));
+
+
                 }
             }}
         }

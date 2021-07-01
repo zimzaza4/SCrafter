@@ -52,6 +52,8 @@ public class RegSFItem {
         new SlimefunItem(Items.MatCate, Items.Nether_ingot, RecipeType.SMELTERY,
                 new ItemStack[] { Items.NetherOre, null, null, null, null, null, null, null, null})
                         .register(plugin);
+        new SlimefunItem(Items.MatCate, Items.EM_boss_soul, RecipeTypes.KillBossMobs, new ItemStack[9])
+                .register(SlimefunZT.getInstance());
 
         new EnderGear(Items.ToolCate, Items.Ender_Head, SCArmorCrafter.TYPE, Helmet(Items.Ender_ingot),
                 new PotionEffect[] { new PotionEffect(PotionEffectType.NIGHT_VISION, 20, 1) })
