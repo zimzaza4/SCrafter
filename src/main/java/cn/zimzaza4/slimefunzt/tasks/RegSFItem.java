@@ -98,6 +98,35 @@ public class RegSFItem {
         
         
         
+
+        new SlimefunArmorPiece(Items.ToolCate, Items.e_gold_Head, RecipeType.ENHANCED_CRAFTING_TABLE, Helmet(new ItemStack(Material.ENCHANTED_GOLDEN_APPLE)),
+
+                new PotionEffect[] { new PotionEffect(PotionEffectType.DAMAGE_RESISTANCE, 400, 1) })
+
+                        .register(SlimefunZT.getInstance());
+        
+       
+
+        new SlimefunArmorPiece(Items.ToolCate, Items.e_gold_Chest, RecipeType.ENHANCED_CRAFTING_TABLE, Chest(new ItemStack(Material.ENCHANTED_GOLDEN_APPLE)),
+
+                new PotionEffect[] { new PotionEffect(PotionEffectType.REGENERATION, 120, 1) })
+
+                        .register(SlimefunZT.getInstance());
+
+    
+        new SlimefunArmorPiece(Items.ToolCate, Items.e_gold_Leg, RecipeType.ENHANCED_CRAFTING_TABLE, Leg(new ItemStack(Material.ENCHANTED_GOLDEN_APPLE)),
+
+                new PotionEffect[] { new PotionEffect(PotionEffectType.DAMAGE_RESISTANCE, 120, 1) })
+
+                        .register(SlimefunZT.getInstance());
+        
+        new SlimefunArmorPiece(Items.ToolCate, Items.e_gold_feet, RecipeType.ENHANCED_CRAFTING_TABLE, Boot(new ItemStack(Material.ENCHANTED_GOLDEN_APPLE)),
+
+                new PotionEffect[] { new PotionEffect(PotionEffectType.DAMAGE_RESISTANCE, 120, 1) })
+
+                        .register(SlimefunZT.getInstance());
+
+        
         
         
         
