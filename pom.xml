@@ -74,11 +74,6 @@
       <artifactId>InfinityLib</artifactId>
       <version>84a3ce8</version>
     </dependency>
-      <dependency>
-          <groupId>cn.zimzaza4</groupId>
-          <artifactId>SCrafter</artifactId>
-          <version>1.0.0</version>
-      </dependency>
   </dependencies>
 
   <build>
