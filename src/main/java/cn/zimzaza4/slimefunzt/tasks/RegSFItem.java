@@ -75,7 +75,7 @@ public class RegSFItem {
 
 
         }).register(SlimefunZT.getInstance());
-
+        new SlimefunItem(Items.Soul_IE_ingot, )
         new SlimefunItem(Items.ToolCate, Items.Soul_Sword, RecipeType.ARMOR_FORGE, new ItemStack[]{
                 null, Items.GhostIngot, null
                 ,null , Items.GhostIngot, null,

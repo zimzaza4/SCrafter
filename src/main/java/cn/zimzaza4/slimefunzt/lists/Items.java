@@ -2,6 +2,8 @@ package cn.zimzaza4.slimefunzt.lists;
 
 import cn.zimzaza4.slimefunzt.SlimefunZT;
 
+import io.github.thebusybiscuit.slimefun4.core.categories.MultiCategory;
+import io.github.thebusybiscuit.slimefun4.core.categories.SubCategory;
 import io.github.thebusybiscuit.slimefun4.implementation.items.blocks.UnplaceableBlock;
 import io.github.thebusybiscuit.slimefun4.utils.LoreBuilder;
 import me.mrCookieSlime.Slimefun.Objects.Category;
@@ -14,15 +16,16 @@ import org.bukkit.inventory.ItemStack;
 
 public class Items {
 
-        public static Category Cate = new Category(new NamespacedKey(SlimefunZT.getInstance(), "ZIM_MA_D"),
+        public static MultiCategory Main_Cate = new MultiCategory(new NamespacedKey(SlimefunZT.getInstance(), "ZIM_MAIN_CATE"), new CustomItem(Material.NETHERITE_BLOCK, "&cSiciliaCraft"));
+        public static SubCategory Cate = new SubCategory(new NamespacedKey(SlimefunZT.getInstance(), "ZIM_MA_D"),Main_Cate,
                         new CustomItem(Material.DIAMOND, "&e&l SC拓展 - 物品"));
-        public static Category MatCate = new Category(new NamespacedKey(SlimefunZT.getInstance(), "ZIM_MAT"),
+        public static SubCategory MatCate = new SubCategory(new NamespacedKey(SlimefunZT.getInstance(), "ZIM_MAT"),Main_Cate,
                         new CustomItem(Material.GOLD_ORE, "&e&l SC拓展 - 材料"));
-        public static Category crystal = new Category(new NamespacedKey(SlimefunZT.getInstance(), "ZIM_MA_D_C"),
+        public static SubCategory crystal = new SubCategory(new NamespacedKey(SlimefunZT.getInstance(), "ZIM_MA_D_C"),Main_Cate,
                         new CustomItem(Material.DIAMOND, "&e&l SC拓展 - 强化"));
-        public static Category ToolCate = new Category(new NamespacedKey(SlimefunZT.getInstance(), "ZIM_MA_TOOL"),
+        public static SubCategory ToolCate = new SubCategory(new NamespacedKey(SlimefunZT.getInstance(), "ZIM_MA_TOOL"),Main_Cate,
                         new CustomItem(Material.DIAMOND_PICKAXE, "&b&l SC拓展 - 工具"));
-        public static Category IE = new Category(new NamespacedKey(SlimefunZT.getInstance(), "ZIM_MA_IE"),
+        public static SubCategory IE = new SubCategory(new NamespacedKey(SlimefunZT.getInstance(), "ZIM_MA_IE"),Main_Cate,
                         new CustomItem(Material.NETHERITE_BLOCK, "&e&l SC拓展 - &c疯狂无限"));
         // ------ 分割线
 
@@ -78,7 +81,9 @@ public class Items {
                                         "&e50J /s", "&a200 J 可储存"
 
                         ));
-        public static SlimefunItemStack Antier = new SlimefunItemStack(" ZIM_ANTIER_I", Material.IRON_BLOCK,
+        public static SlimefunItemStack Soul_IE_ingot = new SlimefunItemStack("ZIM_SOUL_INF_INGOT", Material.NETHERITE_INGOT, "&r&c&l灵魂无尽锭");
+          public static SlimefunItemStack Soul_EM_IE_ingot = new SlimefunItemStack("ZIM_SOUL_EM_INF_INGOT", Material.NETHERITE_INGOT, "&r&c&l无尽精英锭");
+        public static SlimefunItemStack Antier = new SlimefunItemStack("ZIM_ANTIER_I", Material.IRON_BLOCK,
                         "&e激光射线&c - I", "&c防御性机器", "50 J / s");
         public static ItemStack GoldCrafter = new CustomItem(Material.GOLD_BLOCK, "&e&l24K金制造机", "&a自动将金粉转为24K金",
                         "&7一体机", "&e50 J / s", "200 J 可储存");
@@ -134,4 +139,15 @@ public class Items {
         }
 
         public static final SlimefunItemStack Soul_ece = new SlimefunItemStack("ZIM_SOUL_ECT", Material.NETHERITE_BLOCK,"&c灵魂鼓舞室", "速度x10!");
+
+
+
+
+
+
+
+
+
+
+
 }
