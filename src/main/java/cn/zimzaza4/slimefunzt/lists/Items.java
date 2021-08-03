@@ -110,14 +110,14 @@ public class Items {
         }
 
         public static final SlimefunItemStack Ender_feet = new SlimefunItemStack("Z_ENDER_BOOT", Material.IRON_BOOTS,
-                        "&6紫影胸甲");
+                        "&6紫影靴");
         static {
 
                 Ender_feet.addUnsafeEnchantment(Enchantment.PROTECTION_ENVIRONMENTAL, 5);
         }
 
         public static final SlimefunItemStack Ender_Leg = new SlimefunItemStack("Z_ENDER_LEG", Material.IRON_LEGGINGS,
-                        "&6紫影头盔");
+                        "&6紫影护腿");
         static {
                 Ender_Leg.addUnsafeEnchantment(Enchantment.PROTECTION_ENVIRONMENTAL, 5);
         }
