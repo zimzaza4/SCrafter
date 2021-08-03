@@ -166,6 +166,30 @@ public class Items {
         }
 
 
+        public static final SlimefunItemStack e_gold_feet = new SlimefunItemStack("Z_E_GOLDP_BOOT", Material.IRON_BOOTS,
+                        "&e附魔金苹果靴");
+        static {
+
+                Ender_feet.addUnsafeEnchantment(Enchantment.PROTECTION_ENVIRONMENTAL, 4);
+        }
+
+        public static final SlimefunItemStack e_gold_Leg = new SlimefunItemStack("Z_E_GOLDP_LEG", Material.IRON_LEGGINGS,
+                        "&e附魔金苹果护腿");
+        static {
+                Ender_Leg.addUnsafeEnchantment(Enchantment.PROTECTION_ENVIRONMENTAL, 4);
+        }
+        public static final SlimefunItemStack e_gold_Chest = new SlimefunItemStack("Z_E_GOLDP_CHESTPLANT",
+                        Material.IRON_CHESTPLATE, "&e附魔金苹果胸甲");
+        static {
+
+                Ender_Chest.addUnsafeEnchantment(Enchantment.PROTECTION_ENVIRONMENTAL, 4);
+        }
+
+        public static final SlimefunItemStack e_gold_Head = new SlimefunItemStack("Z_E_GOLDP_HELMET", Material.IRON_HELMET,
+                        "&e附魔金苹果头盔");
+        static {
+                Ender_Head.addUnsafeEnchantment(Enchantment.PROTECTION_ENVIRONMENTAL, 4);
+        }
 
 
 
