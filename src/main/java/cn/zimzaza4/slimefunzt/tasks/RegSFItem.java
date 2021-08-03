@@ -65,6 +65,37 @@ public class RegSFItem {
         new SlimefunItem(Items.ToolCate, Items.Ender_feet, SCArmorCrafter.TYPE, Boot(Items.Ender_ingot))
                 .register(SlimefunZT.getInstance());
 
+        
+        new SlimefunArmorPiece(Items.ToolCate, Items.gold_Head, RecipeType.ENHANCED_CRAFTING_TABLE, Helmet(new ItemStack(Material.GOLDEN_APPLE)),
+
+                new PotionEffect[] { new PotionEffect(PotionEffectType.DAMAGE_RESISTANCE, 400, 0) })
+
+                        .register(SlimefunZT.getInstance());
+        
+       
+
+        new SlimefunArmorPiece(Items.ToolCate, Items.gold_Chest, RecipeType.ENHANCED_CRAFTING_TABLE, Chest(new ItemStack(Material.GOLDEN_APPLE)),
+
+                new PotionEffect[] { new PotionEffect(PotionEffectType.REGENERATION, 120, 0) })
+
+                        .register(SlimefunZT.getInstance());
+        
+        
+        
+        
+        new SlimefunArmorPiece(Items.ToolCate, Items.gold_Leg, RecipeType.ENHANCED_CRAFTING_TABLE, Leg(new ItemStack(Material.GOLDEN_APPLE)),
+
+                new PotionEffect[] { new PotionEffect(PotionEffectType.DAMAGE_RESISTANCE, 120, 0) })
+
+                        .register(SlimefunZT.getInstance());
+        
+        new SlimefunArmorPiece(Items.ToolCate, Items.gold_feet, RecipeType.ENHANCED_CRAFTING_TABLE, Boot(new ItemStack(Material.GOLDEN_APPLE)),
+
+                new PotionEffect[] { new PotionEffect(PotionEffectType.DAMAGE_RESISTANCE, 120, 0) })
+
+                        .register(SlimefunZT.getInstance());
+
+        
         SoulMatReg(Items.EM_dust, Items.EM_bit);
         SoulMatReg(Items.EM_bit, Items.EM_sp);
         SoulMatReg(Items.EM_sp, Items.EM_soul);
