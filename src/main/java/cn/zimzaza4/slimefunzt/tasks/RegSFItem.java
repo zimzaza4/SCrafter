@@ -182,19 +182,19 @@ public class RegSFItem {
 
     }
 
-    private static ItemStack[] Helmet(SlimefunItemStack si) {
+    private static ItemStack[] Helmet(ItemStack si) {
         return new ItemStack[] { si, si, si, si, null, si, null, null, null };
     }
 
-    private static ItemStack[] Chest(SlimefunItemStack si) {
+    private static ItemStack[] Chest(ItemStack si) {
         return new ItemStack[] { si, null, si, si, si, si, si, si, si };
     }
 
-    private static ItemStack[] Leg(SlimefunItemStack si) {
+    private static ItemStack[] Leg(ItemStack si) {
         return new ItemStack[] { si, si, si, si, null, si, si, null, si };
     }
 
-    private static ItemStack[] Boot(SlimefunItemStack si) {
+    private static ItemStack[] Boot(ItemStack si) {
         return new ItemStack[] { null, null, null, si, null, si, si, null, si };
     }
 }
