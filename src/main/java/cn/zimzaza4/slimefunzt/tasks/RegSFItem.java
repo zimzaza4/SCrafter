@@ -79,10 +79,8 @@ public class RegSFItem {
                 new PotionEffect[] { new PotionEffect(PotionEffectType.REGENERATION, 120, 0) })
 
                         .register(SlimefunZT.getInstance());
-        
-        
-        
-        
+
+    
         new SlimefunArmorPiece(Items.ToolCate, Items.gold_Leg, RecipeType.ENHANCED_CRAFTING_TABLE, Leg(new ItemStack(Material.GOLDEN_APPLE)),
 
                 new PotionEffect[] { new PotionEffect(PotionEffectType.DAMAGE_RESISTANCE, 120, 0) })
@@ -95,6 +93,15 @@ public class RegSFItem {
 
                         .register(SlimefunZT.getInstance());
 
+        
+        
+        
+        
+        
+        
+        
+        
+        
         
         SoulMatReg(Items.EM_dust, Items.EM_bit);
         SoulMatReg(Items.EM_bit, Items.EM_sp);
