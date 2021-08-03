@@ -140,7 +140,30 @@ public class Items {
 
         public static final SlimefunItemStack Soul_ece = new SlimefunItemStack("ZIM_SOUL_ECT", Material.NETHERITE_BLOCK,"&c灵魂鼓舞室", "速度x10!");
 
+        public static final SlimefunItemStack gold_feet = new SlimefunItemStack("Z_GOLDP_BOOT", Material.IRON_BOOTS,
+                        "&e金苹果靴");
+        static {
 
+                Ender_feet.addUnsafeEnchantment(Enchantment.PROTECTION_ENVIRONMENTAL, 3);
+        }
+
+        public static final SlimefunItemStack gold_Leg = new SlimefunItemStack("Z_GOLDP_LEG", Material.IRON_LEGGINGS,
+                        "&e金苹果护腿");
+        static {
+                Ender_Leg.addUnsafeEnchantment(Enchantment.PROTECTION_ENVIRONMENTAL, 3);
+        }
+        public static final SlimefunItemStack gold_Chest = new SlimefunItemStack("Z_GOLDP_CHESTPLANT",
+                        Material.IRON_CHESTPLATE, "&e金苹果胸甲");
+        static {
+
+                Ender_Chest.addUnsafeEnchantment(Enchantment.PROTECTION_ENVIRONMENTAL, 3);
+        }
+
+        public static final SlimefunItemStack gold_Head = new SlimefunItemStack("Z_GOLDP_HELMET", Material.IRON_HELMET,
+                        "&e金苹果头盔");
+        static {
+                Ender_Head.addUnsafeEnchantment(Enchantment.PROTECTION_ENVIRONMENTAL, 3);
+        }
 
 
 
