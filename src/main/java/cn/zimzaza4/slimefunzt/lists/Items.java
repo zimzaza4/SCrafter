@@ -81,8 +81,19 @@ public class Items {
                                         "&e50J /s", "&a200 J 可储存"
 
                         ));
+
+
+
+
         public static SlimefunItemStack Soul_IE_ingot = new SlimefunItemStack("ZIM_SOUL_INF_INGOT", Material.NETHERITE_INGOT, "&r&c&l灵魂无尽锭");
-          public static SlimefunItemStack Soul_EM_IE_ingot = new SlimefunItemStack("ZIM_SOUL_EM_INF_INGOT", Material.NETHERITE_INGOT, "&r&c&l无尽精英锭");
+
+
+
+         public static SlimefunItemStack Soul_EM_IE_ingot = new SlimefunItemStack("ZIM_SOUL_EM_INF_INGOT", Material.NETHERITE_INGOT, "&r&c&l无尽精英锭");
+
+
+
+
         public static SlimefunItemStack Antier = new SlimefunItemStack("ZIM_ANTIER_I", Material.IRON_BLOCK,
                         "&e激光射线&c - I", "&c防御性机器", "50 J / s");
         public static ItemStack GoldCrafter = new CustomItem(Material.GOLD_BLOCK, "&e&l24K金制造机", "&a自动将金粉转为24K金",
