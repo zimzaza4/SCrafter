@@ -37,7 +37,7 @@ public class IEItem {
         new SlimefunItem(Items.IE, Items.Soul_IE_ingot, RecipeType.SMELTERY, new ItemStack[]{Items.Ender_Singularity, Items.Soul_Singularity, Items.Nether_Singularity,null,Materials.INFINITY_SINGULARITY,null,null, Materials.VOID_INGOT,null }).register(SlimefunZT.getInstance());
 
 
-        new SingularityConstructor(Items.IE, Items.IE_SING_Craft, InfinityWorkbench.TYPE, new ItemStack[]{
+      /*  new SingularityConstructor(Items.IE, Items.IE_SING_Craft, InfinityWorkbench.TYPE, new ItemStack[]{
                 null, null, null, null, null, null,
                 null, Materials.MACHINE_PLATE, Materials.MACHINE_PLATE, Materials.MACHINE_PLATE,Materials.MACHINE_PLATE, null,
                 null, Items.Soul_IE_ingot, Machines.INFINITY_CONSTRUCTOR, Machines.INFINITY_CONSTRUCTOR, Items.Soul_IE_ingot, null,
@@ -46,7 +46,7 @@ public class IEItem {
                 null, Materials.INFINITE_CORE, Items.EM_soul, Items.EM_soul, Materials.INFINITE_CORE, null
 
 
-        }, 1300,128).register(InfinityExpansion.inst()); 
+        }, 1300,128).register(InfinityExpansion.inst()); */
     }
 
     public static SlimefunItemStack SingCrafter = new SlimefunItemStack("ZIM_SING_CRAFTER", Material.GRAY_STAINED_GLASS,
