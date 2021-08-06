@@ -46,7 +46,7 @@ public class IEItem {
                 null, Materials.INFINITE_CORE, Items.EM_soul, Items.EM_soul, Materials.INFINITE_CORE, null
 
 
-        }, 1300,128).register(SlimefunZT.getInstance()); 
+        }, 1300,128).register(InfinityExpansion.class); 
     }
 
     public static SlimefunItemStack SingCrafter = new SlimefunItemStack("ZIM_SING_CRAFTER", Material.GRAY_STAINED_GLASS,
