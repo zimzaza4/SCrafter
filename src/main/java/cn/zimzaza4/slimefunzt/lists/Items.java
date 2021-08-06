@@ -82,7 +82,7 @@ public class Items {
 
                         ));
 
-
+        public static SlimefunItemStack gold_sing = new SlimefunItemStack("24K_GOLD_SING", Material.GOLD_BLOCK, "&e24K金奇点");
 
 
         public static SlimefunItemStack Soul_IE_ingot = new SlimefunItemStack("ZIM_SOUL_INF_INGOT", Material.NETHERITE_INGOT, "&r&c&l灵魂无尽锭");
@@ -112,6 +112,11 @@ public class Items {
         public static SlimefunItemStack EM_soul = new SlimefunItemStack("EM_SOUL", Material.HEART_OF_THE_SEA, "&b灵魂",
                         "&7闪耀着微弱的光");
         public static SlimefunItemStack EM_boss_soul = new SlimefunItemStack("EM_BOSS_SOUL", Material.HEART_OF_THE_SEA, "&4亡魂");
+
+
+
+
+
         public static SlimefunItemStack Tester = new SlimefunItemStack("TESTER_SAVE",
                         new CustomItem(Material.GOLD_BLOCK, "ok", ":P"));
         public static final SlimefunItemStack ElectricAxe = new SlimefunItemStack("ELECTRIC_AXE",

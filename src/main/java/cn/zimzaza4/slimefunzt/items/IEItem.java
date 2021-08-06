@@ -7,6 +7,7 @@ import cn.zimzaza4.slimefunzt.util.SingCreater;
 import io.github.mooy1.infinityexpansion.InfinityExpansion;
 import io.github.mooy1.infinityexpansion.categories.Categories;
 import io.github.mooy1.infinityexpansion.items.Materials;
+import io.github.thebusybiscuit.slimefun4.implementation.SlimefunItems;
 import me.mrCookieSlime.Slimefun.Lists.RecipeType;
 import me.mrCookieSlime.Slimefun.Objects.Category;
 import me.mrCookieSlime.Slimefun.Objects.SlimefunItem.SlimefunItem;
@@ -27,6 +28,10 @@ public class IEItem {
         new SingCreater(Items.Ender_Singularity, Items.Ender_ingot, 600).register(SlimefunZT.getInstance());
         new SingCreater(Items.Nether_Singularity, Items.Nether_ingot, 600).register(SlimefunZT.getInstance());
         new SingCreater(Items.Soul_Singularity, Items.GhostIngot, 300).register(SlimefunZT.getInstance());
+        new SingCreater(Items.gold_sing, SlimefunItems.GOLD_24K, 1000).register(SlimefunZT.getInstance());
+
+
+        new SlimefunItem(Items.IE, Items.Soul_IE_ingot, RecipeType.SMELTERY, new ItemStack[]{Items.Ender_Singularity, Items.Soul_Singularity, Items.Nether_Singularity,null,Materials.INFINITY_SINGULARITY,null,null, Materials.VOID_INGOT,null }).register(SlimefunZT.getInstance());
     }
 
     public static SlimefunItemStack SingCrafter = new SlimefunItemStack("ZIM_SING_CRAFTER", Material.GRAY_STAINED_GLASS,
