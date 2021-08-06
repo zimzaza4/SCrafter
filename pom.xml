@@ -79,6 +79,12 @@
       <scope>system</scope>
       <systemPath>${project.basedir}/lib/EliteMobs.jar</systemPath>
     </dependency>
+            <dependency>
+            <groupId>com.google.code.findbugs</groupId>
+            <artifactId>jsr305</artifactId>
+            <version>3.0.2</version>
+            <scope>provided</scope>
+    </dependency>
     <dependency>
       <groupId>io.github.mooy1</groupId>
       <artifactId>InfinityLib</artifactId>
