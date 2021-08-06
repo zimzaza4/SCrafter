@@ -14,7 +14,6 @@ import org.bukkit.NamespacedKey;
 import org.bukkit.enchantments.Enchantment;
 import org.bukkit.inventory.ItemStack;
 
-import java.util.concurrent.CyclicBarrier;
 
 public class Items {
 
