@@ -167,52 +167,52 @@ public class Items {
 
         public static final SlimefunItemStack Soul_ece = new SlimefunItemStack("ZIM_SOUL_ECT", Material.NETHERITE_BLOCK,"&c灵魂鼓舞室", "速度x10!");
 
-        public static final SlimefunItemStack gold_feet = new SlimefunItemStack("Z_GOLDP_BOOT", Material.GOLD_BOOTS,
+        public static final SlimefunItemStack gold_feet = new SlimefunItemStack("Z_GOLDP_BOOT", Material.GOLDEN_BOOTS,
                         "&e金苹果靴");
         static {
 
                 gold_feet.addUnsafeEnchantment(Enchantment.PROTECTION_ENVIRONMENTAL, 3);
         }
 
-        public static final SlimefunItemStack gold_Leg = new SlimefunItemStack("Z_GOLDP_LEG", Material.GOLD_LEGGINGS,
+        public static final SlimefunItemStack gold_Leg = new SlimefunItemStack("Z_GOLDP_LEG", Material.GOLDEN_LEGGINGS,
                         "&e金苹果护腿");
         static {
                 gold_Leg.addUnsafeEnchantment(Enchantment.PROTECTION_ENVIRONMENTAL, 3);
         }
         public static final SlimefunItemStack gold_Chest = new SlimefunItemStack("Z_GOLDP_CHESTPLANT",
-                        Material.GOLD_CHESTPLATE, "&e金苹果胸甲");
+                        Material.GOLDEN_CHESTPLATE, "&e金苹果胸甲");
         static {
 
                 gold_Chest.addUnsafeEnchantment(Enchantment.PROTECTION_ENVIRONMENTAL, 3);
         }
 
-        public static final SlimefunItemStack gold_Head = new SlimefunItemStack("Z_GOLDP_HELMET", Material.GOD_HELMET,
+        public static final SlimefunItemStack gold_Head = new SlimefunItemStack("Z_GOLDP_HELMET", Material.GOLDEN_HELMET,
                         "&e金苹果头盔");
         static {
                 gold_Head.addUnsafeEnchantment(Enchantment.PROTECTION_ENVIRONMENTAL, 3);
         }
 
 
-        public static final SlimefunItemStack e_gold_feet = new SlimefunItemStack("Z_E_GOLDP_BOOT", Material.GOLD_BOOTS,
+        public static final SlimefunItemStack e_gold_feet = new SlimefunItemStack("Z_E_GOLDP_BOOT", Material.GOLDEN_BOOTS,
                         "&e附魔金苹果靴");
         static {
 
                 e.gold_feet.addUnsafeEnchantment(Enchantment.PROTECTION_ENVIRONMENTAL, 4);
         }
 
-        public static final SlimefunItemStack e_gold_Leg = new SlimefunItemStack("Z_E_GOLDP_LEG", Material.GOLD_LEGGINGS,
+        public static final SlimefunItemStack e_gold_Leg = new SlimefunItemStack("Z_E_GOLDP_LEG", Material.GOLDEN_LEGGINGS,
                         "&e附魔金苹果护腿");
         static {
                 e_gold_Leg.addUnsafeEnchantment(Enchantment.PROTECTION_ENVIRONMENTAL, 4);
         }
         public static final SlimefunItemStack e_gold_Chest = new SlimefunItemStack("Z_E_GOLDP_CHESTPLANT",
-                        Material.GOLD_CHESTPLATE, "&e附魔金苹果胸甲");
+                        Material.GOLDEN_CHESTPLATE, "&e附魔金苹果胸甲");
         static {
 
                 e_gold_Chest.addUnsafeEnchantment(Enchantment.PROTECTION_ENVIRONMENTAL, 4);
         }
 
-        public static final SlimefunItemStack e_gold_Head = new SlimefunItemStack("Z_E_GOLDP_HELMET", Material.GOLD_HELMET,
+        public static final SlimefunItemStack e_gold_Head = new SlimefunItemStack("Z_E_GOLDP_HELMET", Material.GOLDEN_HELMET,
                         "&e附魔金苹果头盔");
         static {
                 e_gold_Head.addUnsafeEnchantment(Enchantment.PROTECTION_ENVIRONMENTAL, 4);
