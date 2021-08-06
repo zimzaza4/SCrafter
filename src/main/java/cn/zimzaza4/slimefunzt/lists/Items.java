@@ -197,7 +197,7 @@ public class Items {
                         "&e附魔金苹果靴");
         static {
 
-                e.gold_feet.addUnsafeEnchantment(Enchantment.PROTECTION_ENVIRONMENTAL, 4);
+                e_gold_feet.addUnsafeEnchantment(Enchantment.PROTECTION_ENVIRONMENTAL, 4);
         }
 
         public static final SlimefunItemStack e_gold_Leg = new SlimefunItemStack("Z_E_GOLDP_LEG", Material.GOLDEN_LEGGINGS,
