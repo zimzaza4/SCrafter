@@ -14,6 +14,8 @@ import org.bukkit.NamespacedKey;
 import org.bukkit.enchantments.Enchantment;
 import org.bukkit.inventory.ItemStack;
 
+import java.util.concurrent.CyclicBarrier;
+
 public class Items {
 
         public static MultiCategory Main_Cate = new MultiCategory(new NamespacedKey(SlimefunZT.getInstance(), "ZIM_MAIN_CATE"), new CustomItem(Material.NETHERITE_BLOCK, "&cSiciliaCraft"));
@@ -30,6 +32,16 @@ public class Items {
         // ------ 分割线
 
 
+        public static SlimefunItemStack IE_SING_Craft = new SlimefunItemStack("ZIM_SING_IE_CRAFT", new CustomItem(Material.NETHERITE_BLOCK, "&c&l灵魂奇点构造机 &c- 普通", "&c加强!"));
+
+        public static SlimefunItemStack IE_Soul_Mac_Core = new SlimefunItemStack("ZIM_SOUL_MACE_CORE", new CustomItem(Material.AMETHYST_BLOCK), "Name", "Lores");
+
+
+
+
+
+
+    // ----------IE
 
         public static ItemStack FruitMachine = new CustomItem(Material.GRAY_STAINED_GLASS, "&e糖提取机", "&a 从水果里提取糖",
                         "30J/s    300J可储存");
