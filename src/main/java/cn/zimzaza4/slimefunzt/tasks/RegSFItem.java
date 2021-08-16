@@ -169,7 +169,7 @@ public class RegSFItem {
         RegCryBuff("&a&l强化水晶&e - &c生命回复", "ZIM_HEALTH_MAC", "&7点击获得&c生命回复",
                 "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZGY3NDY3YzVmNzM4YzY0MTI0NmMwOWY4Y2U3OTFlMzM5YTg2ZTgxZGU2MjA0OWI0MWY0OTI4ODgxNzJmYTcyNiJ9fX0=",
                 new ItemStack(Material.GHAST_TEAR));
-     Items.NB.register(SlimefunZT.getInstance());
+     new SlimefunItem(Items.NB, Items.SOUL_IE_MAGIC_TABLE, RecipeType.ENHANCED_CRAFTING_TABLE, new ItemStack[] {Items.Soul_IE_ingot, Items.Soul_IE_ingot, Items.Soul_IE_ingot, Items.Soul_IE_ingot, new ItemStack(Material.STONE), Items.Soul_IE_ingot, new ItemStack(Material.AMETHYST_SHARD), new ItemStack(Material.AMETHYST_SHARD), new ItemStack(Material.AMETHYST_SHARD)).register(SlimefunZT.getInstance());
     }
 
     private static void SoulMatReg(SlimefunItemStack input, SlimefunItemStack output) {
