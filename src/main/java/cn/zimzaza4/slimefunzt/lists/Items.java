@@ -35,7 +35,9 @@ public class Items {
 
         public static SlimefunItemStack IE_SING_Craft = new SlimefunItemStack("ZIM_SING_IE_CRAFT", new CustomItem(Material.NETHERITE_BLOCK, "&c&l灵魂奇点构造机 &c- 普通", "&c加强!"));
 
-        public static SlimefunItemStack IE_Soul_Mac_Core = new SlimefunItemStack("ZIM_SOUL_MACE_CORE", new CustomItem(Material.AMETHYST_BLOCK), "Name", "Lores");
+        public static SlimefunItemStack IE_Soul_Mac_Core = new SlimefunItemStack("ZIM_SOUL_MACE_CORE", new CustomItem(Material.AMETHYST_BLOCK), "&7&l灵魂机器核心");
+        
+        public static SlimefunItemStack SOUL_IE_MAGIC_TABLE = new SlimefunItemStack("SOUL_MAGIC_TABLE", new CustomItem(Material.RESPAWN_ANCHOR, "&r&a&l灵魂无尽魔法台", "&c这不是单独的机器"));
 
 
 
