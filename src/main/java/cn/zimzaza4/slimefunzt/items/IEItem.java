@@ -30,7 +30,7 @@ public class IEItem {
         new SingCreater(Items.Ender_Singularity, Items.Ender_ingot, 600).register(SlimefunZT.getInstance());
         new SingCreater(Items.Nether_Singularity, Items.Nether_ingot, 600).register(SlimefunZT.getInstance());
         new SingCreater(Items.Soul_Singularity, Items.GhostIngot, 300).register(SlimefunZT.getInstance());
-        new SingCreater(Items.gold_sing, SlimefunItems.GOLD_24K, 1000).register(SlimefunZT.getInstance());
+        new SingCreater(Items.gold_sing, SlimefunItems.GOLD_24K, 3000).register(SlimefunZT.getInstance());
 
 
         new SlimefunItem(Items.IE, Items.Soul_IE_ingot, RecipeType.SMELTERY, new ItemStack[]{Items.Ender_Singularity, Items.Soul_Singularity, Items.Nether_Singularity,null,Materials.INFINITY_SINGULARITY,null,null, Materials.VOID_INGOT,null }).register(SlimefunZT.getInstance());

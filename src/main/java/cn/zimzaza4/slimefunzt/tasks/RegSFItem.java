@@ -12,6 +12,7 @@ import cn.zimzaza4.slimefunzt.machines.SCArmorCrafter;
 import cn.zimzaza4.slimefunzt.machines.ZMCrafter;
 import cn.zimzaza4.slimefunzt.util.RecipeTypes;
 import cn.zimzaza4.slimefunzt.util.SkUtils;
+import io.github.mooy1.infinityexpansion.items.Materials;
 import io.github.thebusybiscuit.slimefun4.api.SlimefunAddon;
 import io.github.thebusybiscuit.slimefun4.implementation.SlimefunItems;
 import io.github.thebusybiscuit.slimefun4.implementation.items.armor.SlimefunArmorPiece;
@@ -155,6 +156,7 @@ public class RegSFItem {
                         SlimefunItems.BASIC_CIRCUIT_BOARD, SlimefunItems.ADVANCED_CIRCUIT_BOARD, null, null, null
 
                 }).register(SlimefunZT.getInstance());
+        
         ItemStack[] ImproveCry = CryImprover(SlimefunItems.POWER_CRYSTAL);
         SkUtils.regitem("ZIM_IMPROVE_CRY", Items.ImproveCry, Items.crystal, RecipeType.ANCIENT_ALTAR, ImproveCry);
         RegCryBuff("&a&l强化水晶&e - &b速度", "ZIM_SPEED_MAC", "&7点击获得&b速度",
@@ -169,6 +171,16 @@ public class RegSFItem {
         RegCryBuff("&a&l强化水晶&e - &c生命回复", "ZIM_HEALTH_MAC", "&7点击获得&c生命回复",
                 "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZGY3NDY3YzVmNzM4YzY0MTI0NmMwOWY4Y2U3OTFlMzM5YTg2ZTgxZGU2MjA0OWI0MWY0OTI4ODgxNzJmYTcyNiJ9fX0=",
                 new ItemStack(Material.GHAST_TEAR));
+
+   new SlimefunItem(Items.NB, Items.Soul_IE_mage_table, RecipeType.ENHANCED_CRAFTING_TABLE, new ItemStack[]{Items.Soul_IE_ingot, Items.Soul_IE_ingot, Items.Soul_IE_ingot,
+   Items.Soul_IE_ingot, Materials.INFINITE_CORE, Items.Soul_IE_ingot,
+   Materials.MACHINE_PLATE, Materials.MACHINE_PLATE, Materials.MACHINE_PLATE}).register(SlimefunZT.getInstance());
+
+
+
+
+
+
     }
 
     private static void SoulMatReg(SlimefunItemStack input, SlimefunItemStack output) {

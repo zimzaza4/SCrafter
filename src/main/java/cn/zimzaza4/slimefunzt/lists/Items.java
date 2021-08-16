@@ -28,9 +28,15 @@ public class Items {
                         new CustomItem(Material.DIAMOND_PICKAXE, "&b&l SC拓展 - 工具"));
         public static SubCategory IE = new SubCategory(new NamespacedKey(SlimefunZT.getInstance(), "ZIM_MA_IE"),Main_Cate,
                         new CustomItem(Material.NETHERITE_BLOCK, "&e&l SC拓展 - &c疯狂无限"));
-        // ------ 分割线
+    public static SubCategory NB = new SubCategory(new NamespacedKey(SlimefunZT.getInstance(), "ZIM_NEW_B"),Main_Cate,
+            new CustomItem(Material.NETHERITE_BLOCK, "&e&l SC拓展 - &aThe End?"));
+
+    // ------ 分割线
+
+        public static SlimefunItemStack Soul_IE_mage_table = new SlimefunItemStack("SOUL_IE_MAGIC_TABLE", new CustomItem(Material.RESPAWN_ANCHOR, "&c&l灵魂无尽魔法台"));
 
 
+        // new tech↑
         public static SlimefunItemStack IE_SING_Craft = new SlimefunItemStack("ZIM_SING_IE_CRAFT", new CustomItem(Material.NETHERITE_BLOCK, "&c&l灵魂奇点构造机 &c- 普通", "&c加强!"));
 
         public static SlimefunItemStack IE_Soul_Mac_Core = new SlimefunItemStack("ZIM_SOUL_MACE_CORE", new CustomItem(Material.AMETHYST_BLOCK), "Name", "Lores");
