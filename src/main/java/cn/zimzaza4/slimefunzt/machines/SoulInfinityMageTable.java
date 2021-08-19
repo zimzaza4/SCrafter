@@ -125,9 +125,9 @@ public class SoulInfinityMageTable extends AbstractTickingContainer {
 
 
     public void craft(@NonNull Block b, @NonNull BlockMenu inventory, @NonNull Player player){
-        ItemStack Energy = inventory.getItemInSlot(14);
+        ItemStack Energy = inventory.getItemInSlot(15);
         if (Energy==null){
-            player.sendMessage("&c缺少灵魂合成剂");
+            player.sendMessage("§c缺少灵魂合成剂");
             return;
         }
 
@@ -149,7 +149,7 @@ public class SoulInfinityMageTable extends AbstractTickingContainer {
             player.sendMessage("§a成功合成成");
             inventory.pushItem(output.getOutput().clone(), 33);
         }else{
-            player.sendMessage("&c请放入正确的灵魂合成剂!");
+            player.sendMessage("§c请放入正确的灵魂合成剂!");
 
         }
     }
