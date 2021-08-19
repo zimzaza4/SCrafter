@@ -52,7 +52,13 @@ public class SoulInfinityMageTable extends AbstractTickingContainer {
             public void init() {
                 setupMenu(this);
             }
-
+            @Override
+            public void newInstance(BlockMenu menu ,Block block){
+                menu.addMenuClickHandler(32, (p, slot, item, action)->{
+                    craft(block, menu, p);
+                    return false;
+                });
+            }
             @Override
             public boolean canOpen(Block block, Player player) {
                 if (player.hasPermission("slimefun.inventory.bypass")|| SlimefunPlugin.getProtectionManager().hasPermission(player, block, ProtectableAction.INTERACT_BLOCK)){
@@ -147,11 +153,6 @@ public class SoulInfinityMageTable extends AbstractTickingContainer {
 
         }
     }
-    @Override
-    public final void onNewInstance(@NonNull BlockMenu present, @NonNull Block b){
-        present.addMenuClickHandler(32, (p, slot,item, action)->{
-            craft(b, present, p);
-            return false;
-        });
-    }
+
+
 }
