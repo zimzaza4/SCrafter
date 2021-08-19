@@ -131,13 +131,12 @@ public class SoulInfinityMageTable extends AbstractTickingContainer {
             return;
         }
 
-        ItemStack One_E = Energy.clone();
-        One_E.setAmount(1);
 
-        if (One_E.isSimilar(Items.Soul_Amey)){
+
+
+        if (Energy.isSimilar(Items.Soul_Amey)){
 
             Energy.setAmount(Energy.getAmount()-1);
-
             RecipeOutput<SlimefunItemStack> output = RECIPE_MAP.get(StackUtils.arrayFrom(inventory, INPUT));
             if (output==null){
                 return;
