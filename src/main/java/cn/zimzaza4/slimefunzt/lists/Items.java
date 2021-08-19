@@ -33,13 +33,12 @@ public class Items {
 
     // ------ 分割线
         public static SlimefunItemStack Soul_Amey = new SlimefunItemStack("SOUL_AMEY", new CustomItem(Material.AMETHYST_SHARD), "&7&l灵魂合成剂");
-        public static SlimefunItemStack Soul_IE_mage_table = new SlimefunItemStack("SOUL_IE_MAGIC_TABLE", new CustomItem(Material.RESPAWN_ANCHOR, "&c&l灵魂无尽魔法台"));
+        public static SlimefunItemStack Soul_IE_mage_table = new SlimefunItemStack("SOUL_IE_MAGIC_TABLE", new CustomItem(Material.RESPAWN_ANCHOR, "&c&l灵魂无尽魔法台", "&7不是单独的机器"));
 
 
-        // new tech↑
         public static SlimefunItemStack IE_SING_Craft = new SlimefunItemStack("ZIM_SING_IE_CRAFT", new CustomItem(Material.NETHERITE_BLOCK, "&c&l灵魂奇点构造机 &c- 普通", "&c加强!"));
 
-        public static SlimefunItemStack IE_Soul_Mac_Core = new SlimefunItemStack("ZIM_SOUL_MACE_CORE", new CustomItem(Material.AMETHYST_BLOCK), "Name", "Lores");
+        public static SlimefunItemStack IE_Soul_Mac_Core = new SlimefunItemStack("ZIM_SOUL_MACE_CORE", new CustomItem(Material.AMETHYST_BLOCK), "&7&l灵魂机器核心");
 
 
 

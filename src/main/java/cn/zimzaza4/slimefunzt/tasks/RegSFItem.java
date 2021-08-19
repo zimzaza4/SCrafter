@@ -156,7 +156,6 @@ public class RegSFItem {
                         SlimefunItems.BASIC_CIRCUIT_BOARD, SlimefunItems.ADVANCED_CIRCUIT_BOARD, null, null, null
 
                 }).register(SlimefunZT.getInstance());
-        
         ItemStack[] ImproveCry = CryImprover(SlimefunItems.POWER_CRYSTAL);
         SkUtils.regitem("ZIM_IMPROVE_CRY", Items.ImproveCry, Items.crystal, RecipeType.ANCIENT_ALTAR, ImproveCry);
         RegCryBuff("&a&l强化水晶&e - &b速度", "ZIM_SPEED_MAC", "&7点击获得&b速度",
