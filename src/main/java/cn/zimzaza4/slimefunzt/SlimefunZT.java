@@ -6,7 +6,10 @@ import cn.zimzaza4.slimefunzt.tasks.RegSFItem;
 import cn.zimzaza4.slimefunzt.tasks.RegSFMachine;
 import io.github.thebusybiscuit.slimefun4.api.SlimefunAddon;
 import org.bukkit.Bukkit;
+import org.bukkit.NamespacedKey;
 import org.bukkit.plugin.java.JavaPlugin;
+
+import java.util.Locale;
 
 public class SlimefunZT extends JavaPlugin implements SlimefunAddon {
 
@@ -33,5 +36,7 @@ public class SlimefunZT extends JavaPlugin implements SlimefunAddon {
 
         return Instance;
     }
-
+    public static NamespacedKey getKey(String key){
+        return new NamespacedKey(Instance, key.toUpperCase(Locale.ROOT));
+    }
 }

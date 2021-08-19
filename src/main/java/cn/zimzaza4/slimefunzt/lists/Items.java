@@ -29,10 +29,10 @@ public class Items {
         public static SubCategory IE = new SubCategory(new NamespacedKey(SlimefunZT.getInstance(), "ZIM_MA_IE"),Main_Cate,
                         new CustomItem(Material.NETHERITE_BLOCK, "&e&l SC拓展 - &c疯狂无限"));
     public static SubCategory NB = new SubCategory(new NamespacedKey(SlimefunZT.getInstance(), "ZIM_NEW_B"),Main_Cate,
-            new CustomItem(Material.NETHERITE_BLOCK, "&e&l SC拓展 - &aThe End?"));
+            new CustomItem(Material.NETHERITE_BLOCK, "&e&l SC拓展 - &a结束了?"));
 
     // ------ 分割线
-
+        public static SlimefunItemStack Soul_Amey = new SlimefunItemStack("SOUL_AMEY", new CustomItem(Material.AMETHYST_SHARD), "&7&l灵魂合成剂");
         public static SlimefunItemStack Soul_IE_mage_table = new SlimefunItemStack("SOUL_IE_MAGIC_TABLE", new CustomItem(Material.RESPAWN_ANCHOR, "&c&l灵魂无尽魔法台"));
 
 
