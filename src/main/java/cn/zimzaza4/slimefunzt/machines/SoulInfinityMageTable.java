@@ -87,6 +87,11 @@ public class SoulInfinityMageTable extends AbstractTickingContainer {
     }
 
     @Override
+    protected void tick(@NotNull BlockMenu blockMenu, @NotNull Block block) {
+
+    }
+
+    @Override
     protected void setupMenu(@NotNull BlockMenuPreset preset) {
         for (int i : BOARD) {
             preset.addItem(i, new CustomItem(Material.BLUE_STAINED_GLASS_PANE), ChestMenuUtils.getEmptyClickHandler());
@@ -102,9 +107,7 @@ public class SoulInfinityMageTable extends AbstractTickingContainer {
         return new int[0];
     }
 
-    @Override
-    protected void tick(@NotNull BlockMenu blockMenu, @NotNull Block block) {
-    }
+
 
     @Override
     protected void onBreak(@NonNull BlockBreakEvent event, @NonNull BlockMenu inv, @NonNull Location loc){
@@ -112,13 +115,7 @@ public class SoulInfinityMageTable extends AbstractTickingContainer {
         inv.dropItems(loc, 33);
         inv.dropItems(loc, 15);
     }
-    @Override
-    public void onNewInstance(@NonNull BlockMenu present, @NonNull Block b){
-            present.addMenuClickHandler(32, (p, slot,item, action)->{
-                craft(b, present, p);
-                return false;
-            });
-        }
+
 
 
     public void craft(@NonNull Block b, @NonNull BlockMenu inventory, @NonNull Player player){
@@ -149,5 +146,12 @@ public class SoulInfinityMageTable extends AbstractTickingContainer {
             player.sendMessage("&c请放入正确的灵魂合成剂!");
 
         }
+    }
+    @Override
+    public final void onNewInstance(@NonNull BlockMenu present, @NonNull Block b){
+        present.addMenuClickHandler(32, (p, slot,item, action)->{
+            craft(b, present, p);
+            return false;
+        });
     }
 }
