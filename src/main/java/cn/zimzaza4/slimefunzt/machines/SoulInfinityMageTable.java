@@ -12,6 +12,7 @@ import io.github.thebusybiscuit.slimefun4.utils.ChestMenuUtils;
 import lombok.NonNull;
 import me.mrCookieSlime.Slimefun.Lists.RecipeType;
 import me.mrCookieSlime.Slimefun.Objects.Category;
+import me.mrCookieSlime.Slimefun.Objects.SlimefunItem.SlimefunItem;
 import me.mrCookieSlime.Slimefun.api.BlockStorage;
 import me.mrCookieSlime.Slimefun.api.SlimefunItemStack;
 import me.mrCookieSlime.Slimefun.api.inventory.BlockMenu;
@@ -134,7 +135,7 @@ public class SoulInfinityMageTable extends AbstractTickingContainer {
 
 
 
-        if (Energy.isSimilar(Items.Soul_Amey)){
+        if (SlimefunItem.getByItem(Energy)!=null&&SlimefunItem.getByItem(Energy).getId()=="SOUL_AMEY"){
 
             Energy.setAmount(Energy.getAmount()-1);
             RecipeOutput<SlimefunItemStack> output = RECIPE_MAP.get(StackUtils.arrayFrom(inventory, INPUT));
