@@ -90,7 +90,7 @@
       <artifactId>InfinityLib</artifactId>
       <version>84a3ce8</version>
     </dependency>
-    
+
   </dependencies>
 
   <build>
