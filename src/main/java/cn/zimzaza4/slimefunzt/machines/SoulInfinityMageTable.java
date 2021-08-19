@@ -138,14 +138,15 @@ public class SoulInfinityMageTable extends AbstractTickingContainer {
 
         if (SlimefunItem.getByItem(Energy)!=null&&SlimefunItem.getByItem(Energy).getId().equals("SOUL_AMEY")){
 
-            inventory.consumeItem(15);
+
             RecipeOutput<SlimefunItemStack> output = RECIPE_MAP.get(StackUtils.arrayFrom(inventory, INPUT));
             if (output==null){
                 return;
-            }
+            }else{player.sendMessage("§c配方错误");}
             if (inventory.fits(output.getOutput(), 33) ){
                 return;
             }
+            inventory.consumeItem(15);
             output.consumeInput();
             player.sendMessage("§a成功合成");
             inventory.pushItem(output.getOutput().clone(), 33);
