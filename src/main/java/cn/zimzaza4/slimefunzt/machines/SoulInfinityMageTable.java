@@ -127,6 +127,7 @@ public class SoulInfinityMageTable extends AbstractTickingContainer {
 
     public void craft(@NonNull Block b, @NonNull BlockMenu inventory, @NonNull Player player){
         ItemStack Energy = inventory.getItemInSlot(15);
+
         if (Energy==null){
             player.sendMessage("§c缺少灵魂合成剂");
             return;
@@ -135,9 +136,9 @@ public class SoulInfinityMageTable extends AbstractTickingContainer {
 
 
 
-        if (SlimefunItem.getByItem(Energy)!=null&&SlimefunItem.getByItem(Energy).getId()=="SOUL_AMEY"){
+        if (SlimefunItem.getByItem(Energy)!=null&&SlimefunItem.getByItem(Energy).getId().equals("SOUL_AMEY")){
 
-            Energy.setAmount(Energy.getAmount()-1);
+            inventory.consumeItem(15);
             RecipeOutput<SlimefunItemStack> output = RECIPE_MAP.get(StackUtils.arrayFrom(inventory, INPUT));
             if (output==null){
                 return;
@@ -146,7 +147,7 @@ public class SoulInfinityMageTable extends AbstractTickingContainer {
                 return;
             }
             output.consumeInput();
-            player.sendMessage("§a成功合成成");
+            player.sendMessage("§a成功合成");
             inventory.pushItem(output.getOutput().clone(), 33);
         }else{
             player.sendMessage("§c请放入正确的灵魂合成剂!");
