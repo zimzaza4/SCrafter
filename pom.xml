@@ -90,11 +90,7 @@
       <artifactId>InfinityLib</artifactId>
       <version>84a3ce8</version>
     </dependency>
-    <dependency>
-      <groupId>io.github.sefiraat.slimetinker</groupId>
-      <artifactId>SlimeTinker</artifactId>
-      <version>MODIFIED</version>
-    </dependency>
+    
   </dependencies>
 
   <build>
