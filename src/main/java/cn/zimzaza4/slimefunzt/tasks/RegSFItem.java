@@ -9,6 +9,7 @@ import cn.zimzaza4.slimefunzt.items.material.NetherOre;
 import cn.zimzaza4.slimefunzt.lists.Items;
 import cn.zimzaza4.slimefunzt.machines.AutoSoulCrafter;
 import cn.zimzaza4.slimefunzt.machines.SCArmorCrafter;
+import cn.zimzaza4.slimefunzt.machines.SoulInfinityMageTable;
 import cn.zimzaza4.slimefunzt.machines.ZMCrafter;
 import cn.zimzaza4.slimefunzt.util.RecipeTypes;
 import cn.zimzaza4.slimefunzt.util.SkUtils;
@@ -30,10 +31,10 @@ public class RegSFItem {
 
         IEItem.setup(SlimefunZT.getInstance());
         SlimefunAddon plugin = SlimefunZT.getInstance();
-        ItemStack[] HEALTH_Kong = { SlimefunItems.REINFORCED_ALLOY_INGOT, SlimefunItems.FIRE_RUNE,
+        ItemStack[] HEALTH_Kong = {SlimefunItems.REINFORCED_ALLOY_INGOT, SlimefunItems.FIRE_RUNE,
                 SlimefunItems.REINFORCED_ALLOY_INGOT, SlimefunItems.EARTH_RUNE, SlimefunItems.ANCIENT_PEDESTAL,
                 SlimefunItems.AIR_RUNE, SlimefunItems.REINFORCED_ALLOY_INGOT, SlimefunItems.ENDER_RUNE,
-                SlimefunItems.REINFORCED_ALLOY_INGOT };
+                SlimefunItems.REINFORCED_ALLOY_INGOT};
         SkUtils.regitem("ZIM_CRY_KONG", Items.Crystal_kong, Items.crystal, RecipeType.ANCIENT_ALTAR, HEALTH_Kong);
 
         new SlimefunItem(Items.MatCate, Items.EnderOre, RecipeType.GEO_MINER, new ItemStack[9])
@@ -49,17 +50,17 @@ public class RegSFItem {
                 .register(SlimefunZT.getInstance());
 
         new SlimefunItem(Items.MatCate, Items.Ender_ingot, RecipeType.SMELTERY,
-                new ItemStack[] { Items.EnderOre, null, null, null, null, null, null, null, null })
-                        .register(SlimefunZT.getInstance());
+                new ItemStack[]{Items.EnderOre, null, null, null, null, null, null, null, null})
+                .register(SlimefunZT.getInstance());
         new SlimefunItem(Items.MatCate, Items.Nether_ingot, RecipeType.SMELTERY,
-                new ItemStack[] { Items.NetherOre, null, null, null, null, null, null, null, null})
-                        .register(plugin);
+                new ItemStack[]{Items.NetherOre, null, null, null, null, null, null, null, null})
+                .register(plugin);
         new SlimefunItem(Items.MatCate, Items.EM_boss_soul, RecipeTypes.KillBossMobs, new ItemStack[9])
                 .register(SlimefunZT.getInstance());
 
         new EnderGear(Items.ToolCate, Items.Ender_Head, SCArmorCrafter.TYPE, Helmet(Items.Ender_ingot),
-                new PotionEffect[] { new PotionEffect(PotionEffectType.NIGHT_VISION, 20, 1) })
-                        .register(SlimefunZT.getInstance());
+                new PotionEffect[]{new PotionEffect(PotionEffectType.NIGHT_VISION, 20, 1)})
+                .register(SlimefunZT.getInstance());
         new SlimefunItem(Items.ToolCate, Items.Ender_Chest, SCArmorCrafter.TYPE, Chest(Items.Ender_ingot))
                 .register(SlimefunZT.getInstance());
         new SlimefunItem(Items.ToolCate, Items.Ender_Leg, SCArmorCrafter.TYPE, Leg(Items.Ender_ingot))
@@ -67,91 +68,79 @@ public class RegSFItem {
         new SlimefunItem(Items.ToolCate, Items.Ender_feet, SCArmorCrafter.TYPE, Boot(Items.Ender_ingot))
                 .register(SlimefunZT.getInstance());
 
-        
+
         new SlimefunArmorPiece(Items.ToolCate, Items.gold_Head, RecipeType.ENHANCED_CRAFTING_TABLE, Helmet(new ItemStack(Material.GOLDEN_APPLE)),
 
-                new PotionEffect[] { new PotionEffect(PotionEffectType.DAMAGE_RESISTANCE, 400, 0) })
+                new PotionEffect[]{new PotionEffect(PotionEffectType.DAMAGE_RESISTANCE, 400, 0)})
 
-                        .register(SlimefunZT.getInstance());
-        
-       
+                .register(SlimefunZT.getInstance());
+
 
         new SlimefunArmorPiece(Items.ToolCate, Items.gold_Chest, RecipeType.ENHANCED_CRAFTING_TABLE, Chest(new ItemStack(Material.GOLDEN_APPLE)),
 
-                new PotionEffect[] { new PotionEffect(PotionEffectType.REGENERATION, 120, 0) })
+                new PotionEffect[]{new PotionEffect(PotionEffectType.REGENERATION, 120, 0)})
 
-                        .register(SlimefunZT.getInstance());
+                .register(SlimefunZT.getInstance());
 
-    
+
         new SlimefunArmorPiece(Items.ToolCate, Items.gold_Leg, RecipeType.ENHANCED_CRAFTING_TABLE, Leg(new ItemStack(Material.GOLDEN_APPLE)),
 
-                new PotionEffect[] { new PotionEffect(PotionEffectType.DAMAGE_RESISTANCE, 120, 0) })
+                new PotionEffect[]{new PotionEffect(PotionEffectType.DAMAGE_RESISTANCE, 120, 0)})
 
-                        .register(SlimefunZT.getInstance());
-        
+                .register(SlimefunZT.getInstance());
+
         new SlimefunArmorPiece(Items.ToolCate, Items.gold_feet, RecipeType.ENHANCED_CRAFTING_TABLE, Boot(new ItemStack(Material.GOLDEN_APPLE)),
 
-                new PotionEffect[] { new PotionEffect(PotionEffectType.DAMAGE_RESISTANCE, 120, 0) })
+                new PotionEffect[]{new PotionEffect(PotionEffectType.DAMAGE_RESISTANCE, 120, 0)})
 
-                        .register(SlimefunZT.getInstance());
+                .register(SlimefunZT.getInstance());
 
-        
-        
-        
-        
 
         new SlimefunArmorPiece(Items.ToolCate, Items.e_gold_Head, RecipeType.ENHANCED_CRAFTING_TABLE, Helmet(new ItemStack(Material.ENCHANTED_GOLDEN_APPLE)),
 
-                new PotionEffect[] { new PotionEffect(PotionEffectType.DAMAGE_RESISTANCE, 400, 1) })
+                new PotionEffect[]{new PotionEffect(PotionEffectType.DAMAGE_RESISTANCE, 400, 1)})
 
-                        .register(SlimefunZT.getInstance());
-        
-       
+                .register(SlimefunZT.getInstance());
+
 
         new SlimefunArmorPiece(Items.ToolCate, Items.e_gold_Chest, RecipeType.ENHANCED_CRAFTING_TABLE, Chest(new ItemStack(Material.ENCHANTED_GOLDEN_APPLE)),
 
-                new PotionEffect[] { new PotionEffect(PotionEffectType.REGENERATION, 120, 1) })
+                new PotionEffect[]{new PotionEffect(PotionEffectType.REGENERATION, 120, 1)})
 
-                        .register(SlimefunZT.getInstance());
+                .register(SlimefunZT.getInstance());
 
-    
+
         new SlimefunArmorPiece(Items.ToolCate, Items.e_gold_Leg, RecipeType.ENHANCED_CRAFTING_TABLE, Leg(new ItemStack(Material.ENCHANTED_GOLDEN_APPLE)),
 
-                new PotionEffect[] { new PotionEffect(PotionEffectType.DAMAGE_RESISTANCE, 120, 1) })
+                new PotionEffect[]{new PotionEffect(PotionEffectType.DAMAGE_RESISTANCE, 120, 1)})
 
-                        .register(SlimefunZT.getInstance());
-        
+                .register(SlimefunZT.getInstance());
+
         new SlimefunArmorPiece(Items.ToolCate, Items.e_gold_feet, RecipeType.ENHANCED_CRAFTING_TABLE, Boot(new ItemStack(Material.ENCHANTED_GOLDEN_APPLE)),
 
-                new PotionEffect[] { new PotionEffect(PotionEffectType.DAMAGE_RESISTANCE, 120, 1) })
+                new PotionEffect[]{new PotionEffect(PotionEffectType.DAMAGE_RESISTANCE, 120, 1)})
 
-                        .register(SlimefunZT.getInstance());
+                .register(SlimefunZT.getInstance());
 
-        
-        
-        
-        
-        
-        
-        
+
         SoulMatReg(Items.EM_dust, Items.EM_bit);
         SoulMatReg(Items.EM_bit, Items.EM_sp);
         SoulMatReg(Items.EM_sp, Items.EM_soul);
-        new SlimefunItem(Items.MatCate, Items.GhostIngot,RecipeType.SMELTERY, new ItemStack[]{
-                Items.Ender_ingot, Items.EM_soul,  Items. EM_soul
-               , Items.EM_soul,null,null,
-                null,null,null
+        new SlimefunItem(Items.MatCate, Items.GhostIngot, RecipeType.SMELTERY, new ItemStack[]{
+                Items.Ender_ingot, Items.EM_soul, Items.EM_soul
+                , Items.EM_soul, null, null,
+                null, null, null
 
 
         }).register(SlimefunZT.getInstance());
 
         new SlimefunItem(Items.ToolCate, Items.Soul_Sword, RecipeType.ARMOR_FORGE, new ItemStack[]{
                 null, Items.GhostIngot, null
-                ,null , Items.GhostIngot, null,
+                , null, Items.GhostIngot, null,
                 null, new ItemStack(Material.STICK), null
         }).register(SlimefunZT.getInstance());
         new ElectricAxe(Items.ToolCate, Items.ElectricAxe, RecipeType.ENHANCED_CRAFTING_TABLE,
-                new ItemStack[] { SlimefunItems.REINFORCED_ALLOY_INGOT, SlimefunItems.REINFORCED_ALLOY_INGOT,
+                new ItemStack[]{SlimefunItems.REINFORCED_ALLOY_INGOT, SlimefunItems.REINFORCED_ALLOY_INGOT,
                         SlimefunItems.REINFORCED_ALLOY_INGOT, SlimefunItems.SMALL_CAPACITOR,
                         SlimefunItems.BASIC_CIRCUIT_BOARD, SlimefunItems.ADVANCED_CIRCUIT_BOARD, null, null, null
 
@@ -171,16 +160,21 @@ public class RegSFItem {
                 "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZGY3NDY3YzVmNzM4YzY0MTI0NmMwOWY4Y2U3OTFlMzM5YTg2ZTgxZGU2MjA0OWI0MWY0OTI4ODgxNzJmYTcyNiJ9fX0=",
                 new ItemStack(Material.GHAST_TEAR));
 
-   new SlimefunItem(Items.NB, Items.Soul_IE_mage_table, RecipeType.ENHANCED_CRAFTING_TABLE, new ItemStack[]{Items.Soul_IE_ingot, Items.Soul_IE_ingot, Items.Soul_IE_ingot,
-   Items.Soul_IE_ingot, Materials.INFINITE_CORE, Items.Soul_IE_ingot,
-   Materials.MACHINE_PLATE, Materials.MACHINE_PLATE, Materials.MACHINE_PLATE}).register(SlimefunZT.getInstance());
+        new SoulInfinityMageTable(Items.NB, Items.Soul_IE_mage_table, RecipeType.ENHANCED_CRAFTING_TABLE, new ItemStack[]{Items.Soul_IE_ingot, Items.Soul_IE_ingot, Items.Soul_IE_ingot,
+                Items.Soul_IE_ingot, Materials.INFINITE_CORE, Items.Soul_IE_ingot,
+                Materials.MACHINE_PLATE, Materials.MACHINE_PLATE, Materials.MACHINE_PLATE}).register(SlimefunZT.getInstance());
+        new SlimefunItem(Items.NB, Items.Soul_Amey, RecipeType.ENHANCED_CRAFTING_TABLE, new ItemStack[]{Items.Soul_Singularity, new ItemStack(Material.AMETHYST_BLOCK), null, null, null, null, null, null, null}).register(SlimefunZT.getInstance());
 
+        new SlimefunItem(Items.NB, Items.IE_Soul_f, RecipeType.ENHANCED_CRAFTING_TABLE, new ItemStack[]{null, Materials.NETHERITE_SINGULARITY, null, null, Items.EM_soul, null, null, null, null}).register(SlimefunZT.getInstance());
 
+        new SlimefunItem(Items.NB, Items.IE_Soul_torch, RecipeType.ENHANCED_CRAFTING_TABLE, new ItemStack[]{null, new ItemStack(Material.SOUL_TORCH)}).register(SlimefunZT.getInstance());
 
+        new SlimefunItem(Items.NB, Items.IE_Soul_Glass, RecipeType.ENHANCED_CRAFTING_TABLE, new ItemStack[]{null, new ItemStack(Material.GLASS), null, null, Items.Soul_IE_ingot, null, null, new ItemStack(Material.BLACK_STAINED_GLASS), null}).register(SlimefunZT.getInstance());
 
-
+        new SlimefunItem(Items.NB, Items.Tester, SoulInfinityMageTable.Type, new ItemStack[]{null, null, null, null, Items.EM_soul, null, null, null, null}).register(SlimefunZT.getInstance());
 
     }
+
 
     private static void SoulMatReg(SlimefunItemStack input, SlimefunItemStack output) {
         ItemStack[] soul = new ItemStack[] { input, input, input, input, input, input, input, input, input };

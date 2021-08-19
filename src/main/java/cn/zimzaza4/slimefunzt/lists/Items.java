@@ -41,11 +41,10 @@ public class Items {
         public static SlimefunItemStack IE_Soul_Mac_Core = new SlimefunItemStack("ZIM_SOUL_MACE_CORE", new CustomItem(Material.AMETHYST_BLOCK), "&7&l灵魂机器核心");
 
 
-
-
-
-
-    // ----------IE
+        public static SlimefunItemStack IE_Soul_f = new SlimefunItemStack("ZIM_SOUL_FLOOR",new CustomItem(Material.NETHERITE_BLOCK, "&c灵魂地基"));
+        public static SlimefunItemStack IE_Soul_torch = new SlimefunItemStack("ZIM_SOUL_TORCH", new CustomItem(Material.SOUL_TORCH, "&c灵魂无尽火把"));
+        public static SlimefunItemStack IE_Soul_Glass = new SlimefunItemStack("ZIM_SOUL_GLASS", new CustomItem(Material.BLACK_STAINED_GLASS, "&e亡魂玻璃"));
+    // --------
 
         public static ItemStack FruitMachine = new CustomItem(Material.GRAY_STAINED_GLASS, "&e糖提取机", "&a 从水果里提取糖",
                         "30J/s    300J可储存");
