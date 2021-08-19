@@ -141,9 +141,11 @@ public class SoulInfinityMageTable extends AbstractTickingContainer {
 
             RecipeOutput<SlimefunItemStack> output = RECIPE_MAP.get(StackUtils.arrayFrom(inventory, INPUT));
             if (output==null){
+                player.sendMessage("§c配方错误");
                 return;
-            }else{player.sendMessage("§c配方错误");}
-            if (inventory.fits(output.getOutput(), 33) ){
+            }
+            if (!inventory.fits(output.getOutput(), 33) ){
+                player.sendMessage("§c空间不足");
                 return;
             }
             inventory.consumeItem(15);
