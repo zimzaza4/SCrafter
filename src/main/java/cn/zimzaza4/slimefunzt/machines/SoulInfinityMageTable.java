@@ -63,23 +63,23 @@ public class SoulInfinityMageTable extends AbstractTickingContainer {
             @Override
             public boolean canOpen(Block block, Player player) {
                 if (player.hasPermission("slimefun.inventory.bypass")|| SlimefunPlugin.getProtectionManager().hasPermission(player, block, ProtectableAction.INTERACT_BLOCK)){
-                    if (BlockStorage.checkID(block.getLocation().add(0,-1,0))=="ZIM_SOUL_FLOOR"&&
-                            BlockStorage.checkID(block.getLocation().add(1,-1,0))=="ZIM_SOUL_FLOOR"&&
-                            BlockStorage.checkID(block.getLocation().add(2,-1,0))=="ZIM_SOUL_FLOOR"&&
-                            BlockStorage.checkID(block.getLocation().add(-1,-1,0))=="ZIM_SOUL_FLOOR"&&
-                            BlockStorage.checkID(block.getLocation().add(-2,-1,0))=="ZIM_SOUL_FLOOR"&&
-                            BlockStorage.checkID(block.getLocation().add(0,-1,1))=="ZIM_SOUL_FLOOR"&&
-                            BlockStorage.checkID(block.getLocation().add(0,-1,2))=="ZIM_SOUL_FLOOR"&&
-                            BlockStorage.checkID(block.getLocation().add(0,-1,-1))=="ZIM_SOUL_FLOOR"&&
-                            BlockStorage.checkID(block.getLocation().add(0,-1,-2))=="ZIM_SOUL_FLOOR"&&
-                            BlockStorage.checkID(block.getLocation().add(1,0,0))=="ZIM_SOUL_GLASS"&&
-                            BlockStorage.checkID(block.getLocation().add(-1,0,0))=="ZIM_SOUL_GLASS"&&
-                            BlockStorage.checkID(block.getLocation().add(0,0,1))=="ZIM_SOUL_GLASS"&&
-                            BlockStorage.checkID(block.getLocation().add(0,0,-1))=="ZIM_SOUL_GLASS"&&
-                            BlockStorage.checkID(block.getLocation().add(2,0,0))=="ZIM_SOUL_TORCH"&&
-                            BlockStorage.checkID(block.getLocation().add(-2,0,0))=="ZIM_SOUL_TORCH"&&
-                            BlockStorage.checkID(block.getLocation().add(0,0,2))=="ZIM_SOUL_TORCH"&&
-                            BlockStorage.checkID(block.getLocation().add(0,0,-2))=="ZIM_SOUL_TORCH"
+                    if (BlockStorage.checkID(block.getLocation().add(0,-1,0)).equals("ZIM_SOUL_FLOOR")&&
+                            BlockStorage.checkID(block.getLocation().add(1,-1,0)).equals("ZIM_SOUL_FLOOR")&&
+                            BlockStorage.checkID(block.getLocation().add(2,-1,0)).equals("ZIM_SOUL_FLOOR")&&
+                            BlockStorage.checkID(block.getLocation().add(-1,-1,0)).equals("ZIM_SOUL_FLOOR")&&
+                            BlockStorage.checkID(block.getLocation().add(-2,-1,0)).equals("ZIM_SOUL_FLOOR")&&
+                            BlockStorage.checkID(block.getLocation().add(0,-1,1)).equals("ZIM_SOUL_FLOOR")&&
+                            BlockStorage.checkID(block.getLocation().add(0,-1,2)).equals("ZIM_SOUL_FLOOR")&&
+                            BlockStorage.checkID(block.getLocation().add(0,-1,-1)).equals("ZIM_SOUL_FLOOR")&&
+                            BlockStorage.checkID(block.getLocation().add(0,-1,-2)).equals("ZIM_SOUL_FLOOR")&&
+                            BlockStorage.checkID(block.getLocation().add(1,0,0)).equals("ZIM_SOUL_GLASS")&&
+                            BlockStorage.checkID(block.getLocation().add(-1,0,0)).equals("ZIM_SOUL_GLASS")&&
+                            BlockStorage.checkID(block.getLocation().add(0,0,1)).equals("ZIM_SOUL_GLASS")&&
+                            BlockStorage.checkID(block.getLocation().add(0,0,-1)).equals("ZIM_SOUL_GLASS")&&
+                            BlockStorage.checkID(block.getLocation().add(2,0,0)).equals("ZIM_SOUL_TORCH")&&
+                            BlockStorage.checkID(block.getLocation().add(-2,0,0)).equals("ZIM_SOUL_TORCH")&&
+                            BlockStorage.checkID(block.getLocation().add(0,0,2)).equals("ZIM_SOUL_TORCH")&&
+                            BlockStorage.checkID(block.getLocation().add(0,0,-2)).equals("ZIM_SOUL_TORCH")
                     ){
                         return true;
                     }else {player.sendMessage("§c结构不完整"); return false;}
