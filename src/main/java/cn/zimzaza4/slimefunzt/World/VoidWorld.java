@@ -33,7 +33,7 @@ public class VoidWorld extends ChunkGenerator {
 
         }
         if (fognoise==null) {
-            fognoise = new SimplexOctaveGenerator(world.getSeed()-5, 1);
+            fognoise = new SimplexOctaveGenerator(world.getSeed()+193873, 1);
             fognoise.setScale(0.007D);
         }
 
@@ -46,15 +46,16 @@ public class VoidWorld extends ChunkGenerator {
                 if (height<80) {
                 for (int y =70; y > height-10 ; y--) {
                     data.setBlock(x1, y, z1, Material.BLACKSTONE);
-
-                    data.setBlock(x1, 71, z1, Material.DIRT_PATH);
                 }
+                    data.setBlock(x1, 71, z1, Material.DIRT_PATH);
+
 
                 }
                 double noiseV = noise.noise(realX, realZ, 0.5D, 0.5D);
 
                 int fogr = (int) (noiseV * 40D + 100D);
-                if (fogr - 10 > 80){
+                if (fogr > 80){
+
                     data.setBlock(x1, 130, z1, Material.WHITE_STAINED_GLASS);
                 }
 
