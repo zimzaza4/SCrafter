@@ -1,8 +1,5 @@
 package cn.zimzaza4.slimefunzt.World;
 
-import cn.zimzaza4.slimefunzt.lists.Items;
-import me.mrCookieSlime.Slimefun.api.BlockStorage;
-import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.World;
 import org.bukkit.block.Biome;
@@ -36,8 +33,8 @@ public class VoidWorld extends ChunkGenerator {
 
         }
         if (fognoise==null) {
-            fognoise = new SimplexOctaveGenerator(world.getSeed(), 1);
-            fognoise.setScale(0.005D);
+            fognoise = new SimplexOctaveGenerator(world.getSeed()-5, 1);
+            fognoise.setScale(0.007D);
         }
 
         for (int x1 = 0; x1 < 16; x1++) {
@@ -49,9 +46,7 @@ public class VoidWorld extends ChunkGenerator {
                 if (height<80) {
                 for (int y =70; y > height-10 ; y--) {
                     data.setBlock(x1, y, z1, Material.BLACKSTONE);
-                    if (Math.random()>0.3) {
-                        BlockStorage.addBlockInfo(new Location(world, x1, y, z1), "id", Items.Void_Stone.getItemId(), true);
-                    }
+
                     data.setBlock(x1, 71, z1, Material.DIRT_PATH);
                 }
 
@@ -59,7 +54,7 @@ public class VoidWorld extends ChunkGenerator {
                 double noiseV = noise.noise(realX, realZ, 0.5D, 0.5D);
 
                 int fogr = (int) (noiseV * 40D + 100D);
-                if (fogr > 80){
+                if (fogr - 10 > 80){
                     data.setBlock(x1, 130, z1, Material.WHITE_STAINED_GLASS);
                 }
 
