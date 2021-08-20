@@ -7,7 +7,6 @@ import cn.zimzaza4.slimefunzt.items.gear.EnderGear;
 import cn.zimzaza4.slimefunzt.items.material.EnderOre;
 import cn.zimzaza4.slimefunzt.items.material.NetherOre;
 import cn.zimzaza4.slimefunzt.lists.Items;
-import cn.zimzaza4.slimefunzt.machines.AutoSoulCrafter;
 import cn.zimzaza4.slimefunzt.machines.SCArmorCrafter;
 import cn.zimzaza4.slimefunzt.machines.SoulInfinityMageTable;
 import cn.zimzaza4.slimefunzt.machines.ZMCrafter;
@@ -19,7 +18,6 @@ import io.github.thebusybiscuit.slimefun4.implementation.SlimefunItems;
 import io.github.thebusybiscuit.slimefun4.implementation.items.armor.SlimefunArmorPiece;
 import me.mrCookieSlime.Slimefun.Lists.RecipeType;
 import me.mrCookieSlime.Slimefun.Objects.SlimefunItem.SlimefunItem;
-import me.mrCookieSlime.Slimefun.Objects.SlimefunItem.abstractItems.AContainer;
 import me.mrCookieSlime.Slimefun.api.SlimefunItemStack;
 import org.bukkit.Material;
 import org.bukkit.inventory.ItemStack;
@@ -171,8 +169,7 @@ public class RegSFItem {
 
         new SlimefunItem(Items.NB, Items.IE_Soul_Glass, RecipeType.ENHANCED_CRAFTING_TABLE, new ItemStack[]{null, new ItemStack(Material.GLASS), null, null, Items.Soul_IE_ingot, null, null, new ItemStack(Material.BLACK_STAINED_GLASS), null}).register(SlimefunZT.getInstance());
 
-        new SlimefunItem(Items.NB, Items.Tester, SoulInfinityMageTable.Type, new ItemStack[]{null, null, null, null, Items.EM_soul, null, null, null, null}).register(SlimefunZT.getInstance());
-
+        new SlimefunItem(Items.MatCate, Items.Void_Ore_1, RecipeTypes.Natural, new ItemStack[9]).register(SlimefunZT.getInstance());
     }
 
 

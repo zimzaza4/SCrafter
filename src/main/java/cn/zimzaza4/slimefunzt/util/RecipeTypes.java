@@ -12,5 +12,7 @@ public class RecipeTypes {
             new NamespacedKey(SlimefunZT.getInstance(), "KILL_EM_MOB"), new CustomItem(Material.IRON_SWORD, "&a击杀精英怪"));
     public static final RecipeType KillBossMobs = new RecipeType(
             new NamespacedKey(SlimefunZT.getInstance(), "KILL_BOSS_MOB"), new CustomItem(Material.DIAMOND_SWORD, "&a击杀特殊的精英怪"));
+    public static final RecipeType Natural = new RecipeType(
+            new NamespacedKey(SlimefunZT.getInstance(), "NATURAL_SPAWN"), new CustomItem(Material.IRON_ORE, "&a自然生成"));
 
 }

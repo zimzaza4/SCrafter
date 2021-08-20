@@ -1,12 +1,9 @@
 package cn.zimzaza4.slimefunzt.lists;
 
 import cn.zimzaza4.slimefunzt.SlimefunZT;
-
 import io.github.thebusybiscuit.slimefun4.core.categories.MultiCategory;
 import io.github.thebusybiscuit.slimefun4.core.categories.SubCategory;
-import io.github.thebusybiscuit.slimefun4.implementation.items.blocks.UnplaceableBlock;
 import io.github.thebusybiscuit.slimefun4.utils.LoreBuilder;
-import me.mrCookieSlime.Slimefun.Objects.Category;
 import me.mrCookieSlime.Slimefun.api.SlimefunItemStack;
 import me.mrCookieSlime.Slimefun.cscorelib2.item.CustomItem;
 import org.bukkit.Material;
@@ -26,6 +23,8 @@ public class Items {
                         new CustomItem(Material.DIAMOND, "&e&l SC拓展 - 强化"));
         public static SubCategory ToolCate = new SubCategory(new NamespacedKey(SlimefunZT.getInstance(), "ZIM_MA_TOOL"),Main_Cate,
                         new CustomItem(Material.DIAMOND_PICKAXE, "&b&l SC拓展 - 工具"));
+        public static SubCategory WeaponCate = new SubCategory(new NamespacedKey(SlimefunZT.getInstance(), "ZIM_WEAPONS"),Main_Cate,
+            new CustomItem(Material.DIAMOND_PICKAXE, "&b&l SC拓展 - &e武器和锻造"));
         public static SubCategory IE = new SubCategory(new NamespacedKey(SlimefunZT.getInstance(), "ZIM_MA_IE"),Main_Cate,
                         new CustomItem(Material.NETHERITE_BLOCK, "&e&l SC拓展 - &c疯狂无限"));
     public static SubCategory NB = new SubCategory(new NamespacedKey(SlimefunZT.getInstance(), "ZIM_NEW_B"),Main_Cate,
@@ -223,8 +222,7 @@ public class Items {
         }
 
 
-
-
+        public static  SlimefunItemStack Void_Ore_1 = new SlimefunItemStack("ZIM_VOID_ORE_I", Material.PURPLE_STAINED_GLASS, "&7&l虚空晶体");
 
 
 
