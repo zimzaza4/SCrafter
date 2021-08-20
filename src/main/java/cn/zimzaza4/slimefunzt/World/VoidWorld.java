@@ -38,12 +38,12 @@ public class VoidWorld extends ChunkGenerator {
                 int realZ = z * 16 + z1;
                 double noiseValue = noise.noise(realX, realZ, 0.5D, 0.5D);
                 int height = (int) (noiseValue * 40D + 100D);
-                if (height> 80) {
+                if (height<70) {
                 for (int y =30; y > height - 10; y--) {
                     data.setBlock(x1, y, z1, Material.BLACKSTONE);
                     if (Math.random()>0.3)
                     BlockStorage.addBlockInfo(new Location(world, x1, y, z1), "id", Items.Void_Stone.getItemId(), true);
-                    data.setBlock(x1, 81, z1, Material.DIRT_PATH);
+                    data.setBlock(x1, 71, z1, Material.DIRT_PATH);
                 }
                 }
 
