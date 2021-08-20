@@ -26,7 +26,7 @@ public class VoidPopulator extends BlockPopulator {
             chunkore1.setType(Material.PURPLE_STAINED_GLASS);
             BlockStorage.addBlockInfo(chunkore1.getLocation(), "id", Items.Void_Ore_1.getItemId(), true);
         }
-        for (int i = 0 ; i< 2 ;i++) {
+
             x = random.nextInt(16);
             y = random.nextInt(150);
             z = random.nextInt(16);
@@ -37,6 +37,18 @@ public class VoidPopulator extends BlockPopulator {
                 chunkblock1.getLocation().add(0,0,1).getBlock().setType(Material.BLACK_STAINED_GLASS);
                 chunkblock1.getLocation().add(-1,0,0).getBlock().setType(Material.BLACK_STAINED_GLASS);
                 chunkblock1.getLocation().add(0,0,-1).getBlock().setType(Material.BLACK_STAINED_GLASS);
+
+        }
+
+        canspawn = Math.random();
+        x = random.nextInt(16);
+        y = random.nextInt(71);
+        z = random.nextInt(16);
+        if (canspawn>0.5){
+            if (chunk.getBlock(x, y, z).getType()==Material.DIRT_PATH){
+                Block chunkblockst = chunk.getBlock(x, y+1, z);
+                chunkblockst.setType(Material.DEEPSLATE_IRON_ORE);
+
             }
         }
         canspawn = Math.random();

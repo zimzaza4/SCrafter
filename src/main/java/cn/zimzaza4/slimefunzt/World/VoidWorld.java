@@ -54,7 +54,7 @@ public class VoidWorld extends ChunkGenerator {
                 double noiseV = noise.noise(realX, realZ, 0.5D, 0.5D);
 
                 int fogr = (int) (noiseV * 40D + 100D);
-                if (fogr > 80){
+                if (fogr > 90){
 
                     data.setBlock(x1, 130, z1, Material.WHITE_STAINED_GLASS);
                 }
