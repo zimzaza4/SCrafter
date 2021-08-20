@@ -37,8 +37,8 @@ public class VoidWorld extends ChunkGenerator {
             fognoise.setScale(0.009D);
         }
         if (landnoise==null) {
-            landnoise = new SimplexOctaveGenerator(world.getSeed(), 1);
-            landnoise.setScale(0.01D);
+            landnoise = new SimplexOctaveGenerator(world.getSeed()+19283737, 1);
+            landnoise.setScale(0.001D);
         }
 
         for (int x1 = 0; x1 < 16; x1++) {
@@ -51,20 +51,22 @@ public class VoidWorld extends ChunkGenerator {
                 for (int y =70; y > height-10 ; y--) {
                     data.setBlock(x1, y, z1, Material.BLACKSTONE);
                 }
+                data.setBlock(x1, 70 ,z1,Material.DIRT_PATH );
 
 
                 }
-
-                if (height<89) {
-                    for (int y =70; y < height-10 ; y++) {
-                        data.setBlock(x1, y, z1, Material.BLACKSTONE);
-
-
-                        data.setBlock(x1, y+1, z1, Material.DIRT_PATH);
+                double noiseValue2 = landnoise.noise(realX, realZ, 0.5D, 0.5D);
+                int heig = (int) (noiseValue2 * 40D + 100D);
+                if (heig<80) {
+                    for (int y =90; y > height+40 ; y--) {
+                        data.setBlock(x1, y, z1, Material.STONE);
                     }
+                    data.setBlock(x1, 90 ,z1,Material.GRASS_BLOCK );
+
 
                 }
-                double noiseV = noise.noise(realX, realZ, 0.5D, 0.5D);
+
+                double noiseV = fognoise.noise(realX, realZ, 0.8D, 0.5D);
 
                 int fogr = (int) (noiseV * 40D + 100D);
                 if (fogr > 120){
