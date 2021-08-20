@@ -17,6 +17,7 @@ import java.util.Random;
 
 public class VoidWorld extends ChunkGenerator {
     private SimplexOctaveGenerator noise;
+    private SimplexOctaveGenerator fognoise;
 
     @Override
     public ChunkData generateChunkData(World world, Random random, int x, int z, BiomeGrid biome) {
@@ -34,6 +35,11 @@ public class VoidWorld extends ChunkGenerator {
             noise.setYScale(0.009D);
 
         }
+        if (fognoise==null) {
+            fognoise = new SimplexOctaveGenerator(world.getSeed(), 1);
+            fognoise.setScale(0.005D);
+        }
+
         for (int x1 = 0; x1 < 16; x1++) {
             for (int z1 = 0; z1 < 16; z1++) {
                 int realX = x * 16 + x1;
@@ -48,8 +54,14 @@ public class VoidWorld extends ChunkGenerator {
                     }
                     data.setBlock(x1, 71, z1, Material.DIRT_PATH);
                 }
-                }
 
+                }
+                double noiseV = noise.noise(realX, realZ, 0.5D, 0.5D);
+
+                int fogr = (int) (noiseV * 40D + 100D);
+                if (fogr > 80){
+                    data.setBlock(x1, 130, z1, Material.WHITE_STAINED_GLASS);
+                }
 
 
             }
