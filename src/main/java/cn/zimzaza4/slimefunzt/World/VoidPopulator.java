@@ -22,13 +22,13 @@ public class VoidPopulator extends BlockPopulator {
         int y = random.nextInt(10);
         int z = random.nextInt(16);
         Block chunkore1 = chunk.getBlock(x, y, z);
-        if (canspawn>0.7){
+        if (canspawn>0.9){
             chunkore1.setType(Material.PURPLE_STAINED_GLASS);
             BlockStorage.addBlockInfo(chunkore1.getLocation(), "id", Items.Void_Ore_1.getItemId(), true);
         }
-        for (int i = 0 ; i< 5 ;i++) {
+        for (int i = 0 ; i< 4 ;i++) {
             x = random.nextInt(16);
-            y = random.nextInt(100);
+            y = random.nextInt(150);
             z = random.nextInt(16);
             if (y>70) {
                 Block chunkblock1 = chunk.getBlock(x, y, z);
@@ -36,14 +36,14 @@ public class VoidPopulator extends BlockPopulator {
                 chunkblock1.getLocation().add(1,0,0).getBlock().setType(Material.BLACK_STAINED_GLASS);
                 chunkblock1.getLocation().add(0,0,1).getBlock().setType(Material.BLACK_STAINED_GLASS);
                 chunkblock1.getLocation().add(-1,0,0).getBlock().setType(Material.BLACK_STAINED_GLASS);
-                chunkblock1.getLocation().add(1,0,-1).getBlock().setType(Material.BLACK_STAINED_GLASS);
+                chunkblock1.getLocation().add(0,0,-1).getBlock().setType(Material.BLACK_STAINED_GLASS);
             }
         }
         canspawn = Math.random();
         x = random.nextInt(16);
         y = random.nextInt(250);
         z = random.nextInt(16);
-        if (canspawn>0.3){
+        if (canspawn>0.02){
 
         }
     }

@@ -221,8 +221,11 @@ public class Items {
                 e_gold_Head.addUnsafeEnchantment(Enchantment.PROTECTION_ENVIRONMENTAL, 4);
         }
 
-
+        public static  SlimefunItemStack Void_Stone = new SlimefunItemStack("ZIM_VOID_STONE", Material.BLACKSTONE, "&7虚空石");
         public static  SlimefunItemStack Void_Ore_1 = new SlimefunItemStack("ZIM_VOID_ORE_I", Material.PURPLE_STAINED_GLASS, "&7&l虚空晶体");
+
+        public static SlimefunItemStack Void_Ore_2 = new SlimefunItemStack("ZIM_VOID_ORE_II", Material.BLACK_STAINED_GLASS, "&7&l虚空魔石");
+
 
 
 

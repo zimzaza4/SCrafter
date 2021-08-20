@@ -32,7 +32,7 @@ public class SlimefunZT extends JavaPlugin implements SlimefunAddon {
 
         if (Bukkit.getWorld("world_void")==null) {
             WorldCreator newWorld = new WorldCreator("world_void");
-            newWorld.environment(World.Environment.THE_END);
+            newWorld.environment(World.Environment.NORMAL);
             long seed = new Random().nextLong();
             newWorld = newWorld.seed(seed);
             newWorld = newWorld.type(WorldType.NORMAL);
