@@ -32,8 +32,8 @@ public class VoidWorld extends ChunkGenerator {
             noise.setScale(0.007D);
 
         }
-        for (int x1 = 0; x < 16; x++) {
-            for (int z1 = 0; z < 16; z++) {
+        for (int x1 = 0; x1 < 16; x1++) {
+            for (int z1 = 0; z1 < 16; z1++) {
                 int realX = x * 16 + x1;
                 int realZ = z * 16 + z1;
                 double noiseValue = noise.noise(realX, realZ, 0.5D, 0.5D);

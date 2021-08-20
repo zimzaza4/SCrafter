@@ -26,7 +26,7 @@ public class VoidPopulator extends BlockPopulator {
             chunkore1.setType(Material.PURPLE_STAINED_GLASS);
             BlockStorage.addBlockInfo(chunkore1.getLocation(), "id", Items.Void_Ore_1.getItemId(), true);
         }
-        for (int i = 0 ; i< 4 ;i++) {
+        for (int i = 0 ; i< 2 ;i++) {
             x = random.nextInt(16);
             y = random.nextInt(150);
             z = random.nextInt(16);
