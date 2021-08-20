@@ -42,11 +42,11 @@ public class VoidPopulator extends BlockPopulator {
 
         canspawn = Math.random();
         x = random.nextInt(16);
-
+        y = random.nextInt(70);
         z = random.nextInt(16);
-        if (canspawn>0.5){
-            if (chunk.getBlock(x, 71, z).getType()==Material.DIRT_PATH){
-                Block chunkblockst = chunk.getBlock(x, y+1, z);
+        if (canspawn>0.4){
+            if (chunk.getBlock(x, y, z).getType()==Material.BLACKSTONE){
+                Block chunkblockst = chunk.getBlock(x, y, z);
                 chunkblockst.setType(Material.DEEPSLATE_IRON_ORE);
 
             }
