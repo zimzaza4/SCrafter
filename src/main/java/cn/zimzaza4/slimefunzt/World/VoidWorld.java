@@ -23,7 +23,7 @@ public class VoidWorld extends ChunkGenerator {
         data.setRegion(0, 255,0, 16,256, 16, Material.BEDROCK);
         for (int i = 0; i < 16; i++) {
             for (int j = 0; j < 16; j++) {
-                biome.setBiome(i, j, Biome.THE_END);
+                biome.setBiome(i, j, Biome.THE_VOID);
             }
         }
         if (noise==null){
@@ -65,7 +65,7 @@ public class VoidWorld extends ChunkGenerator {
                 double noiseValue2 = landnoise.noise(realX, realZ, 0.8D, 0.5D);
                 int heig = (int) (noiseValue2 * 40D + 100D);
                 if (heig<86) {
-                    for (int y =170; y > heig+95 ; y--) {
+                    for (int y =170; y > heig+85 ; y--) {
                         data.setBlock(x1, y, z1, Material.STONE);
                     }
                     data.setBlock(x1, 171 ,z1,Material.GRASS_BLOCK );
