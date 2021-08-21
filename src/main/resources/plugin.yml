@@ -7,5 +7,5 @@ main: cn.zimzaza4.slimefunzt.SlimefunZT
 depend: [Slimefun]
 loadbefore:
 - SlimeCustomizer
-- WorldEdit
+- Multiverse-Core
 api-version: 1.17
