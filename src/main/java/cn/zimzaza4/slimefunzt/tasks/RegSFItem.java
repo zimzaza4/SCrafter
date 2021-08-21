@@ -169,7 +169,7 @@ public class RegSFItem {
 
         new SlimefunItem(Items.NB, Items.IE_Soul_Glass, RecipeType.ENHANCED_CRAFTING_TABLE, new ItemStack[]{null, new ItemStack(Material.GLASS), null, null, Items.Soul_IE_ingot, null, null, new ItemStack(Material.BLACK_STAINED_GLASS), null}).register(SlimefunZT.getInstance());
 
-        new SlimefunItem(Items.MatCate, Items.Void_Ore_1, RecipeTypes.Natural, new ItemStack[9]).register(SlimefunZT.getInstance());
+        new SlimefunItem(Items.MatCate, Items.Void_Ore_Ame, RecipeTypes.Natural, new ItemStack[9]).register(SlimefunZT.getInstance());
     }
 
 
