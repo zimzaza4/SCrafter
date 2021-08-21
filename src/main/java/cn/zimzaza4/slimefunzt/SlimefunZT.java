@@ -7,8 +7,11 @@ import cn.zimzaza4.slimefunzt.tasks.RegSFItem;
 import cn.zimzaza4.slimefunzt.tasks.RegSFMachine;
 import io.github.thebusybiscuit.slimefun4.api.SlimefunAddon;
 import org.bukkit.*;
+import org.bukkit.generator.ChunkGenerator;
 import org.bukkit.plugin.java.JavaPlugin;
+import org.jetbrains.annotations.Nullable;
 
+import java.io.File;
 import java.util.Locale;
 import java.util.Random;
 
@@ -21,9 +24,12 @@ public class SlimefunZT extends JavaPlugin implements SlimefunAddon {
         return this;
     }
 
+    @Nullable
+    @Override
     public String getBugTrackerURL() {
-        return "wnm";
+        return null;
     }
+
 
     @Override
     public void onEnable() {
@@ -42,6 +48,7 @@ public class SlimefunZT extends JavaPlugin implements SlimefunAddon {
         }
         RegSFMachine.run();
         RegSFItem.run();
+
         Bukkit.getPluginManager().registerEvents(new EliteMobD(), this);
         Bukkit.getPluginManager().registerEvents(new ClickMac(), this);
     }
@@ -50,7 +57,26 @@ public class SlimefunZT extends JavaPlugin implements SlimefunAddon {
 
         return Instance;
     }
-    public static NamespacedKey getKey(String key){
+
+    @Override
+    public ChunkGenerator getDefaultWorldGenerator(String world, String id){
+        switch (id){
+            case "the_void":
+                return new VoidWorld();
+            default:
+                return null;
+        }
+    }
+
+
+    public   static NamespacedKey getKey(String key){
         return new NamespacedKey(Instance, key.toUpperCase(Locale.ROOT));
+    }
+
+    private void setupConfig(){
+        if (!new File(getDataFolder(), "config.yml").exists()){
+            saveDefaultConfig();
+            saveResource("schematics/", true);
+        }
     }
 }
