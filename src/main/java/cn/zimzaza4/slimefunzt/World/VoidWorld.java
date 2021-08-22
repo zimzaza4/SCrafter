@@ -28,8 +28,8 @@ public class VoidWorld extends ChunkGenerator {
         }
         if (noise==null){
 
-            noise = new SimplexOctaveGenerator(world.getSeed(), 6);
-            noise.setScale(0.009D);
+            noise = new SimplexOctaveGenerator(world.getSeed(), 5);
+            noise.setScale(0.007D);
 
         }
         if (fognoise==null) {
@@ -38,8 +38,8 @@ public class VoidWorld extends ChunkGenerator {
 
         }
         if (landnoise==null) {
-            landnoise = new SimplexOctaveGenerator(world.getSeed()+19283737, 6);
-            landnoise.setScale(0.1D);
+            landnoise = new SimplexOctaveGenerator(world.getSeed()+19283737, 5);
+            landnoise.setScale(0.009D);
 
         }
         if (webnoise==null) {
