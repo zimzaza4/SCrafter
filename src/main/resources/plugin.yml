@@ -8,4 +8,6 @@ depend: [Slimefun]
 loadbefore:
 - SlimeCustomizer
 - Multiverse-Core
+softdepend:
+  - WorldEdit
 api-version: 1.17
