@@ -60,10 +60,15 @@ public class VoidWorld extends ChunkGenerator {
                 if (height<80) {
 
                 for (int y =70; y > height-10 ; y--) {
-                    int glass = y/60;
-                    data.setBlock(x1,glass+70, z1,Material.STONE);
+
 
                     data.setBlock(x1, y, z1, Material.BLACKSTONE);
+                }
+                height = height/60;
+                for (int y =72; y < height+72 ; y++) {
+
+
+                        data.setBlock(x1, y, z1, Material.STONE);
                 }
 
                 }
