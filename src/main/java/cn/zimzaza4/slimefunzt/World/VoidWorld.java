@@ -34,7 +34,7 @@ public class VoidWorld extends ChunkGenerator {
         }
         if (fognoise==null) {
             fognoise = new SimplexOctaveGenerator(world.getSeed() + 193873, 1);
-            fognoise.setScale(0.009D);
+            fognoise.setScale(0.1D);
 
         }
         if (landnoise==null) {
