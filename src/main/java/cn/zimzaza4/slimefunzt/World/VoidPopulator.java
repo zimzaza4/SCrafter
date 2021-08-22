@@ -58,12 +58,13 @@ public class VoidPopulator extends BlockPopulator {
         y = random.nextInt(10);
         y = y+170;
         z = random.nextInt(16);
-
-            if (random.nextDouble()>0.6 ){
-                chunk.getBlock(x, y+1, z).setType(Material.TALL_GRASS);
-            }else {
+        if (chunk.getBlock(x, y, z).getType()==Material.GRASS_BLOCK) {
+            if (random.nextDouble() > 0.6) {
+                chunk.getBlock(x, y + 1, z).setType(Material.TALL_GRASS);
+                chunk.getBlock(x, y+2 , z).setType(Material.TALL_GRASS);
+            } else {
                 chunk.getBlock(x, y + 1, z).setType(Material.GRASS);
             }
-
+        }
     }
 }}
