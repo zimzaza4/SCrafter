@@ -64,11 +64,11 @@ public class VoidWorld extends ChunkGenerator {
 
                     data.setBlock(x1, y, z1, Material.BLACKSTONE);
                 }
-                height = height/60;
-                for (int y =72; y < height+72 ; y++) {
 
+                int Fh = 3-height/40;
 
-                        data.setBlock(x1, y, z1, Material.STONE);
+                for (int y = 73; y> Fh+73 ; y++){
+                    data.setBlock(x1, y, z1, Material.STONE);
                 }
 
                 }
