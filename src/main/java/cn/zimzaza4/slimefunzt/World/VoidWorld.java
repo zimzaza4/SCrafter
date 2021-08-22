@@ -53,7 +53,7 @@ public class VoidWorld extends ChunkGenerator {
             for (int z1 = 0; z1 < 16; z1++) {
                 int realX = x * 16 + x1;
                 int realZ = z * 16 + z1;
-                double noiseValue = noise.noise(realX, realZ, 2D, 0.5D);
+                double noiseValue = noise.noise(realX, realZ, 1.5D, 0.5D);
 
                 int height = (int) (noiseValue * 40 +100);
 
@@ -65,7 +65,7 @@ public class VoidWorld extends ChunkGenerator {
                     data.setBlock(x1, y, z1, Material.BLACKSTONE);
                 }
 
-                int Fh = 9-height/10;
+                int Fh = 9-height/11;
 
                 for (int y = 71; y< Fh+70; y++){
                     data.setBlock(x1, y, z1, Material.STONE);
@@ -73,10 +73,10 @@ public class VoidWorld extends ChunkGenerator {
 
                 }
 
-                double noiseValue2 = landnoise.noise(realX, realZ ,2D, 0.5D);
+                double noiseValue2 = landnoise.noise(realX, realZ ,1.5D, 0.5D);
                 int heig = (int) (noiseValue2 * 40 + 100);
                 if (heig<75) {
-                int Fh = 9-heig/10;
+                int Fh = 9-heig/11;
                     for (int y =170; y > heig+95 ; y--) {
                         data.setBlock(x1, y, z1, Material.STONE);
                     }
