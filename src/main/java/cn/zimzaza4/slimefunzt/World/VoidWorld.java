@@ -55,7 +55,7 @@ public class VoidWorld extends ChunkGenerator {
                 int realZ = z * 16 + z1;
                 double noiseValue = noise.noise(realX, realZ, 3D, 0.5D);
 
-                int height = (int) (100 + Math.pow((noiseValue*5), 2.5));
+                int height = (int) (90 + Math.pow(noiseValue, 3)*30);
 
                 if (height<80) {
 
