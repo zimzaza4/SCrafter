@@ -67,7 +67,7 @@ public class VoidWorld extends ChunkGenerator {
 
                 }
 
-                double noiseValue2 = landnoise.noise(realX, realZ, 0.05, 0.5D);
+                double noiseValue2 = landnoise.noise(realX, realZ, 0.005, 0.5D);
                 int heig = (int) (noiseValue2 * 40D + 100D);
                 if (heig<86) {
 
@@ -89,7 +89,7 @@ public class VoidWorld extends ChunkGenerator {
 
                 double noiseweb = webnoise.noise(realX, realZ, 3D, 0.5D);
                 if (noiseweb*40 >20){
-                    data.setBlock(x1, 202, z1, Material.WHITE_STAINED_GLASS);
+                    data.setBlock(x1, 230, z1, Material.WHITE_STAINED_GLASS);
                 }
 
             }
