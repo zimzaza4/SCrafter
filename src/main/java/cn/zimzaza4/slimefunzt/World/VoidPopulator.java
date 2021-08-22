@@ -23,7 +23,7 @@ public class VoidPopulator extends BlockPopulator {
         int z = random.nextInt(16);
         Block chunkore1 = chunk.getBlock(x, y, z);
 
-        if (canspawn>0.93){
+        if (canspawn>0.96){
             chunkore1.setType(Material.PURPLE_STAINED_GLASS);
             BlockStorage.addBlockInfo(chunkore1.getLocation(), "id", Items.Void_Ore_Ame.getItemId(), true);
         }
@@ -52,12 +52,18 @@ public class VoidPopulator extends BlockPopulator {
 
             }
         }
-        canspawn = Math.random();
-        x = random.nextInt(16);
-        y = random.nextInt(250);
-        z = random.nextInt(16);
-        if (canspawn>0.02){
+        for (int i = 0;i<9; i++)
 
+        x = random.nextInt(16);
+        y = 200;
+        z = random.nextInt(16);
+        while (chunk.getBlock(x, y, z).getType() != Material.GRASS_BLOCK || y>150){
+            if (random.nextDouble()>0.6 ){
+                chunk.getBlock(x, y+1, z).setType(Material.TALL_GRASS);
+            }else {
+                chunk.getBlock(x, y + 1, z).setType(Material.GRASS);
+            }
+             y--;
         }
     }
 }
