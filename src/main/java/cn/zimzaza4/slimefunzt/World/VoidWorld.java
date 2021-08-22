@@ -57,9 +57,9 @@ public class VoidWorld extends ChunkGenerator {
 
                 int height = (int) (noiseValue * 40 +100);
 
-                if (height<70) {
+                if (height<76) {
 
-                for (int y =70; y > height-5 ; y--) {
+                for (int y =70; y > height-1 ; y--) {
 
 
                     data.setBlock(x1, y, z1, Material.BLACKSTONE);
@@ -67,7 +67,7 @@ public class VoidWorld extends ChunkGenerator {
 
                 int Fh = 4-height/10;
 
-                for (int y = 71; y< Fh+71 ; y++){
+                for (int y = 71; y< Fh-5 ; y++){
                     data.setBlock(x1, y, z1, Material.STONE);
                 }
 
