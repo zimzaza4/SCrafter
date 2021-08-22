@@ -6,6 +6,7 @@ import org.bukkit.Chunk;
 import org.bukkit.Material;
 import org.bukkit.World;
 import org.bukkit.block.Block;
+import org.bukkit.block.data.Bisected;
 import org.bukkit.generator.BlockPopulator;
 import org.jetbrains.annotations.NotNull;
 
@@ -52,19 +53,26 @@ public class VoidPopulator extends BlockPopulator {
 
             }
         }
-        for (int i = 0;i<18; i++){
+        for (int i = 0;i<10; i++){
+        for (y=170;y<180; y++){
 
         x = random.nextInt(16);
-        y = random.nextInt(10);
-        y = y+170;
         z = random.nextInt(16);
         if (chunk.getBlock(x, y, z).getType()==Material.GRASS_BLOCK) {
             if (random.nextDouble() > 0.6) {
-                chunk.getBlock(x, y + 1, z).setType(Material.TALL_GRASS);
-                chunk.getBlock(x, y+2 , z).setType(Material.TALL_GRASS);
+                Block b = chunk.getBlock(x, y+1, z);
+                b.setType(Material.TALL_GRASS);
+                Bisected data = (Bisected) b.getBlockData();
+                data.setHalf(Bisected.Half.BOTTOM);
+                b.setBlockData(data);
+                b = chunk.getBlock(x, y+2, z);
+                b.setType(Material.TALL_GRASS);
+                Bisected bdata = (Bisected) b.getBlockData();
+                bdata.setHalf(Bisected.Half.TOP);
+                b.setBlockData(bdata);
             } else {
                 chunk.getBlock(x, y + 1, z).setType(Material.GRASS);
             }
-        }
+        }}
     }
 }}
