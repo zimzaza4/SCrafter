@@ -4,4 +4,5 @@
 Slimefun,
 CS-CoreLib,
 InfinityExpansion,
-EliteMobs
+EliteMobs,
+FastAsyncWorldEdit
