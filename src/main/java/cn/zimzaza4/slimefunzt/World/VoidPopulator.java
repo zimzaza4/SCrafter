@@ -53,14 +53,14 @@ public class VoidPopulator extends BlockPopulator {
             }
         }
         for (int i = 0;i<17; i++){
-        for (y=180;y>170; y--){
 
         x = random.nextInt(16);
         z = random.nextInt(16);
-        if (chunk.getBlock(x, y, z).getType()==Material.GRASS_BLOCK) {
 
-                chunk.getBlock(x, y + 1, z).setType(Material.GRASS);
-                break;
-        }}
-    }
+        for (y= 180;y>170;y--){
+        }
+            if (chunk.getBlock(x, y, z).getType()==Material.GRASS_BLOCK){
+                chunk.getBlock(x, y+1, z).setType(Material.GRASS);
+            }
+        }
 }}
