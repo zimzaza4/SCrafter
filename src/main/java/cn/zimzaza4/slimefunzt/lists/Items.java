@@ -182,6 +182,7 @@ public class Items {
                  "&c防御性机器",
                        "",
                        "&750J/s");
+
         public static ItemStack GoldCrafter = new CustomItem(Material.GOLD_BLOCK,
                  "&e&l24K金制造机",
                  "&a自动将金粉转为24K金",
@@ -189,18 +190,21 @@ public class Items {
                        "&c一体式机器",
                        "&750J/s",
                        "&7200J 可储存");
+
         public static ItemStack CarbonCrafter = new CustomItem(Material.WHITE_STAINED_GLASS,
                  "&7&l解压机",
                  "&a钻石转换为128个煤",
                        "",
                        "&790J/s",
                        "&7200J 可储存");
+
         public static ItemStack CarbonCrafter_II = new CustomItem(Material.WHITE_STAINED_GLASS,
                  "&7&l解压机&c - II",
                  "&a钻石或128个煤转换为12个碳",
                        "",
                        "&7100J/s",
                        "&7400J 可储存");
+
         public static ItemStack ImproveCry = new CustomItem(Material.DIAMOND,
                  "&b&l水晶强化物",
                  "",
