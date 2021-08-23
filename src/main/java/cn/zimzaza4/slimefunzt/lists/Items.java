@@ -191,7 +191,7 @@ public class Items {
                        "&7200J 可储存");
         public static ItemStack CarbonCrafter = new CustomItem(Material.WHITE_STAINED_GLASS,
                  "&7&l解压机",
-                 "&a把钻石转换为128个煤",
+                 "&a钻石转换为128个煤",
                        "",
                        "&790J/s",
                        "&7200J 可储存");
