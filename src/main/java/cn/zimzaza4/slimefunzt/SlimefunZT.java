@@ -47,6 +47,7 @@ public class SlimefunZT extends JavaPlugin implements SlimefunAddon {
             newWorld = newWorld.generator(new VoidWorld());
             World w = newWorld.createWorld();
         }
+        setupConfig();
         RegSFMachine.run();
         RegSFItem.run();
         if (Bukkit.getPluginManager().getPlugin("EliteMobs") != null) {
