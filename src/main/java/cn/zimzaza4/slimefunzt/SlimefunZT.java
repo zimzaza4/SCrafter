@@ -3,6 +3,7 @@ package cn.zimzaza4.slimefunzt;
 import cn.zimzaza4.slimefunzt.World.VoidWorld;
 import cn.zimzaza4.slimefunzt.listeners.ClickMac;
 import cn.zimzaza4.slimefunzt.listeners.EliteMobD;
+import cn.zimzaza4.slimefunzt.listeners.NormalMobD;
 import cn.zimzaza4.slimefunzt.tasks.RegSFItem;
 import cn.zimzaza4.slimefunzt.tasks.RegSFMachine;
 import io.github.thebusybiscuit.slimefun4.api.SlimefunAddon;
@@ -36,7 +37,7 @@ public class SlimefunZT extends JavaPlugin implements SlimefunAddon {
         Instance = this;
 
 
-        if (Bukkit.getWorld("world_void")==null) {
+        if (Bukkit.getWorld("world_void") == null) {
             WorldCreator newWorld = new WorldCreator("world_void");
             newWorld.environment(World.Environment.NORMAL);
             long seed = new Random().nextLong();
@@ -48,9 +49,13 @@ public class SlimefunZT extends JavaPlugin implements SlimefunAddon {
         }
         RegSFMachine.run();
         RegSFItem.run();
-
-        Bukkit.getPluginManager().registerEvents(new EliteMobD(), this);
+        if (Bukkit.getPluginManager().getPlugin("EliteMobs") != null) {
+            Bukkit.getPluginManager().registerEvents(new EliteMobD(), this);
+        }else {
+            Bukkit.getPluginManager().registerEvents(new NormalMobD(), this);
+        }
         Bukkit.getPluginManager().registerEvents(new ClickMac(), this);
+
     }
 
     public static SlimefunZT getInstance() {
