@@ -60,7 +60,7 @@ public class VoidPopulator extends BlockPopulator {
         if (chunk.getBlock(x, y, z).getType()==Material.GRASS_BLOCK) {
 
                 chunk.getBlock(x, y + 1, z).setType(Material.GRASS);
-                break;
+                y = 200;
         }}
     }
 }}
