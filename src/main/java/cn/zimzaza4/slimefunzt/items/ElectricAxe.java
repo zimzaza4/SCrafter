@@ -31,7 +31,7 @@ public class ElectricAxe extends SlimefunItem implements Rechargeable {
                 removeItemCharge(tool, 5F);
 
             } else {
-                e.getPlayer().sendMessage("§c没电了");
+                e.getPlayer().sendMessage("§c电量不足");
                 e.setCancelled(true);
             }
 

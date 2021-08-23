@@ -145,17 +145,28 @@ public class RegSFItem {
                 }).register(SlimefunZT.getInstance());
         ItemStack[] ImproveCry = CryImprover(SlimefunItems.POWER_CRYSTAL);
         SkUtils.regitem("ZIM_IMPROVE_CRY", Items.ImproveCry, Items.crystal, RecipeType.ANCIENT_ALTAR, ImproveCry);
-        RegCryBuff("&a&l强化水晶&e - &b速度", "ZIM_SPEED_MAC", "&7点击获得&b速度",
-                "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZDJlNGZmYzcxYzlmZDQ0NWRhNmYyNWY3ODAzNDEwNjg5N2E5YWFhY2VkNTM5Y2YxY2ZiZWU0ZGNiOThhYzNmOSJ9fX0=",
+        RegCryBuff("&a&l强化水晶&e - &b速度",
+                      "ZIM_SPEED_MAC",
+                       "&7点击以获得&b速度",
+                    "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZDJlNGZmYzcxYzlmZDQ0NWRhNmYyNWY3ODAzNDEwNjg5N2E5YWFhY2VkNTM5Y2YxY2ZiZWU0ZGNiOThhYzNmOSJ9fX0=",
                 new ItemStack(Material.FEATHER));
-        RegCryBuff("&a&l强化水晶&e - &7抗性", "ZIM_DAMAGE_RESISTANCE_MAC", "&7点击获得&l抗性",
-                "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZDJlNGZmYzcxYzlmZDQ0NWRhNmYyNWY3ODAzNDEwNjg5N2E5YWFhY2VkNTM5Y2YxY2ZiZWU0ZGNiOThhYzNmOSJ9fX0=",
+
+        RegCryBuff("&a&l强化水晶&e - &7抗性",
+                    "ZIM_DAMAGE_RESISTANCE_MAC",
+                     "&7点击以获得&l抗性",
+                  "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZDJlNGZmYzcxYzlmZDQ0NWRhNmYyNWY3ODAzNDEwNjg5N2E5YWFhY2VkNTM5Y2YxY2ZiZWU0ZGNiOThhYzNmOSJ9fX0=",
                 new ItemStack(Material.TURTLE_HELMET));
-        RegCryBuff("&a&l强化水晶&e - &e力量", "ZIM_STRONG_MAC", "&7点击获得&e力量",
-                "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvM2JmMDdhODcyYmJjOTg1YTZmMWE1YTI4M2IzYTZmNjVmMjgzZjM0YjEyZjE0NTY5MWZkOTQwYTVkZTNkNGExMiJ9fX0=",
+
+        RegCryBuff("&a&l强化水晶&e - &e力量",
+                      "ZIM_STRONG_MAC",
+                      "&7点击①获得&e力量",
+                   "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvM2JmMDdhODcyYmJjOTg1YTZmMWE1YTI4M2IzYTZmNjVmMjgzZjM0YjEyZjE0NTY5MWZkOTQwYTVkZTNkNGExMiJ9fX0=",
                 new ItemStack(Material.BLAZE_ROD));
-        RegCryBuff("&a&l强化水晶&e - &c生命回复", "ZIM_HEALTH_MAC", "&7点击获得&c生命回复",
-                "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZGY3NDY3YzVmNzM4YzY0MTI0NmMwOWY4Y2U3OTFlMzM5YTg2ZTgxZGU2MjA0OWI0MWY0OTI4ODgxNzJmYTcyNiJ9fX0=",
+
+        RegCryBuff("&a&l强化水晶&e - &c生命回复",
+                     "ZIM_HEALTH_MAC",
+                       "&7点击以获得&c生命回复",
+                    "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZGY3NDY3YzVmNzM4YzY0MTI0NmMwOWY4Y2U3OTFlMzM5YTg2ZTgxZGU2MjA0OWI0MWY0OTI4ODgxNzJmYTcyNiJ9fX0=",
                 new ItemStack(Material.GHAST_TEAR));
 
         new SoulInfinityMageTable(Items.NB, Items.Soul_IE_mage_table, RecipeType.ENHANCED_CRAFTING_TABLE, new ItemStack[]{Items.Soul_IE_ingot, Items.Soul_IE_ingot, Items.Soul_IE_ingot,
