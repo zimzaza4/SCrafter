@@ -111,7 +111,7 @@ public class Items {
                         Material.NETHERITE_INGOT,
                 "&c&l熔岩锭",
                 "",
-                "&c火热!");
+                "&7烫手的&c熔盐锭!");
 
         public static final SlimefunItemStack FastIngotFactory = new SlimefunItemStack("ZIM_FAST_INGOT_FACTORY",  new CustomItem(Material.SMITHING_TABLE,
                 "&a加强电动铸锭机 &7[&cI&7]",
