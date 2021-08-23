@@ -16,6 +16,6 @@ public class SchematicUtil {
         World world = new BukkitWorld(l.getWorld());
         BlockVector3 to = BlockVector3.at(l.getBlockX(), l.getBlockY(),l.getBlockZ());
         Clipboard cb = ClipboardFormats.findByFile(schematic).load(schematic);
-        cb.paste(world, to);
+        cb.paste(world, to, false);
 
 }}
