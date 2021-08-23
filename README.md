@@ -2,7 +2,6 @@
 一个粘液拓展
 前置:
 Slimefun,
-CS-CoreLib,
 InfinityExpansion,
-EliteMobs,
+EliteMobs(软),
 FastAsyncWorldEdit
