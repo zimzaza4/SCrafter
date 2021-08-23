@@ -4,10 +4,12 @@ name: SlimefunZT
 version: ${project.version}
 author: zimzaza4
 main: cn.zimzaza4.slimefunzt.SlimefunZT
-depend: [Slimefun]
+depend: [Slimefun, FastAsyncWorldEdit, InfinityExpansion]
 loadbefore:
 - SlimeCustomizer
 - Multiverse-Core
 softdepend:
+  - EliteMobs
   - WorldEdit
+  - GeneticChickengineering
 api-version: 1.17
