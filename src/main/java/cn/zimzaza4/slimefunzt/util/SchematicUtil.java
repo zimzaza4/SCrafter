@@ -12,26 +12,31 @@ import com.sk89q.worldedit.function.operation.Operation;
 import com.sk89q.worldedit.function.operation.Operations;
 import com.sk89q.worldedit.math.BlockVector3;
 import com.sk89q.worldedit.session.ClipboardHolder;
-import com.sk89q.worldedit.world.World;
 import de.schlichtherle.io.FileInputStream;
 import org.bukkit.Location;
 
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 
 public class SchematicUtil {
 
 
 
+    public static Clipboard LoadSchmatic(File file) throws FileNotFoundException {
+            Clipboard clipboard = null;
 
-    public static void SpawnSchmatic(File schematic, Location l) throws IOException, WorldEditException {
-            Clipboard cb;
-            ClipboardFormat format = ClipboardFormats.findByFile(schematic);
-            World world = new BukkitWorld(l.getWorld());
-            try (ClipboardReader reader = format.getReader(new FileInputStream(schematic))) {
-                    cb = reader.read();
+            ClipboardFormat format = ClipboardFormats.findByFile(file);
+            try (ClipboardReader reader = format.getReader(new FileInputStream(file))) {
+                    clipboard = reader.read();
+            } catch (IOException e) {
+                    e.printStackTrace();
             }
-            try (EditSession editSession = WorldEdit.getInstance().newEditSession(world)) {
+            return clipboard;
+    }
+    public static void SpawnSchmatic(Clipboard cb, Location l) throws WorldEditException {
+
+            try (EditSession editSession = WorldEdit.getInstance().newEditSession(new BukkitWorld(l.getWorld()))) {
                     Operation operation = new ClipboardHolder(cb)
                             .createPaste(editSession)
                             .to(BlockVector3.at(l.getX(), l.getY(), l.getZ()))

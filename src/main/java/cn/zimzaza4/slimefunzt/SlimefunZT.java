@@ -6,6 +6,8 @@ import cn.zimzaza4.slimefunzt.listeners.EliteMobD;
 import cn.zimzaza4.slimefunzt.listeners.NormalMobD;
 import cn.zimzaza4.slimefunzt.tasks.RegSFItem;
 import cn.zimzaza4.slimefunzt.tasks.RegSFMachine;
+import cn.zimzaza4.slimefunzt.util.SchematicUtil;
+import com.sk89q.worldedit.extent.clipboard.Clipboard;
 import io.github.thebusybiscuit.slimefun4.api.SlimefunAddon;
 import org.bukkit.*;
 import org.bukkit.generator.ChunkGenerator;
@@ -20,7 +22,7 @@ import java.util.Random;
 public class SlimefunZT extends JavaPlugin implements SlimefunAddon {
     public Boolean isFAME;
     private static SlimefunZT Instance;
-    public File void_tree;
+    public Clipboard void_tree;
 
 
     public JavaPlugin getJavaPlugin() {
@@ -101,7 +103,7 @@ public class SlimefunZT extends JavaPlugin implements SlimefunAddon {
     private void setupSchematic() throws IOException {
         File f = new File (getDataFolder(),"void_tree.schem");
         System.out.println("Loading"+f.getPath());
-        this.void_tree = f;
+        this.void_tree = SchematicUtil.LoadSchmatic(f);
     }
 
 }

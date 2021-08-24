@@ -81,7 +81,7 @@ public class VoidPopulator extends BlockPopulator {
                     b.setBlockData(data);
                     if (Math.random()>0.9) {
                             File f = new File (SlimefunZT.getInstance().getDataFolder(), "void_tree.schem");
-                            SchematicUtil.SpawnSchmatic(f, b.getLocation());
+                            SchematicUtil.SpawnSchmatic(SlimefunZT.getInstance().void_tree, b.getLocation());
 
                         break;
                     }
