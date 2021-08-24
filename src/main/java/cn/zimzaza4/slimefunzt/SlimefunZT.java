@@ -6,6 +6,8 @@ import cn.zimzaza4.slimefunzt.listeners.EliteMobD;
 import cn.zimzaza4.slimefunzt.listeners.NormalMobD;
 import cn.zimzaza4.slimefunzt.tasks.RegSFItem;
 import cn.zimzaza4.slimefunzt.tasks.RegSFMachine;
+import cn.zimzaza4.slimefunzt.util.SchematicUtil;
+import com.sk89q.worldedit.extent.clipboard.Clipboard;
 import io.github.thebusybiscuit.slimefun4.api.SlimefunAddon;
 import org.bukkit.*;
 import org.bukkit.generator.ChunkGenerator;
@@ -13,12 +15,14 @@ import org.bukkit.plugin.java.JavaPlugin;
 import org.jetbrains.annotations.Nullable;
 
 import java.io.File;
+import java.io.IOException;
 import java.util.Locale;
 import java.util.Random;
 
 public class SlimefunZT extends JavaPlugin implements SlimefunAddon {
 
     private static SlimefunZT Instance;
+    public Clipboard void_tree;
 
 
     public JavaPlugin getJavaPlugin() {
@@ -36,7 +40,12 @@ public class SlimefunZT extends JavaPlugin implements SlimefunAddon {
     public void onEnable() {
         Instance = this;
 
-
+        try {
+            setupSchematic();
+        }
+        catch (IOException ioe){
+            System.out.println("§c 加载结构失败");
+        }
         if (Bukkit.getWorld("world_void") == null) {
             WorldCreator newWorld = new WorldCreator("world_void");
             newWorld.environment(World.Environment.NORMAL);
@@ -86,6 +95,10 @@ public class SlimefunZT extends JavaPlugin implements SlimefunAddon {
             saveResource("schematics/void_tree_2.schem", true);
 
         }
+    }
+    private void setupSchematic() throws IOException {
+        this.void_tree =SchematicUtil.LoadSchmatic(new File(getDataFolder(), "void_tree"));
+
     }
 
 }
