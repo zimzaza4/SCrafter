@@ -1,6 +1,9 @@
 package cn.zimzaza4.slimefunzt.World;
 
+import cn.zimzaza4.slimefunzt.SlimefunZT;
 import cn.zimzaza4.slimefunzt.lists.Items;
+import cn.zimzaza4.slimefunzt.util.SchematicUtil;
+import com.sk89q.worldedit.extent.clipboard.Clipboard;
 import lombok.SneakyThrows;
 import me.mrCookieSlime.Slimefun.api.BlockStorage;
 import org.bukkit.Chunk;
@@ -77,7 +80,13 @@ public class VoidPopulator extends BlockPopulator {
                     b.setBlockData(data);
                     if (Math.random()>0.6) {
                         System.out.println("DEBUG: Spawn");
-                             break;
+                        Clipboard cb = SlimefunZT.getInstance().void_tree;
+                        if (cb!=null){
+                            SchematicUtil.SpawnSchmatic(cb, b.getLocation());
+                        }else{
+                            System.out.println("未加载");
+                        }
+                        break;
                     }
                     break;
                 }
