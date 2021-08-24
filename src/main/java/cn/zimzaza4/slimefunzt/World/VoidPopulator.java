@@ -9,7 +9,6 @@ import org.bukkit.Chunk;
 import org.bukkit.Material;
 import org.bukkit.World;
 import org.bukkit.block.Block;
-import org.bukkit.block.data.Waterlogged;
 import org.bukkit.generator.BlockPopulator;
 import org.jetbrains.annotations.NotNull;
 
@@ -75,10 +74,10 @@ public class VoidPopulator extends BlockPopulator {
 
                 if (chunk.getBlock(x, y, z).getType() == Material.STONE) {
                     Block b = chunk.getBlock(x, y + 1, z);
-                    b.setType(Material.DEAD_BUBBLE_CORAL);
+                    /*b.setType(Material.DEAD_BUBBLE_CORAL);
                     Waterlogged data = (Waterlogged) b.getBlockData();
                     data.setWaterlogged(false);
-                    b.setBlockData(data);
+                    b.setBlockData(data);*/
                     if (Math.random()>0.9) {
                             File f = new File (SlimefunZT.getInstance().getDataFolder(), "void_tree.schem");
                             SchematicUtil.SpawnSchmatic(SlimefunZT.getInstance().void_tree, b.getLocation());
