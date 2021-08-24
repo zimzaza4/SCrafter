@@ -70,7 +70,7 @@ public class VoidPopulator extends BlockPopulator {
                 }
             }
         }
-        if (random.nextDouble()<1/4){
+        if (random.nextDouble()<0.3){
             x = random.nextInt(13);
             if (x<4){
                 x=4;
@@ -79,10 +79,10 @@ public class VoidPopulator extends BlockPopulator {
             if (z<4){
                 z=4;
             }
-            for (y = 76; y > 70; y--) {
+            for (y = 79; y > 70; y--) {
 
                 if (chunk.getBlock(x, y, z).getType() == Material.STONE) {
-                    SchematicUtil.SpawnSchmatic(new File(SlimefunZT.getInstance().getDataFolder() , "schematic/void_tree.schem"),
+                    SchematicUtil.SpawnSchmatic(new File(SlimefunZT.getInstance().getDataFolder() , "void_tree.schem"),
                             chunk.getBlock(x, y,z).getLocation());
                     break;
                 }
