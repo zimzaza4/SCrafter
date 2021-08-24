@@ -78,7 +78,7 @@ public class VoidPopulator extends BlockPopulator {
                     Waterlogged data = (Waterlogged) b.getBlockData();
                     data.setWaterlogged(false);
                     b.setBlockData(data);
-                    if (Math.random()>0.6) {
+                    if (Math.random()>0.9) {
                         System.out.println("DEBUG: Spawn");
                         Clipboard cb = SlimefunZT.getInstance().void_tree;
                         if (cb!=null){
