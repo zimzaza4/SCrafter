@@ -69,8 +69,15 @@ public class VoidPopulator extends BlockPopulator {
                     break;
                 }
             }
+            for (y=79;y>70;y--){
+
+                if (chunk.getBlock(x, y, z).getType() == Material.STONE) {
+                    chunk.getBlock(x, y + 1, z).setType(Material.DEAD_BUBBLE_CORAL);
+                    break;
+                }
+            }
         }
-        if (Math.random()>0.6){
+
             x = random.nextInt(13);
             if (x<4){
                 x=4;
@@ -89,6 +96,6 @@ public class VoidPopulator extends BlockPopulator {
                 }
             }
 
-        }
+
     }
 }
