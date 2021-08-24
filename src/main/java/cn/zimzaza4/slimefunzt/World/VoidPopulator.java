@@ -82,8 +82,9 @@ public class VoidPopulator extends BlockPopulator {
             for (y = 79; y > 70; y--) {
 
                 if (chunk.getBlock(x, y, z).getType() == Material.STONE) {
-                    SchematicUtil.SpawnSchmatic(new File(SlimefunZT.getInstance().getDataFolder() , "void_tree.schem"),
-                            chunk.getBlock(x, y,z).getLocation());
+                    SchematicUtil.SpawnSchmatic(new File(SlimefunZT.getInstance().getDataFolder() , "void_tree.schem"), chunk.getBlock(x, y,z).getLocation());
+
+                    System.out.print("DEBUG:Spawned");
                     break;
                 }
             }
