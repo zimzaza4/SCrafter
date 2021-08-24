@@ -44,6 +44,7 @@ public class SchematicUtil {
                             // configure here
                             .build();
                     Operations.complete(operation);
+                    editSession.flushSession();
                 }
             }else{
             try (EditSession editSession = WorldEdit.getInstance().newEditSession(new BukkitWorld(l.getWorld()))) {
