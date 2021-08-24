@@ -67,22 +67,22 @@ public class Items {
                 "&e糖提取机",
                 "&7从水果里提取糖",
                 "",
-                "&730J/s",
-                "&7300J 可储存");
+                "&b◆ &730J/s",
+                "&b◆ &7300J 可储存");
 
         public static ItemStack ShaiKTQMachine = new CustomItem(Material.IRON_BLOCK,
                 "&a筛矿提取机 &7[&cI&7]",
                 "&7从圆石提取筛矿,每秒二个",
                 "",
-                "&73J/s",
-                "&7300J 可储存");
+                "&b◆ &73J/s",
+                "&b◆ &7300J 可储存");
 
         public static ItemStack ShaiKTQMachineII = new CustomItem(Material.GOLD_BLOCK,
                 "&a筛矿提取机 &7[&cII&7]",
                 "&7从原石提取筛矿,每秒十个",
                 "",
-                "&76J/s",
-                "&7500J 可储存");
+                "&b◆ &76J/s",
+                "&b◆ &7500J 可储存");
 
         public static SlimefunItemStack Crystal_kong = new SlimefunItemStack("ZIM_CRY_KONG",
                "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvOTc2NThiZGU1NTRkNGNmM2E3ZTU4OGQ3ZGJlYmE1NTQzNGM2OWY3Nzk5MjUwMzhkYTZkN2YxZGIyMTlkNTE2NSJ9fX0=",
@@ -117,15 +117,15 @@ public class Items {
                 "&a加强电动铸锭机 &7[&cI&7]",
                 "",
                 "&c一级机器",
-                "&7512J 可储存",
-                "&730J/s"));
+                "&b◆ &7512J 可储存",
+                "&b◆ &730J/s"));
 
         public static final SlimefunItemStack FastIngotFactory_II = new SlimefunItemStack("ZIM_FAST_INGOT_FACTORY_2",  new CustomItem(Material.SMITHING_TABLE,
                 "&a加强电动铸锭机 &7[&cII&7]",
                 "",
                 "&c二级机器",
-                "&71024J 可储存",
-                "&740J/s"));
+                "&b◆ &71024J 可储存",
+                "&b◆ &740J/s"));
 
         public static final SlimefunItemStack Ender_Singularity = new SlimefunItemStack("ZIM_ENDER_SINGULARITY",
                         Material.IRON_BLOCK,
@@ -143,8 +143,8 @@ public class Items {
                 "&a&l&o元素发电机",
                 "&7将石头,泥土,沙子等作为燃料",
                 "",
-                "&7500J 可储存",
-                "&79J/2s");
+                "&b◆ &7500J 可储存",
+                "&b◆ &79J/2s");
 
         public static SlimefunItemStack AutoSoulCrafter = new SlimefunItemStack("Z_AUTOSOULCRAFTER", Material.IRON_BLOCK,
                 "&c自动处理灵魂",
@@ -159,16 +159,16 @@ public class Items {
                 "&cSC装备制作机 &7[&cI&7]",
                 "",
                 "&c一级机器",
-                "&7100J/s",
-                "&7200J 可储存"));
+                "&b◆ &7100J/s",
+                "&b◆ &7200J 可储存"));
 
         public static SlimefunItemStack SoulCrafter = new SlimefunItemStack("SOUL_CRAFTER",
                         new CustomItem(Material.SMITHING_TABLE,
                 "&c灵魂处理器 &7[&cI&7]",
                 "",
                 "&c一级机器",
-                "&750J/s",
-                "&7200J 可储存"));
+                "&b◆ &750J/s",
+                "&b◆ &7200J 可储存"));
 
         public static SlimefunItemStack gold_sing = new SlimefunItemStack("24K_GOLD_SING", Material.GOLD_BLOCK,
                 "&e24K金奇点");
@@ -184,31 +184,31 @@ public class Items {
                  "&7防御性机器",
                  "",
                  "&c一级机器",
-                 "&750J/s");
+                 "&b◆ &750J/s");
 
         public static ItemStack GoldCrafter = new CustomItem(Material.GOLD_BLOCK,
                  "&e&l24K金制造机",
-                 "&a全自动金粉转为24K金",
+                 "&7全自动金粉转为24K金",
                  "",
                  "&c一体式机器",
-                 "&750J/s",
-                 "&7200J 可储存");
+                 "&b◆ &750J/s",
+                 "&b◆ &7200J 可储存");
 
         public static ItemStack CarbonCrafter = new CustomItem(Material.WHITE_STAINED_GLASS,
                  "&7&l解压机 &7[&cI&7]",
                  "&7钻石转换为128个煤",
                  "",
                  "&c一级机器",
-                 "&790J/s",
-                 "&7200J 可储存");
+                 "&b◆ &790J/s",
+                 "&b◆ &7200J 可储存");
 
         public static ItemStack CarbonCrafter_II = new CustomItem(Material.WHITE_STAINED_GLASS,
                  "&7&l解压机 &7[&cII&7]",
                  "&7钻石或128个煤转换为12个碳",
                  "",
                  "&c二级机器",
-                 "&7100J/s",
-                 "&7400J 可储存");
+                 "&b◆ &7100J/s",
+                 "&b◆ &7400J 可储存");
 
         public static ItemStack ImproveCry = new CustomItem(Material.DIAMOND,
                  "&b&l水晶强化物",
@@ -296,7 +296,7 @@ public class Items {
                 Material.NETHERITE_BLOCK,
                 "&c灵魂鼓舞室",
                 "",
-                "&7速度:10x");
+                "&b◆ &7速度:10x");
 
 
         public static final SlimefunItemStack gold_feet = new SlimefunItemStack("Z_GOLDP_BOOT",
