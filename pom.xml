@@ -83,13 +83,6 @@
     </dependency>
 
 
-    <!-- FAWE Core API -->
-    <dependency>
-      <groupId>com.fastasyncworldedit</groupId>
-      <artifactId>FAWE-Core</artifactId>
-      <version>1.17-157</version>
-      <scope>provided</scope>
-    </dependency>
 
     <dependency>
       <groupId>com.sk89q.worldedit</groupId>
@@ -97,18 +90,12 @@
       <version>7.2.0-SNAPSHOT</version>
       <scope>provided</scope>
     </dependency>
-    <!-- FAWE Bukkit API -->
+
     <dependency>
-      <groupId>com.fastasyncworldedit</groupId>
-      <artifactId>FAWE-Bukkit</artifactId>
-      <version>1.17-157</version>
+      <groupId>com.sk89q.worldedit</groupId>
+      <artifactId>worldedit-bukkit</artifactId>
+      <version>7.2.0-SNAPSHOT</version>
       <scope>provided</scope>
-      <exclusions>
-        <exclusion>
-          <artifactId>FAWE-Core</artifactId>
-          <groupId>*</groupId>
-        </exclusion>
-      </exclusions>
     </dependency>
     <dependency>
       <groupId>com.magmaguy.elitemobs</groupId>

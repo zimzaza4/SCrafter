@@ -80,7 +80,6 @@ public class VoidPopulator extends BlockPopulator {
                     data.setWaterlogged(false);
                     b.setBlockData(data);
                     if (Math.random()>0.9) {
-
                         try{
                             SchematicUtil.SpawnSchmatic(SlimefunZT.getInstance().void_tree, b.getLocation());
                         }catch(IOException exc){
