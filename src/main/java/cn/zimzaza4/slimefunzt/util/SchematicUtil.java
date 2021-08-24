@@ -21,7 +21,7 @@ public class SchematicUtil {
 
     public static void SpawnSchmatic(Clipboard cb, Location l){
         World world = new BukkitWorld(l.getWorld());
-        BlockVector3 loc = BlockVector3.at(l.getX(), l.getY(), l.getZ());
+        BlockVector3 loc =   BlockVector3.at(l.getX(), l.getY(), l.getZ());
         cb.paste(world, loc, false);
     }
 }

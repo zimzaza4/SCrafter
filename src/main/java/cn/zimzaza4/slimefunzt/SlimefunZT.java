@@ -97,7 +97,9 @@ public class SlimefunZT extends JavaPlugin implements SlimefunAddon {
         }
     }
     private void setupSchematic() throws IOException {
-        this.void_tree =SchematicUtil.LoadSchmatic(new File(getDataFolder(), "void_tree.schem"));
+        File f = new File (getDataFolder(),"void_tree.schem");
+        System.out.println("加载文件"+f.getPath()+"中");
+        this.void_tree =SchematicUtil.LoadSchmatic(f);
 
     }
 
