@@ -33,7 +33,7 @@ public class SchematicUtil {
             Clipboard clipboard = reader.read();
             BlockVector3 loc = BlockVector3.at(l.getX(), l.getY(), l.getZ());
 
-            EditSession editSession = WorldEdit.getInstance().newEditSession(world);
+            EditSession editSession = WorldEdit.getInstance().getEditSessionFactory().getEditSession(world, -1);
             Operation operation = new ClipboardHolder(clipboard).createPaste(editSession).to(loc).ignoreAirBlocks(true).build();
             Operations.complete(operation);
 
