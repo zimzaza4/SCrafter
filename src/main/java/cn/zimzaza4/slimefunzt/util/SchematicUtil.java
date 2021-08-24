@@ -25,17 +25,23 @@ public class SchematicUtil {
 
 
     public static void SpawnSchmatic(File schematic, Location l) throws IOException, WorldEditException {
-
-            ClipboardFormat cb = ClipboardFormats.findByFile(schematic);
+            Clipboard cb;
+            ClipboardFormat format = ClipboardFormats.findByFile(schematic);
             World world = new BukkitWorld(l.getWorld());
-            FileInputStream stream = new FileInputStream(schematic);
-            ClipboardReader reader = cb.getReader(stream);
-            Clipboard clipboard = reader.read();
-            BlockVector3 loc = BlockVector3.at(l.getX(), l.getY(), l.getZ());
+            try (ClipboardReader reader = format.getReader(new FileInputStream(schematic))) {
+                    cb = reader.read();
+            }
+            try (EditSession editSession = WorldEdit.getInstance().newEditSession(world)) {
+                    Operation operation = new ClipboardHolder(cb)
+                            .createPaste(editSession)
+                            .to(BlockVector3.at(l.getX(), l.getY(), l.getZ()))
+                            // configure here
+                            .build();
+                    Operations.complete(operation);
+            }
 
-            EditSession editSession = WorldEdit.getInstance().newEditSession(world);
-            Operation operation = new ClipboardHolder(clipboard).createPaste(editSession).to(loc).ignoreAirBlocks(true).build();
-            Operations.complete(operation);
+
+
 
     }
 }
