@@ -1,5 +1,6 @@
 package cn.zimzaza4.slimefunzt.util;
 
+import cn.zimzaza4.slimefunzt.SlimefunZT;
 import com.sk89q.worldedit.EditSession;
 import com.sk89q.worldedit.WorldEdit;
 import com.sk89q.worldedit.WorldEditException;
@@ -35,7 +36,16 @@ public class SchematicUtil {
             return clipboard;
     }
     public static void SpawnSchmatic(Clipboard cb, Location l) throws WorldEditException {
-
+            if (SlimefunZT.getInstance().isFAME==true){
+                try (EditSession editSession = WorldEdit.getInstance().getEditSessionFactory().getEditSession(new BukkitWorld(l.getWorld()), -1)) {
+                    Operation operation = new ClipboardHolder(cb)
+                            .createPaste(editSession)
+                            .to(BlockVector3.at(l.getX(), l.getY(), l.getZ()))
+                            // configure here
+                            .build();
+                    Operations.complete(operation);
+                }
+            }else{
             try (EditSession editSession = WorldEdit.getInstance().newEditSession(new BukkitWorld(l.getWorld()))) {
                     Operation operation = new ClipboardHolder(cb)
                             .createPaste(editSession)
@@ -43,7 +53,7 @@ public class SchematicUtil {
                             // configure here
                             .build();
                     Operations.complete(operation);
-            }
+            }}
 
 
 
