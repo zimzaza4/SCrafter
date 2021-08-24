@@ -18,7 +18,7 @@ import java.util.Locale;
 import java.util.Random;
 
 public class SlimefunZT extends JavaPlugin implements SlimefunAddon {
-
+    public Boolean isFAME;
     private static SlimefunZT Instance;
     public File void_tree;
 
@@ -37,7 +37,11 @@ public class SlimefunZT extends JavaPlugin implements SlimefunAddon {
     @Override
     public void onEnable() {
         Instance = this;
-
+        if (Bukkit.getPluginManager().getPlugin("FastAsyncWorldEdit")!=null){
+            this.isFAME = true;
+        } else {
+            this.isFAME = false;
+        }
         try {
             setupSchematic();
         }
