@@ -31,7 +31,7 @@ public class SchematicUtil {
             try (ClipboardReader reader = format.getReader(new FileInputStream(file))) {
                     clipboard = reader.read();
             } catch (IOException e) {
-                    e.printStackTrace();
+                e.printStackTrace();
             }
             return clipboard;
     }
@@ -45,6 +45,7 @@ public class SchematicUtil {
                             .build();
                     Operations.complete(operation);
                     editSession.flushSession();
+                    editSession.close();
                 }
             }else{
             try (EditSession editSession = WorldEdit.getInstance().newEditSession(new BukkitWorld(l.getWorld()))) {
@@ -54,10 +55,9 @@ public class SchematicUtil {
                             // configure here
                             .build();
                     Operations.complete(operation);
+                    editSession.close();
             }}
-
-
-
-
     }
+
+
 }
