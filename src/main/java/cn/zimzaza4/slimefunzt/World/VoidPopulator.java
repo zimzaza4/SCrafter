@@ -1,6 +1,9 @@
 package cn.zimzaza4.slimefunzt.World;
 
+import cn.zimzaza4.slimefunzt.SlimefunZT;
 import cn.zimzaza4.slimefunzt.lists.Items;
+import cn.zimzaza4.slimefunzt.util.SchematicUtil;
+import lombok.SneakyThrows;
 import me.mrCookieSlime.Slimefun.api.BlockStorage;
 import org.bukkit.Chunk;
 import org.bukkit.Material;
@@ -9,9 +12,11 @@ import org.bukkit.block.Block;
 import org.bukkit.generator.BlockPopulator;
 import org.jetbrains.annotations.NotNull;
 
+import java.io.File;
 import java.util.Random;
 
 public class VoidPopulator extends BlockPopulator {
+    @SneakyThrows
     @Override
     public void populate(@NotNull World world, @NotNull Random random, @NotNull Chunk chunk) {
         if (BlockStorage.getStorage(world) == null){
@@ -52,16 +57,37 @@ public class VoidPopulator extends BlockPopulator {
 
             }
         }
-        for (int i = 0;i<17; i++){
+        for (int i = 0;i<17; i++) {
 
-        x = random.nextInt(16);
-        z = random.nextInt(16);
+            x = random.nextInt(16);
+            z = random.nextInt(16);
 
-        for (y= 180;y>170;y--){
+            for (y = 180; y > 170; y--) {
 
-            if (chunk.getBlock(x, y, z).getType()==Material.GRASS_BLOCK){
-                chunk.getBlock(x, y+1, z).setType(Material.GRASS);
-                break;
+                if (chunk.getBlock(x, y, z).getType() == Material.GRASS_BLOCK) {
+                    chunk.getBlock(x, y + 1, z).setType(Material.GRASS);
+                    break;
+                }
             }
         }
-}}}
+        if (random.nextDouble()<1/4){
+            x = random.nextInt(13);
+            if (x<4){
+                x=4;
+            }
+            z = random.nextInt(13);
+            if (z<4){
+                z=4;
+            }
+            for (y = 76; y > 70; y--) {
+
+                if (chunk.getBlock(x, y, z).getType() == Material.STONE) {
+                    SchematicUtil.SpawnSchmatic(new File(SlimefunZT.getInstance().getDataFolder() + "schematic/", "void_tree"),
+                            chunk.getBlock(x, y+1,z).getLocation());
+                    break;
+                }
+            }
+
+        }
+    }
+}
