@@ -9,6 +9,7 @@ import org.bukkit.Chunk;
 import org.bukkit.Material;
 import org.bukkit.World;
 import org.bukkit.block.Block;
+import org.bukkit.block.data.Waterlogged;
 import org.bukkit.generator.BlockPopulator;
 import org.jetbrains.annotations.NotNull;
 
@@ -72,25 +73,21 @@ public class VoidPopulator extends BlockPopulator {
             for (y=79;y>70;y--){
 
                 if (chunk.getBlock(x, y, z).getType() == Material.STONE) {
-                    chunk.getBlock(x, y + 1, z).setType(Material.DEAD_BRAIN_CORAL_FAN);
+                    Block b = chunk.getBlock(x, y + 1, z);
+                    b.setType(Material.DEAD_BUBBLE_CORAL);
+                    Waterlogged data = (Waterlogged) b.getBlockData();
+                    data.setWaterlogged(false);
+                    b.setBlockData(data);
+                    if (Math.random()>0.6) {
+                        SchematicUtil.SpawnSchmatic(new File(SlimefunZT.getInstance().getDataFolder() , "void_tree.schem"), chunk.getBlock(x, y,z).getLocation());
+                        break;
+                    }
                     break;
                 }
             }
         }
 
-            x = random.nextInt(16);
 
-            z = random.nextInt(16);
-
-            for (y = 79; y > 70; y--) {
-
-                if (chunk.getBlock(x, y, z).getType() == Material.STONE) {
-                    SchematicUtil.SpawnSchmatic(new File(SlimefunZT.getInstance().getDataFolder() , "void_tree.schem"), chunk.getBlock(x, y,z).getLocation());
-
-                    System.out.print("DEBUG:Spawned");
-                    break;
-                }
-            }
 
 
     }
