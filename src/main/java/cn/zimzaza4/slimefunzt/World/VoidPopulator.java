@@ -39,12 +39,13 @@ public class VoidPopulator extends BlockPopulator {
             z = random.nextInt(16);
             if (y>70) {
                 Block chunkblock1 = chunk.getBlock(x, y, z);
-                chunkblock1.setType(Material.GLOWSTONE);
-                chunkblock1.getLocation().add(1,0,0).getBlock().setType(Material.BLACK_STAINED_GLASS);
-                chunkblock1.getLocation().add(0,0,1).getBlock().setType(Material.BLACK_STAINED_GLASS);
-                chunkblock1.getLocation().add(-1,0,0).getBlock().setType(Material.BLACK_STAINED_GLASS);
-                chunkblock1.getLocation().add(0,0,-1).getBlock().setType(Material.BLACK_STAINED_GLASS);
-
+                if (chunkblock1.getType()==Material.AIR) {
+                    chunkblock1.setType(Material.GLOWSTONE);
+                    chunkblock1.getLocation().add(1, 0, 0).getBlock().setType(Material.BLACK_STAINED_GLASS);
+                    chunkblock1.getLocation().add(0, 0, 1).getBlock().setType(Material.BLACK_STAINED_GLASS);
+                    chunkblock1.getLocation().add(-1, 0, 0).getBlock().setType(Material.BLACK_STAINED_GLASS);
+                    chunkblock1.getLocation().add(0, 0, -1).getBlock().setType(Material.BLACK_STAINED_GLASS);
+                }
         }
 
         canspawn = Math.random();
