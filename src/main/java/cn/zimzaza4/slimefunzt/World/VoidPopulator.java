@@ -14,7 +14,6 @@ import org.bukkit.generator.BlockPopulator;
 import org.jetbrains.annotations.NotNull;
 
 import java.io.File;
-import java.io.IOException;
 import java.util.Random;
 
 public class VoidPopulator extends BlockPopulator {
@@ -81,12 +80,9 @@ public class VoidPopulator extends BlockPopulator {
                     data.setWaterlogged(false);
                     b.setBlockData(data);
                     if (Math.random()>0.9) {
-                        try{
                             File f = new File (SlimefunZT.getInstance().getDataFolder(), "void_tree.schem");
                             SchematicUtil.SpawnSchmatic(f, b.getLocation());
-                        }catch(IOException exc){
-                            System.out.println("未加载");
-                        }
+
                         break;
                     }
                     break;
