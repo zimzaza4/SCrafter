@@ -12,14 +12,11 @@ import java.io.IOException;
 
 public class SchematicUtil {
 
-    public static Clipboard LoadSchmatic(File schematic) throws IOException {
 
+
+
+    public static void SpawnSchmatic(File schematic, Location l) throws IOException {
         Clipboard cb = ClipboardFormats.findByFile(schematic).load(schematic);
-        return cb;
-
-    }
-
-    public static void SpawnSchmatic(Clipboard cb, Location l){
         World world = new BukkitWorld(l.getWorld());
         BlockVector3 loc =   BlockVector3.at(l.getX(), l.getY(), l.getZ());
         cb.paste(world, loc, false, false, false);

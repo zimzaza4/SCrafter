@@ -3,7 +3,6 @@ package cn.zimzaza4.slimefunzt.World;
 import cn.zimzaza4.slimefunzt.SlimefunZT;
 import cn.zimzaza4.slimefunzt.lists.Items;
 import cn.zimzaza4.slimefunzt.util.SchematicUtil;
-import com.sk89q.worldedit.extent.clipboard.Clipboard;
 import lombok.SneakyThrows;
 import me.mrCookieSlime.Slimefun.api.BlockStorage;
 import org.bukkit.Chunk;
@@ -14,6 +13,7 @@ import org.bukkit.block.data.Waterlogged;
 import org.bukkit.generator.BlockPopulator;
 import org.jetbrains.annotations.NotNull;
 
+import java.io.IOException;
 import java.util.Random;
 
 public class VoidPopulator extends BlockPopulator {
@@ -80,11 +80,10 @@ public class VoidPopulator extends BlockPopulator {
                     data.setWaterlogged(false);
                     b.setBlockData(data);
                     if (Math.random()>0.9) {
-                        System.out.println("DEBUG: Spawn");
-                        Clipboard cb = SlimefunZT.getInstance().void_tree;
-                        if (cb!=null){
-                            SchematicUtil.SpawnSchmatic(cb, b.getLocation());
-                        }else{
+
+                        try{
+                            SchematicUtil.SpawnSchmatic(SlimefunZT.getInstance().void_tree, b.getLocation());
+                        }catch(IOException exc){
                             System.out.println("未加载");
                         }
                         break;
