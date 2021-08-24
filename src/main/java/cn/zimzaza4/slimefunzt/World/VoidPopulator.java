@@ -80,22 +80,32 @@ public class VoidPopulator extends BlockPopulator {
                     data.setWaterlogged(false);
                     b.setBlockData(data);*/
                     Clipboard cb = null;
-
+                    Boolean isTree = false;
+                    if (x>2&&x<13&&z>2&&z<13){
                     if (Math.random()>0.87){
+
                          cb = SlimefunZT.getInstance().stone_1;
                     }else if (Math.random()>0.9) {
                          cb = SlimefunZT.getInstance().stone_2;
                     }else if (Math.random()>0.93){
+                        isTree = true;
                         cb = SlimefunZT.getInstance().void_tree;
                     }else if (Math.random()>0.99){
+                        isTree = true;
                         cb = SlimefunZT.getInstance().void_tree_large;
                     }
                     if (cb!=null) {
-                        Location loc = b.getLocation().add(0, -random.nextInt(2), 0);
+
+                            Location loc = b.getLocation();
+                            if (isTree) {
+                                loc.add(0, -random.nextInt(2), 0);
+                            }else {
+                                loc.add(0, -1 , 0);
+                            }
                         SchematicUtil.SpawnSchmatic(cb, loc);
                     }
                     break;
-                }
+                }}
             }
         }
 
