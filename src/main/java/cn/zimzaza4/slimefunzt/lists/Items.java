@@ -147,9 +147,9 @@ public class Items {
                 "&b◆ &79J/2s");
 
         public static SlimefunItemStack AutoSoulCrafter = new SlimefunItemStack("Z_AUTOSOULCRAFTER", Material.IRON_BLOCK,
-                "&c自动处理灵魂",
+                "&c全自动灵魂处理器",
                 "",
-                "&7512J 可储存");
+                "&b◆ &7512J 可储存");
 
         public static SlimefunItemStack GhostIngot = new SlimefunItemStack("Z_GHOST_INGOT", new CustomItem(Material.IRON_INGOT,
                 "&7魂锭"));
@@ -233,7 +233,7 @@ public class Items {
         public static SlimefunItemStack EM_soul = new SlimefunItemStack("EM_SOUL", Material.HEART_OF_THE_SEA,
                  "&b灵魂",
                  "",
-                 "&7闪耀着微弱的光");
+                 "&7&o闪耀着微弱的光");
 
         public static SlimefunItemStack EM_boss_soul = new SlimefunItemStack("EM_BOSS_SOUL", Material.HEART_OF_THE_SEA,
                  "&4亡魂",
