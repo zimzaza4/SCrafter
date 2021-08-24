@@ -70,7 +70,7 @@ public class VoidPopulator extends BlockPopulator {
                 }
             }
         }
-        if (random.nextDouble()<0.3){
+        if (Math.random()>0.6){
             x = random.nextInt(13);
             if (x<4){
                 x=4;
