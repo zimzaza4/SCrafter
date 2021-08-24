@@ -42,6 +42,7 @@ public class SchematicUtil {
                             .createPaste(editSession)
                             .to(BlockVector3.at(l.getX(), l.getY(), l.getZ()))
                             // configure here
+                            .ignoreAirBlocks(true)
                             .build();
                     Operations.complete(operation);
                     editSession.flushSession();
@@ -53,6 +54,8 @@ public class SchematicUtil {
                             .createPaste(editSession)
                             .to(BlockVector3.at(l.getX(), l.getY(), l.getZ()))
                             // configure here
+                            .ignoreAirBlocks(true)
+
                             .build();
                     Operations.complete(operation);
                     editSession.close();

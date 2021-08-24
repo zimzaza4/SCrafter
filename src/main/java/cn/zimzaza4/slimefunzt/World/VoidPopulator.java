@@ -3,16 +3,17 @@ package cn.zimzaza4.slimefunzt.World;
 import cn.zimzaza4.slimefunzt.SlimefunZT;
 import cn.zimzaza4.slimefunzt.lists.Items;
 import cn.zimzaza4.slimefunzt.util.SchematicUtil;
+import com.sk89q.worldedit.extent.clipboard.Clipboard;
 import lombok.SneakyThrows;
 import me.mrCookieSlime.Slimefun.api.BlockStorage;
 import org.bukkit.Chunk;
+import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.World;
 import org.bukkit.block.Block;
 import org.bukkit.generator.BlockPopulator;
 import org.jetbrains.annotations.NotNull;
 
-import java.io.File;
 import java.util.Random;
 
 public class VoidPopulator extends BlockPopulator {
@@ -78,11 +79,20 @@ public class VoidPopulator extends BlockPopulator {
                     Waterlogged data = (Waterlogged) b.getBlockData();
                     data.setWaterlogged(false);
                     b.setBlockData(data);*/
-                    if (Math.random()>0.9) {
-                            File f = new File (SlimefunZT.getInstance().getDataFolder(), "void_tree.schem");
-                            SchematicUtil.SpawnSchmatic(SlimefunZT.getInstance().void_tree, b.getLocation());
+                    Clipboard cb = null;
 
-                        break;
+                    if (Math.random()>0.87){
+                         cb = SlimefunZT.getInstance().stone_1;
+                    }else if (Math.random()>0.9) {
+                         cb = SlimefunZT.getInstance().stone_2;
+                    }else if (Math.random()>0.93){
+                        cb = SlimefunZT.getInstance().void_tree;
+                    }else if (Math.random()>0.99){
+                        cb = SlimefunZT.getInstance().void_tree_large;
+                    }
+                    if (cb!=null) {
+                        Location loc = b.getLocation().add(0, -random.nextInt(2), 0);
+                        SchematicUtil.SpawnSchmatic(cb, loc);
                     }
                     break;
                 }

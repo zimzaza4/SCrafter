@@ -23,6 +23,9 @@ public class SlimefunZT extends JavaPlugin implements SlimefunAddon {
     public Boolean isFAME;
     private static SlimefunZT Instance;
     public Clipboard void_tree;
+    public Clipboard void_tree_large;
+    public Clipboard stone_1;
+    public Clipboard stone_2;
 
 
     public JavaPlugin getJavaPlugin() {
@@ -104,6 +107,20 @@ public class SlimefunZT extends JavaPlugin implements SlimefunAddon {
         File f = new File (getDataFolder(),"void_tree.schem");
         System.out.println("Loading "+f.getPath());
         this.void_tree = SchematicUtil.LoadSchmatic(f);
-    }
 
+        f = new File (getDataFolder(),"void_tree_large.schem");
+        System.out.println("Loading "+f.getPath());
+        this.void_tree_large = SchematicUtil.LoadSchmatic(f);
+
+        f = new File (getDataFolder(),"stone_natural_1,schem");
+        System.out.println("Loading "+f.getPath());
+        this.stone_1 = SchematicUtil.LoadSchmatic(f);
+
+        f = new File (getDataFolder(),"stone_natural_2.schem");
+        System.out.println("Loading "+f.getPath());
+        this.stone_2 = SchematicUtil.LoadSchmatic(f);
+
+
+
+    }
 }
