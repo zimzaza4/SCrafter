@@ -91,8 +91,8 @@ public class SlimefunZT extends JavaPlugin implements SlimefunAddon {
     private void setupConfig(){
         if (!new File(getDataFolder(), "config.yml").exists()){
             saveDefaultConfig();
-            saveResource("schematics/void_tree.schem", true);
-            saveResource("schematics/void_tree_2.schem", true);
+            saveResource("void_tree.schem", true);
+            saveResource("void_tree_2.schem", true);
 
         }
     }
