@@ -159,7 +159,7 @@ public class RegSFItem {
 
         RegCryBuff("&a&l强化水晶&e - &e力量",
                       "ZIM_STRONG_MAC",
-                      "&7点击①获得&e力量",
+                      "&7点击以获得&e力量",
                    "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvM2JmMDdhODcyYmJjOTg1YTZmMWE1YTI4M2IzYTZmNjVmMjgzZjM0YjEyZjE0NTY5MWZkOTQwYTVkZTNkNGExMiJ9fX0=",
                 new ItemStack(Material.BLAZE_ROD));
 

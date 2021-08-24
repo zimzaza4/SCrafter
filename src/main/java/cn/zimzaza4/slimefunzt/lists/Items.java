@@ -147,9 +147,9 @@ public class Items {
                 "&b◆ &79J/2s");
 
         public static SlimefunItemStack AutoSoulCrafter = new SlimefunItemStack("Z_AUTOSOULCRAFTER", Material.IRON_BLOCK,
-                "&c自动处理灵魂",
+                "&c全自动灵魂处理器",
                 "",
-                "&7512J 可储存");
+                "&b◆ &7512J 可储存");
 
         public static SlimefunItemStack GhostIngot = new SlimefunItemStack("Z_GHOST_INGOT", new CustomItem(Material.IRON_INGOT,
                 "&7魂锭"));
