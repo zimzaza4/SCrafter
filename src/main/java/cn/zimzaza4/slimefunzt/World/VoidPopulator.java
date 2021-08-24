@@ -72,20 +72,16 @@ public class VoidPopulator extends BlockPopulator {
             for (y=79;y>70;y--){
 
                 if (chunk.getBlock(x, y, z).getType() == Material.STONE) {
-                    chunk.getBlock(x, y + 1, z).setType(Material.DEAD_BUBBLE_CORAL);
+                    chunk.getBlock(x, y + 1, z).setType(Material.DEAD_BRAIN_CORAL_FAN);
                     break;
                 }
             }
         }
 
-            x = random.nextInt(13);
-            if (x<4){
-                x=4;
-            }
-            z = random.nextInt(13);
-            if (z<4){
-                z=4;
-            }
+            x = random.nextInt(16);
+
+            z = random.nextInt(16);
+
             for (y = 79; y > 70; y--) {
 
                 if (chunk.getBlock(x, y, z).getType() == Material.STONE) {
