@@ -174,7 +174,7 @@ public class Items {
                 "&e24K金奇点");
 
         public static SlimefunItemStack Soul_IE_ingot = new SlimefunItemStack("ZIM_SOUL_INF_INGOT", Material.NETHERITE_INGOT,
-                "&r&c&l灵魂无尽锭");
+                "&r&c&l无尽灵魂锭");
 
          public static SlimefunItemStack Soul_EM_IE_ingot = new SlimefunItemStack("ZIM_SOUL_EM_INF_INGOT", Material.NETHERITE_INGOT,
                  "&r&c&l无尽精英锭");
