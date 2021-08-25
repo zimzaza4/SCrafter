@@ -30,6 +30,9 @@ public class SlimefunZT extends JavaPlugin implements SlimefunAddon {
     public Clipboard stone_2;
 
 
+    public String void_world;
+
+
     public JavaPlugin getJavaPlugin() {
         return this;
     }
@@ -81,6 +84,7 @@ public class SlimefunZT extends JavaPlugin implements SlimefunAddon {
         }else {
             isDebug = false;
         }
+        void_world = getConfig().getString("void-world");
     }
 
     public static SlimefunZT getInstance() {

@@ -1,2 +1,5 @@
 # 调试模式
 debug-mode: true
+
+#虚空世界
+void-world: "world_void"
