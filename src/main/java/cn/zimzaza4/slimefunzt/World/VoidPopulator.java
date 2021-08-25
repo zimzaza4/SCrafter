@@ -82,15 +82,17 @@ public class VoidPopulator extends BlockPopulator {
                     Clipboard cb = null;
                     Boolean isTree = false;
                     if (x>2&&x<13&&z>2&&z<13){
-                    if (Math.random()>0.87){
+                       Double rd = Math.random();
+
+                    if (rd>0.87){
 
                          cb = SlimefunZT.getInstance().stone_1;
-                    }else if (Math.random()>0.9) {
+                    }else if (rd>0.9) {
                          cb = SlimefunZT.getInstance().stone_2;
-                    }else if (Math.random()>0.93){
+                    }else if (rd>0.93){
                         isTree = true;
                         cb = SlimefunZT.getInstance().void_tree;
-                    }else if (Math.random()>0.99){
+                    }else if (rd>0.99){
                         isTree = true;
                         cb = SlimefunZT.getInstance().void_tree_large;
                     }
