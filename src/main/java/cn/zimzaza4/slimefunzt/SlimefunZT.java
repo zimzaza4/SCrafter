@@ -12,6 +12,7 @@ import io.github.thebusybiscuit.slimefun4.api.SlimefunAddon;
 import org.bukkit.*;
 import org.bukkit.generator.ChunkGenerator;
 import org.bukkit.plugin.java.JavaPlugin;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import java.io.File;
@@ -33,7 +34,7 @@ public class SlimefunZT extends JavaPlugin implements SlimefunAddon {
     public String void_world;
 
 
-    public JavaPlugin getJavaPlugin() {
+    public @NotNull JavaPlugin getJavaPlugin() {
         return this;
     }
 
@@ -52,15 +53,11 @@ public class SlimefunZT extends JavaPlugin implements SlimefunAddon {
 
         inst = this;
 
-        if (Bukkit.getPluginManager().getPlugin("FastAsyncWorldEdit")!=null){
-            this.isFAME = true;
-        } else {
-            this.isFAME = false;
-        }
+        this.isFAME = Bukkit.getPluginManager().getPlugin("FastAsyncWorldEdit") != null;
         setupConfig();
         RegSFMachine.run();
         RegSFItem.run();
-        try{setupSchematic();}catch(IOException ioException){}
+        try{setupSchematic();}catch(IOException ignored){}
 
 
         if (Bukkit.getWorld("world_void") == null) {
@@ -71,7 +68,7 @@ public class SlimefunZT extends JavaPlugin implements SlimefunAddon {
             newWorld = newWorld.type(WorldType.NORMAL);
             newWorld = newWorld.generateStructures(false);
             newWorld = newWorld.generator(new VoidWorld());
-            World w = newWorld.createWorld();
+            World world = newWorld.createWorld();
         }
 
         if (Bukkit.getPluginManager().getPlugin("EliteMobs") != null) {

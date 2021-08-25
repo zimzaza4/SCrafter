@@ -28,8 +28,11 @@ public class SchematicUtil {
             Clipboard clipboard = null;
 
             ClipboardFormat format = ClipboardFormats.findByFile(file);
-            try (ClipboardReader reader = format.getReader(new FileInputStream(file))) {
-                    clipboard = reader.read();
+            try {
+                assert format != null;
+                try (ClipboardReader reader = format.getReader(new FileInputStream(file))) {
+                        clipboard = reader.read();
+                }
             } catch (IOException e) {
                 e.printStackTrace();
             }
