@@ -11,6 +11,7 @@ import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.World;
 import org.bukkit.block.Block;
+import org.bukkit.block.data.Waterlogged;
 import org.bukkit.generator.BlockPopulator;
 import org.jetbrains.annotations.NotNull;
 
@@ -77,10 +78,10 @@ public class VoidPopulator extends BlockPopulator {
                 if (chunk.getBlock(x, y, z).getType() == Material.STONE) {
                     Block b = chunk.getBlock(x, y + 1, z);
 
-                    /*b.setType(Material.DEAD_BUBBLE_CORAL);
+                    b.setType(Material.DEAD_BUBBLE_CORAL);
                     Waterlogged data = (Waterlogged) b.getBlockData();
                     data.setWaterlogged(false);
-                    b.setBlockData(data);*/
+
 
                     Clipboard cb = null;
 
