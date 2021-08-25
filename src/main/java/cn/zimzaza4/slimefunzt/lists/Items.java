@@ -140,7 +140,7 @@ public class Items {
                 "&b&l魂奇点");
 
         public static ItemStack ZIMysger = new CustomItem(Material.BLACK_STAINED_GLASS,
-                "&a&l&o元素发电机",
+                "&a&l元素发电机",
                 "&7将石头,泥土,沙子等作为燃料",
                 "",
                 "&7⇨ &e⚡ &7500J 可储存",
