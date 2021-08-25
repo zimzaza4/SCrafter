@@ -81,8 +81,8 @@ public class VoidPopulator extends BlockPopulator {
                     b.setBlockData(data);*/
                     Clipboard cb = null;
                     Boolean isTree = false;
-                    if (x>2&&x<13&&z>2&&z<13){
-                       Double rd = Math.random();
+
+                    Double rd = Math.random();
 
                     if (rd>0.87){
 
@@ -104,10 +104,12 @@ public class VoidPopulator extends BlockPopulator {
                             }else {
                                 loc.add(0, -1 , 0);
                             }
-                        SchematicUtil.SpawnSchmatic(cb, loc);
+
+                            SchematicUtil.SpawnSchmatic(cb, loc);
                             break;
                     }
-                }}
+                }
+
             }
         }
 
