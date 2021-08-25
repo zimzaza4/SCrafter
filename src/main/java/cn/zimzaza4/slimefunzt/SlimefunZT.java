@@ -46,6 +46,7 @@ public class SlimefunZT extends JavaPlugin implements SlimefunAddon {
 
     @Override
     public void onEnable() {
+        isDebug = getConfig().getBoolean("debug-mode", false);
         Instance = this;
         inst = this;
         if (Bukkit.getPluginManager().getPlugin("FastAsyncWorldEdit")!=null){
@@ -79,12 +80,6 @@ public class SlimefunZT extends JavaPlugin implements SlimefunAddon {
         }
         Bukkit.getPluginManager().registerEvents(new ClickMac(), this);
 
-        if (getConfig().getBoolean("debug-mode")==true){
-            isDebug = true;
-        }else {
-            isDebug = false;
-        }
-        void_world = getConfig().getString("void-world");
     }
 
     public static SlimefunZT getInstance() {
