@@ -16,25 +16,25 @@ public class Items {
 
         public static MultiCategory Main_Cate = new MultiCategory(new NamespacedKey(SlimefunZT.getInstance(), "ZIM_MAIN_CATE"), new CustomItem(Material.NETHERITE_BLOCK, "&cSiciliaCraft"));
         public static SubCategory Cate = new SubCategory(new NamespacedKey(SlimefunZT.getInstance(), "ZIM_MA_D"),Main_Cate,
-                        new CustomItem(Material.DIAMOND, "&e&l SC拓展 - 物品"));
+                        new CustomItem(Material.BLACK_STAINED_GLASS, "&e&l SC拓展 &7- &6机器"));
 
         public static SubCategory MatCate = new SubCategory(new NamespacedKey(SlimefunZT.getInstance(), "ZIM_MAT"),Main_Cate,
-                        new CustomItem(Material.GOLD_ORE, "&e&l SC拓展 - 材料"));
+                        new CustomItem(Material.GOLD_ORE, "&e&l SC拓展 &7- &d材料"));
 
         public static SubCategory crystal = new SubCategory(new NamespacedKey(SlimefunZT.getInstance(), "ZIM_MA_D_C"),Main_Cate,
-                        new CustomItem(Material.DIAMOND, "&e&l SC拓展 - 强化"));
+                        new CustomItem(Material.DIAMOND, "&e&l SC拓展 &7- &9强化"));
 
         public static SubCategory ToolCate = new SubCategory(new NamespacedKey(SlimefunZT.getInstance(), "ZIM_MA_TOOL"),Main_Cate,
-                        new CustomItem(Material.DIAMOND_PICKAXE, "&b&l SC拓展 - 工具"));
+                        new CustomItem(Material.DIAMOND_PICKAXE, "&b&l SC拓展 &7- &6工具"));
 
         public static SubCategory WeaponCate = new SubCategory(new NamespacedKey(SlimefunZT.getInstance(), "ZIM_WEAPONS"),Main_Cate,
-            new CustomItem(Material.DIAMOND_PICKAXE, "&b&l SC拓展 - &e武器和锻造"));
+            new CustomItem(Material.IRON_SWORD, "&b&l SC拓展 &7- &e武器和锻造"));
 
         public static SubCategory IE = new SubCategory(new NamespacedKey(SlimefunZT.getInstance(), "ZIM_MA_IE"),Main_Cate,
-                        new CustomItem(Material.NETHERITE_BLOCK, "&e&l SC拓展 - &c疯狂无限"));
+                        new CustomItem(Material.NETHERITE_BLOCK, "&e&l SC拓展 &7- &c疯狂无限"));
 
         public static SubCategory NB = new SubCategory(new NamespacedKey(SlimefunZT.getInstance(), "ZIM_NEW_B"),Main_Cate,
-            new CustomItem(Material.NETHERITE_BLOCK, "&e&l SC拓展 - &a结束了?"));
+            new CustomItem(Material.BEDROCK, "&e&l SC拓展 &7- &a结束了?"));
     // -------------------------------------------------------------------------------------------------------------------------------------------
 
     // 多方块结构
@@ -56,7 +56,7 @@ public class Items {
                 "&c灵魂地基"));
 
         public static SlimefunItemStack IE_Soul_torch = new SlimefunItemStack("ZIM_SOUL_TORCH", new CustomItem(Material.SOUL_TORCH,
-                "&c灵魂无尽火把"));
+                "&9灵魂无尽火把"));
 
         public static SlimefunItemStack IE_Soul_Glass = new SlimefunItemStack("ZIM_SOUL_GLASS", new CustomItem(Material.BLACK_STAINED_GLASS,
                 "&e亡魂玻璃"));
@@ -86,9 +86,9 @@ public class Items {
 
         public static SlimefunItemStack Crystal_kong = new SlimefunItemStack("ZIM_CRY_KONG",
                "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvOTc2NThiZGU1NTRkNGNmM2E3ZTU4OGQ3ZGJlYmE1NTQzNGM2OWY3Nzk5MjUwMzhkYTZkN2YxZGIyMTlkNTE2NSJ9fX0=",
-                "&o&l&7强化水晶",
+                "&9&l强化水晶",
                 "",
-                "&7无效果的合成材料");
+                "&7有效水晶的基础合成材料");
 
         public static final SlimefunItemStack EnderOre = new SlimefunItemStack("ZIM_ENDER_ORE", Material.LAPIS_ORE,
                 "&b&l紫影矿",
@@ -255,7 +255,7 @@ public class Items {
 
         public static final SlimefunItemStack Ender_feet = new SlimefunItemStack("Z_ENDER_BOOT",
                 Material.IRON_BOOTS,
-                 "&6紫影靴");
+                 "&9紫影靴");
         static {
 
                 Ender_feet.addUnsafeEnchantment(Enchantment.PROTECTION_ENVIRONMENTAL, 5);
@@ -263,14 +263,14 @@ public class Items {
 
         public static final SlimefunItemStack Ender_Leg = new SlimefunItemStack("Z_ENDER_LEG",
                 Material.IRON_LEGGINGS,
-                "&6紫影护腿");
+                "&9紫影护腿");
         static {
                 Ender_Leg.addUnsafeEnchantment(Enchantment.PROTECTION_ENVIRONMENTAL, 5);
         }
 
         public static final SlimefunItemStack Ender_Chest = new SlimefunItemStack("Z_ENDER_CHEST",
                 Material.IRON_CHESTPLATE,
-                "&6紫影胸甲");
+                "&9紫影胸甲");
         static {
 
                 Ender_Chest.addUnsafeEnchantment(Enchantment.PROTECTION_ENVIRONMENTAL, 5);
@@ -278,14 +278,14 @@ public class Items {
 
         public static final SlimefunItemStack Ender_Head = new SlimefunItemStack("Z_ENDER_HELMET",
                 Material.IRON_HELMET,
-                "&6紫影头盔");
+                "&9紫影头盔");
         static {
                 Ender_Head.addUnsafeEnchantment(Enchantment.PROTECTION_ENVIRONMENTAL, 5);
         }
 
         public static final SlimefunItemStack Soul_Sword = new SlimefunItemStack("ZIM_SOUL_SWOED",
                 Material.IRON_SWORD,
-                "&7魂剑",
+                "&7&l魂剑",
                 "",
                 "&c提高灵魂粉末的掉落数量");
         static {
