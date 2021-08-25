@@ -85,7 +85,8 @@ public class VoidPopulator extends BlockPopulator {
                     Clipboard cb = null;
                     Boolean isTree = false;
 
-                    Double rd = Math.random();
+                    Double rd = random.nextDouble();
+
                     if (rd > 0.99) {
                         isTree = true;
                         cb = SlimefunZT.getInstance().void_tree_large;
@@ -100,23 +101,18 @@ public class VoidPopulator extends BlockPopulator {
                     }
                     if (SlimefunZT.inst.isDebug) {
                         System.out.println(rd);
+                        System.out.println("Spawned?");
                     }
-
-                    if (cb != null) {
-                        if (SlimefunZT.inst.isDebug) {
-                            System.out.println("Spawned?");
-
-
-                            Location loc = b.getLocation();
-                            if (isTree) {
-                                loc.add(0, -random.nextInt(2), 0);
-                            } else {
-                                loc.add(0, -1, 0);
-                            }
-
-                            SchematicUtil.SpawnSchmatic(cb, loc);
-                            break;
+                    if (cb!=null) {
+                        Location loc = b.getLocation();
+                        if (isTree) {
+                            loc.add(0, -random.nextInt(2), 0);
+                        } else {
+                            loc.add(0, 0, 0);
                         }
+
+                        SchematicUtil.SpawnSchmatic(cb, loc);
+
                     }
                 }
             }
