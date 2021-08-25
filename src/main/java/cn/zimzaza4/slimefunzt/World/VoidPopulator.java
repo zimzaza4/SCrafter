@@ -105,8 +105,8 @@ public class VoidPopulator extends BlockPopulator {
                                 loc.add(0, -1 , 0);
                             }
                         SchematicUtil.SpawnSchmatic(cb, loc);
+                            break;
                     }
-                    break;
                 }}
             }
         }
