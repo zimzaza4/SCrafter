@@ -94,7 +94,7 @@ public class VoidPopulator extends BlockPopulator {
                         isTree = true;
                         cb = SlimefunZT.getInstance().void_tree;
 
-                    } else if (rd > 0.9) {
+                    } else if (rd > 0.90) {
                         cb = SlimefunZT.getInstance().stone_2;
                     } else if (rd > 0.87) {
                         cb = SlimefunZT.getInstance().stone_1;

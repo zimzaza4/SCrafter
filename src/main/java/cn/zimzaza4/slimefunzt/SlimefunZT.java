@@ -57,12 +57,12 @@ public class SlimefunZT extends JavaPlugin implements SlimefunAddon {
         } else {
             this.isFAME = false;
         }
-        try {
-            setupSchematic();
-        }
-        catch (IOException ioe){
-            System.out.println("§c 加载结构失败");
-        }
+        setupConfig();
+        RegSFMachine.run();
+        RegSFItem.run();
+        try{setupSchematic();}catch(IOException ioException){}
+
+
         if (Bukkit.getWorld("world_void") == null) {
             WorldCreator newWorld = new WorldCreator("world_void");
             newWorld.environment(World.Environment.NORMAL);
@@ -73,9 +73,7 @@ public class SlimefunZT extends JavaPlugin implements SlimefunAddon {
             newWorld = newWorld.generator(new VoidWorld());
             World w = newWorld.createWorld();
         }
-        setupConfig();
-        RegSFMachine.run();
-        RegSFItem.run();
+
         if (Bukkit.getPluginManager().getPlugin("EliteMobs") != null) {
             Bukkit.getPluginManager().registerEvents(new EliteMobD(), this);
         }else {
@@ -109,7 +107,7 @@ public class SlimefunZT extends JavaPlugin implements SlimefunAddon {
         if (!new File(getDataFolder(), "config.yml").exists()){
             saveDefaultConfig();
             saveResource("void_tree.schem", true);
-            saveResource("void_tree_2.schem", true);
+            saveResource("void_tree_large.schem", true);
             saveResource("stone_natural_1.schem", true);
             saveResource("stone_natural_2.schem", true);
         }
