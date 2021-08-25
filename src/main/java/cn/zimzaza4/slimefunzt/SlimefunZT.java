@@ -47,8 +47,11 @@ public class SlimefunZT extends JavaPlugin implements SlimefunAddon {
     @Override
     public void onEnable() {
         isDebug = getConfig().getBoolean("debug-mode", false);
+
         Instance = this;
+
         inst = this;
+
         if (Bukkit.getPluginManager().getPlugin("FastAsyncWorldEdit")!=null){
             this.isFAME = true;
         } else {
