@@ -21,6 +21,8 @@ import java.util.Random;
 
 public class SlimefunZT extends JavaPlugin implements SlimefunAddon {
     public Boolean isFAME;
+    public Boolean isDebug;
+    public static SlimefunZT inst;
     private static SlimefunZT Instance;
     public Clipboard void_tree;
     public Clipboard void_tree_large;
@@ -42,6 +44,7 @@ public class SlimefunZT extends JavaPlugin implements SlimefunAddon {
     @Override
     public void onEnable() {
         Instance = this;
+        inst = this;
         if (Bukkit.getPluginManager().getPlugin("FastAsyncWorldEdit")!=null){
             this.isFAME = true;
         } else {
@@ -73,6 +76,11 @@ public class SlimefunZT extends JavaPlugin implements SlimefunAddon {
         }
         Bukkit.getPluginManager().registerEvents(new ClickMac(), this);
 
+        if (getConfig().getBoolean("debug-mode")==true){
+            isDebug = true;
+        }else {
+            isDebug = false;
+        }
     }
 
     public static SlimefunZT getInstance() {
@@ -100,7 +108,8 @@ public class SlimefunZT extends JavaPlugin implements SlimefunAddon {
             saveDefaultConfig();
             saveResource("void_tree.schem", true);
             saveResource("void_tree_2.schem", true);
-
+            saveResource("stone_natural_1.schem", true);
+            saveResource("stone_natural_2.schem", true);
         }
     }
     private void setupSchematic() throws IOException {

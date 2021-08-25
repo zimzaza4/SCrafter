@@ -17,6 +17,7 @@ import org.jetbrains.annotations.NotNull;
 import java.util.Random;
 
 public class VoidPopulator extends BlockPopulator {
+
     @SneakyThrows
     @Override
     public void populate(@NotNull World world, @NotNull Random random, @NotNull Chunk chunk) {
@@ -96,8 +97,13 @@ public class VoidPopulator extends BlockPopulator {
                         isTree = true;
                         cb = SlimefunZT.getInstance().void_tree_large;
                     }
+                    if (SlimefunZT.inst.isDebug==true){
+                        System.out.println(rd);
+                    }
                     if (cb!=null) {
-
+                            if (SlimefunZT.inst.isDebug==true){
+                                System.out.println("Spawned?");
+                            }
                             Location loc = b.getLocation();
                             if (isTree) {
                                 loc.add(0, -random.nextInt(2), 0);
