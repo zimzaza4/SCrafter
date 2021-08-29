@@ -57,20 +57,21 @@ public class SlimefunZT extends JavaPlugin implements SlimefunAddon {
         setupConfig();
         RegSFMachine.run();
         RegSFItem.run();
-        try{setupSchematic();}catch(IOException ignored){}
 
 
-        if (Bukkit.getWorld("world_void") == null) {
-            WorldCreator newWorld = new WorldCreator("world_void");
-            newWorld.environment(World.Environment.NORMAL);
-            long seed = new Random().nextLong();
-            newWorld = newWorld.seed(seed);
-            newWorld = newWorld.type(WorldType.NORMAL);
-            newWorld = newWorld.generateStructures(false);
-            newWorld = newWorld.generator(new VoidWorld());
-            World world = newWorld.createWorld();
+        if (getConfig().getBoolean("enable-void-world")) {
+            try{setupSchematic();}catch(IOException ignored){}
+            if (Bukkit.getWorld("world_void") == null) {
+                WorldCreator newWorld = new WorldCreator("world_void");
+                newWorld.environment(World.Environment.NORMAL);
+                long seed = new Random().nextLong();
+                newWorld = newWorld.seed(seed);
+                newWorld = newWorld.type(WorldType.NORMAL);
+                newWorld = newWorld.generateStructures(false);
+                newWorld = newWorld.generator(new VoidWorld());
+                World world = newWorld.createWorld();
+            }
         }
-
         if (Bukkit.getPluginManager().getPlugin("EliteMobs") != null) {
             Bukkit.getPluginManager().registerEvents(new EliteMobD(), this);
         }else {

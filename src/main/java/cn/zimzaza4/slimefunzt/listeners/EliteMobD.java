@@ -1,5 +1,6 @@
 package cn.zimzaza4.slimefunzt.listeners;
 
+import cn.zimzaza4.slimefunzt.lists.Items;
 import com.magmaguy.elitemobs.api.EliteMobDeathEvent;
 import me.mrCookieSlime.Slimefun.Objects.SlimefunItem.SlimefunItem;
 import me.mrCookieSlime.Slimefun.api.SlimefunItemStack;
@@ -8,11 +9,7 @@ import org.bukkit.entity.LivingEntity;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
-
-import cn.zimzaza4.slimefunzt.lists.Items;
 import org.bukkit.event.entity.EntityDamageByEntityEvent;
-import org.bukkit.event.entity.EntityDamageEvent;
-import org.bukkit.inventory.ItemStack;
 
 public class EliteMobD implements Listener {
 
@@ -31,10 +28,10 @@ public class EliteMobD implements Listener {
     @EventHandler
     public void EliteMobDeath(EliteMobDeathEvent e) {
        if (e.getEntity() instanceof LivingEntity) {
-           if (e.getEliteMobEntity()!=null){
+           if (e.getEliteEntity()!=null){
 
 
-                   int level = e.getEliteMobEntity().getLevel();
+                   int level = e.getEliteEntity().getLevel();
 
         LivingEntity le = (LivingEntity) e.getEntity();
         if (le.getKiller()!=null&&le.getKiller().getPlayer() != null) {
