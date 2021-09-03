@@ -1,25 +1,24 @@
 package cn.zimzaza4.slimefunzt.machines;
 
-import me.mrCookieSlime.Slimefun.Lists.RecipeType;
-import me.mrCookieSlime.Slimefun.Objects.Category;
+import io.github.thebusybiscuit.slimefun4.api.items.ItemGroup;
+import io.github.thebusybiscuit.slimefun4.api.items.SlimefunItemStack;
+import io.github.thebusybiscuit.slimefun4.api.recipes.RecipeType;
 import me.mrCookieSlime.Slimefun.Objects.SlimefunItem.abstractItems.AContainer;
-import me.mrCookieSlime.Slimefun.api.SlimefunItemStack;
-
 import org.bukkit.Material;
 import org.bukkit.inventory.ItemStack;
 
 public class ZmDiamondMach extends AContainer {
 
-    public ZmDiamondMach(Category category, SlimefunItemStack item, RecipeType recipeType, ItemStack[] recipe) {
+    public ZmDiamondMach(ItemGroup category, SlimefunItemStack item, RecipeType recipeType, ItemStack[] recipe) {
         super(category, item, recipeType, recipe);
     }
 
-    public ZmDiamondMach(Category category, SlimefunItemStack item, RecipeType recipeType, ItemStack[] recipe,
+    public ZmDiamondMach(ItemGroup category, SlimefunItemStack item, RecipeType recipeType, ItemStack[] recipe,
             ItemStack recipeOutput) {
         super(category, item, recipeType, recipe, recipeOutput);
     }
 
-    public ZmDiamondMach(Category category, String id, ItemStack item, RecipeType recipeType, ItemStack[] recipe) {
+    public ZmDiamondMach(ItemGroup category, String id, ItemStack item, RecipeType recipeType, ItemStack[] recipe) {
         super(category, new SlimefunItemStack(id, item), recipeType, recipe);
     }
 

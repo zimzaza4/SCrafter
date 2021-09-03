@@ -58,14 +58,14 @@
     <dependency>
       <groupId>com.github.Slimefun</groupId>
       <artifactId>Slimefun4</artifactId>
-      <version>RC-23</version>
+      <version>RC-27</version>
       <scope>provided</scope>
-      <exclusions>
-        <exclusion>
-          <artifactId>cscorelib2</artifactId>
-          <groupId>io.github.thebusybiscuit</groupId>
-        </exclusion>
-      </exclusions>
+    </dependency>
+    <dependency>
+      <groupId>io.github.baked-libs</groupId>
+      <artifactId>dough-api</artifactId>
+      <version>1.0.2</version>
+      <scope>compile</scope>
     </dependency>
     <dependency>
       <groupId>io.github.mooy1</groupId>
@@ -113,7 +113,7 @@
     <dependency>
       <groupId>io.github.mooy1</groupId>
       <artifactId>InfinityLib</artifactId>
-      <version>84a3ce8</version>
+      <version>ed79898</version>
     </dependency>
 
   </dependencies>
@@ -134,6 +134,29 @@
 
     <plugins>
       <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-shade-plugin</artifactId>
+        <version>3.2.4</version>
+
+        <configuration>
+          <relocations>
+            <relocation>
+              <pattern>io.github.bakedlibs.dough</pattern>
+              <shadedPattern>cn.zimzaza4.slimefunzt.dough</shadedPattern>
+            </relocation>
+          </relocations>
+        </configuration>
+
+        <executions>
+          <execution>
+            <phase>package</phase>
+            <goals>
+              <goal>shade</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+      <plugin>
                 <!-- Compiler plugin -->
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
@@ -147,27 +170,6 @@
                     </excludes>
                 </configuration>
        </plugin>
-      <plugin>
-        <artifactId>maven-shade-plugin</artifactId>
-        <version>3.1.0</version>
-        <executions>
-          <execution>
-            <phase>package</phase>
-            <goals>
-              <goal>shade</goal>
-            </goals>
-          </execution>
-        </executions>
-        <configuration>
-          <relocations>
-            <relocation>
-              <pattern>io.github.thebusybiscuit.cscorelib2</pattern>
-              <shadedPattern>cn.zimzaza4.slimefunzt.cscorelib2</shadedPattern>
-            </relocation>
-          </relocations>
-          <filters />
-        </configuration>
-      </plugin>
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-shade-plugin</artifactId>

@@ -20,7 +20,7 @@ public class VoidWorldDamage {
                     }
                 }
             }
-        };
+        }.runTaskTimer(SlimefunZT.inst, 10, 20);
     }
 }
 

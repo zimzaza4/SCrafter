@@ -1,13 +1,22 @@
 package cn.zimzaza4.slimefunzt.machines;
 
-import java.util.ArrayList;
-import java.util.LinkedHashMap;
-import java.util.List;
-
-import javax.annotation.Nonnull;
-
 import cn.zimzaza4.slimefunzt.SlimefunZT;
 import cn.zimzaza4.slimefunzt.lists.Items;
+import io.github.bakedlibs.dough.collections.Pair;
+import io.github.bakedlibs.dough.items.CustomItemStack;
+import io.github.mooy1.infinityexpansion.infinitylib.items.StackUtils;
+import io.github.mooy1.infinityexpansion.infinitylib.presets.MenuPreset;
+import io.github.mooy1.infinityexpansion.infinitylib.recipes.RecipeMap;
+import io.github.mooy1.infinityexpansion.infinitylib.recipes.RecipeOutput;
+import io.github.mooy1.infinityexpansion.infinitylib.recipes.ShapedRecipe;
+import io.github.mooy1.infinityexpansion.items.abstracts.AbstractEnergyCrafter;
+import io.github.mooy1.infinityexpansion.utils.Util;
+import io.github.thebusybiscuit.slimefun4.api.items.ItemGroup;
+import io.github.thebusybiscuit.slimefun4.api.items.SlimefunItemStack;
+import io.github.thebusybiscuit.slimefun4.api.recipes.RecipeType;
+import io.github.thebusybiscuit.slimefun4.utils.ChestMenuUtils;
+import me.mrCookieSlime.Slimefun.api.inventory.BlockMenu;
+import me.mrCookieSlime.Slimefun.api.inventory.BlockMenuPreset;
 import org.bukkit.ChatColor;
 import org.bukkit.Location;
 import org.bukkit.Material;
@@ -17,24 +26,10 @@ import org.bukkit.entity.Player;
 import org.bukkit.event.block.BlockBreakEvent;
 import org.bukkit.inventory.ItemStack;
 
-import io.github.mooy1.infinityexpansion.InfinityExpansion;
-import io.github.mooy1.infinityexpansion.categories.InfinityCategory;
-import io.github.mooy1.infinityexpansion.items.Blocks;
-import io.github.mooy1.infinityexpansion.items.abstracts.AbstractEnergyCrafter;
-import io.github.mooy1.infinityexpansion.utils.Util;
-import io.github.mooy1.infinitylib.items.StackUtils;
-import io.github.mooy1.infinitylib.presets.MenuPreset;
-import io.github.mooy1.infinitylib.recipes.RecipeMap;
-import io.github.mooy1.infinitylib.recipes.RecipeOutput;
-import io.github.mooy1.infinitylib.recipes.ShapedRecipe;
-import io.github.thebusybiscuit.slimefun4.utils.ChestMenuUtils;
-import me.mrCookieSlime.Slimefun.Lists.RecipeType;
-import me.mrCookieSlime.Slimefun.Objects.Category;
-import me.mrCookieSlime.Slimefun.api.SlimefunItemStack;
-import me.mrCookieSlime.Slimefun.api.inventory.BlockMenu;
-import me.mrCookieSlime.Slimefun.api.inventory.BlockMenuPreset;
-import me.mrCookieSlime.Slimefun.cscorelib2.collections.Pair;
-import me.mrCookieSlime.Slimefun.cscorelib2.item.CustomItem;
+import javax.annotation.Nonnull;
+import java.util.ArrayList;
+import java.util.LinkedHashMap;
+import java.util.List;
 
 /**
  * A 6x6 crafting table O.o
@@ -68,7 +63,7 @@ public final class SCArmorCrafter extends AbstractEnergyCrafter {
                 IDS.add(item.getItemId());
             }, "", "&c请在SC配方内查看正确的配方!");
 
-    public SCArmorCrafter(Category category, SlimefunItemStack item, RecipeType type, ItemStack[] recipe, int energy) {
+    public SCArmorCrafter(ItemGroup category, SlimefunItemStack item, RecipeType type, ItemStack[] recipe, int energy) {
         super(category, item, type, recipe, energy, STATUS_SLOT);
     }
 
@@ -86,7 +81,7 @@ public final class SCArmorCrafter extends AbstractEnergyCrafter {
         for (int i : STATUS_BORDER) {
             blockMenuPreset.addItem(i, MenuPreset.STATUS_ITEM, ChestMenuUtils.getEmptyClickHandler());
         }
-        blockMenuPreset.addItem(RECIPE_SLOT, new CustomItem(Material.BOOK, "&6配方"), ChestMenuUtils.getEmptyClickHandler());
+        blockMenuPreset.addItem(RECIPE_SLOT, new CustomItemStack(Material.BOOK, "&6配方"), ChestMenuUtils.getEmptyClickHandler());
         blockMenuPreset.addItem(STATUS_SLOT, MenuPreset.INVALID_INPUT, ChestMenuUtils.getEmptyClickHandler());
     }
 

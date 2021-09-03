@@ -2,10 +2,9 @@ package cn.zimzaza4.slimefunzt.util;
 
 import cn.zimzaza4.slimefunzt.lists.Items;
 import cn.zimzaza4.slimefunzt.machines.ie.NewSingConer;
-import io.github.mooy1.infinityexpansion.InfinityExpansion;
+import io.github.bakedlibs.dough.items.CustomItemStack;
+import io.github.thebusybiscuit.slimefun4.api.items.SlimefunItemStack;
 import io.github.thebusybiscuit.slimefun4.implementation.items.blocks.UnplaceableBlock;
-import me.mrCookieSlime.Slimefun.api.SlimefunItemStack;
-import me.mrCookieSlime.Slimefun.cscorelib2.item.CustomItem;
 import org.apache.commons.lang.Validate;
 import org.bukkit.inventory.ItemStack;
 
@@ -37,10 +36,10 @@ public final class SingCreater extends UnplaceableBlock {
         int extra = amount % 64;
 
         for (int i = 0 ; i < stacks ; i++) {
-            recipe.add(new CustomItem(item, 64));
+            recipe.add(new CustomItemStack(item, 64));
         }
 
-        recipe.add(new CustomItem(item, extra));
+        recipe.add(new CustomItemStack(item, extra));
 
         while (recipe.size() < 9) {
             recipe.add(null);

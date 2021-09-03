@@ -1,18 +1,24 @@
 package cn.zimzaza4.slimefunzt.machines.ie;
 
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-
-import javax.annotation.Nonnull;
-import javax.annotation.Nullable;
-
 import cn.zimzaza4.slimefunzt.SlimefunZT;
 import cn.zimzaza4.slimefunzt.items.IEItem;
+import io.github.bakedlibs.dough.items.CustomItemStack;
+import io.github.mooy1.infinityexpansion.infinitylib.items.StackUtils;
+import io.github.mooy1.infinityexpansion.infinitylib.presets.MenuPreset;
+import io.github.mooy1.infinityexpansion.items.abstracts.AbstractMachine;
+import io.github.mooy1.infinityexpansion.utils.Util;
+import io.github.thebusybiscuit.slimefun4.api.items.ItemGroup;
+import io.github.thebusybiscuit.slimefun4.api.items.SlimefunItemStack;
+import io.github.thebusybiscuit.slimefun4.api.recipes.RecipeType;
+import io.github.thebusybiscuit.slimefun4.core.attributes.RecipeDisplayItem;
+import io.github.thebusybiscuit.slimefun4.libraries.dough.collections.Pair;
 import lombok.AllArgsConstructor;
-
+import me.mrCookieSlime.Slimefun.api.BlockStorage;
+import me.mrCookieSlime.Slimefun.api.inventory.BlockMenu;
+import me.mrCookieSlime.Slimefun.api.inventory.BlockMenuPreset;
+import me.mrCookieSlime.Slimefun.api.inventory.DirtyChestMenu;
+import me.mrCookieSlime.Slimefun.api.item_transport.ItemTransportFlow;
 import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.NamespacedKey;
@@ -20,23 +26,12 @@ import org.bukkit.block.Block;
 import org.bukkit.event.block.BlockBreakEvent;
 import org.bukkit.inventory.ItemStack;
 
-import io.github.mooy1.infinityexpansion.InfinityExpansion;
-import io.github.mooy1.infinityexpansion.items.Machines;
-import io.github.mooy1.infinityexpansion.items.abstracts.AbstractMachine;
-import io.github.mooy1.infinityexpansion.utils.Util;
-import io.github.mooy1.infinitylib.items.StackUtils;
-import io.github.mooy1.infinitylib.presets.MenuPreset;
-import io.github.thebusybiscuit.slimefun4.core.attributes.RecipeDisplayItem;
-import me.mrCookieSlime.Slimefun.Lists.RecipeType;
-import me.mrCookieSlime.Slimefun.Objects.Category;
-import me.mrCookieSlime.Slimefun.api.BlockStorage;
-import me.mrCookieSlime.Slimefun.api.SlimefunItemStack;
-import me.mrCookieSlime.Slimefun.api.inventory.BlockMenu;
-import me.mrCookieSlime.Slimefun.api.inventory.BlockMenuPreset;
-import me.mrCookieSlime.Slimefun.api.inventory.DirtyChestMenu;
-import me.mrCookieSlime.Slimefun.api.item_transport.ItemTransportFlow;
-import me.mrCookieSlime.Slimefun.cscorelib2.collections.Pair;
-import me.mrCookieSlime.Slimefun.cscorelib2.item.CustomItem;
+import javax.annotation.Nonnull;
+import javax.annotation.Nullable;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 /**
  * Constructs singularities form many items
@@ -69,7 +64,7 @@ public final class NewSingConer extends AbstractMachine implements RecipeDisplay
     private final int speed;
     private final int energy;
 
-    public NewSingConer(Category category, SlimefunItemStack item, RecipeType type, ItemStack[] recipe, int energy, int speed) {
+    public NewSingConer(ItemGroup category, SlimefunItemStack item, RecipeType type, ItemStack[] recipe, int energy, int speed) {
         super(category, item, type, recipe);
         this.speed = speed;
         this.energy = energy;
@@ -87,7 +82,7 @@ public final class NewSingConer extends AbstractMachine implements RecipeDisplay
             Recipe triplet = RECIPE_LIST.get(progressID);
 
             if (triplet != null) {
-                ItemStack drop = new CustomItem(triplet.input, 64);
+                ItemStack drop = new CustomItemStack(triplet.input, 64);
 
                 int stacks = progress / 64;
 
@@ -168,14 +163,14 @@ public final class NewSingConer extends AbstractMachine implements RecipeDisplay
                 progressID = null;
 
                 if (menu.hasViewer()) {
-                    menu.replaceExistingItem(STATUS_SLOT, new CustomItem(
+                    menu.replaceExistingItem(STATUS_SLOT, new CustomItemStack(
                             Material.LIME_STAINED_GLASS_PANE,
                             "&a建造中 " + triplet.output.getDisplayName() + "...",
                             "&7复合"
                     ));
                 }
             } else if (menu.hasViewer()) {
-                menu.replaceExistingItem(STATUS_SLOT, new CustomItem(
+                menu.replaceExistingItem(STATUS_SLOT, new CustomItemStack(
                         Material.LIME_STAINED_GLASS_PANE,
                         "&a构造中 " + triplet.output.getDisplayName() + "...",
                         "&7" + progress + " / " + triplet.amount
@@ -228,7 +223,7 @@ public final class NewSingConer extends AbstractMachine implements RecipeDisplay
     }
 
     private static void invalidInput(BlockMenu menu) {
-        menu.replaceExistingItem(STATUS_SLOT, new CustomItem(
+        menu.replaceExistingItem(STATUS_SLOT, new CustomItemStack(
                 Material.RED_STAINED_GLASS_PANE,
                 "&c输入有效的材料 并开始"
         ));
