@@ -56,7 +56,7 @@ public final class Antier extends SlimefunItem implements EnergyNetComponent {
 
             @Override
             public void tick(Block block, SlimefunItem item, Config data) {
-                if ((InfinityExpansion.inst().getGlobalTick() & 3) == 0) {
+                if ((InfinityExpansion.slimefunTickCount() %8) == 0) {
                     return;
                 }
                 Location l = block.getLocation();
