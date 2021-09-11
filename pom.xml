@@ -111,16 +111,6 @@
             <scope>provided</scope>
     </dependency>
     <dependency>
-      <groupId>io.github.mooy1</groupId>
-      <artifactId>InfinityLib</artifactId>
-      <version>ed79898</version>
-    </dependency>
-      <dependency>
-          <groupId>cn.zimzaza4</groupId>
-          <artifactId>SCrafter</artifactId>
-          <version>1.0.0</version>
-      </dependency>
-      <dependency>
           <groupId>io.github.mooy1</groupId>
           <artifactId>InfinityLib</artifactId>
           <version>4d178e6</version>
