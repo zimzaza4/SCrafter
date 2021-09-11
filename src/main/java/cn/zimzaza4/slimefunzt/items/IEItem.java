@@ -4,10 +4,8 @@ import cn.zimzaza4.slimefunzt.SlimefunZT;
 import cn.zimzaza4.slimefunzt.lists.Items;
 import cn.zimzaza4.slimefunzt.machines.ie.NewSingConer;
 import cn.zimzaza4.slimefunzt.util.SingCreater;
-import io.github.mooy1.infinityexpansion.InfinityExpansion;
-import io.github.mooy1.infinityexpansion.items.Machines;
-import io.github.mooy1.infinityexpansion.items.Materials;
-import io.github.thebusybiscuit.slimefun4.api.items.ItemGroup;
+import io.github.mooy1.infinityexpansion.items.machines.Machines;
+import io.github.mooy1.infinityexpansion.items.materials.Materials;
 import io.github.thebusybiscuit.slimefun4.api.items.SlimefunItem;
 import io.github.thebusybiscuit.slimefun4.api.items.SlimefunItemStack;
 import io.github.thebusybiscuit.slimefun4.api.recipes.RecipeType;
@@ -19,12 +17,15 @@ public class IEItem {
     public static void setup(SlimefunZT zt) {
         System.out.println("Loading... ");
 
-        new NewSingConer(Items.IE, IEItem.SingCrafter, RecipeType.ENHANCED_CRAFTING_TABLE, new ItemStack[]{
+        NewSingConer Coner = new NewSingConer(Items.IE, IEItem.SingCrafter, RecipeType.ENHANCED_CRAFTING_TABLE, new ItemStack[]{
                 Materials.VOID_INGOT, Machines.SINGULARITY_CONSTRUCTOR, Materials.MAGSTEEL, Materials.MAGSTEEL,
                 Materials.MACHINE_PLATE, Materials.MACHINE_CORE, Materials.MACHINE_PLATE,
                 Items.GhostIngot, Items.GhostIngot, Items.GhostIngot
 
-        }, 200, 2).register(SlimefunZT.getInstance());
+        });
+                Coner.setSpeed(2);
+                Coner.energyPerTick(200);
+                Coner.register(SlimefunZT.getInstance());
         new SingCreater(Items.Ender_Singularity, Items.Ender_ingot, 600).register(SlimefunZT.getInstance());
         new SingCreater(Items.Nether_Singularity, Items.Nether_ingot, 600).register(SlimefunZT.getInstance());
         new SingCreater(Items.Soul_Singularity, Items.GhostIngot, 300).register(SlimefunZT.getInstance());
@@ -52,8 +53,5 @@ public class IEItem {
 
 
 
-    public static void register(ItemGroup category, SlimefunItemStack item, RecipeType recipeType, ItemStack[] recipe) {
-        new SlimefunItem(category, item, recipeType, recipe).register(InfinityExpansion.inst());
-    }
 
 }

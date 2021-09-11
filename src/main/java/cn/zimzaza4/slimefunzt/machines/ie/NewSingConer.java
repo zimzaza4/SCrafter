@@ -2,11 +2,10 @@ package cn.zimzaza4.slimefunzt.machines.ie;
 
 
 import cn.zimzaza4.slimefunzt.SlimefunZT;
-import cn.zimzaza4.slimefunzt.items.IEItem;
+import cn.zimzaza4.slimefunzt.lists.Items;
 import io.github.bakedlibs.dough.items.CustomItemStack;
-import io.github.mooy1.infinityexpansion.infinitylib.items.StackUtils;
-import io.github.mooy1.infinityexpansion.infinitylib.presets.MenuPreset;
-import io.github.mooy1.infinityexpansion.items.abstracts.AbstractMachine;
+import io.github.mooy1.infinityexpansion.infinitylib.common.StackUtils;
+import io.github.mooy1.infinityexpansion.infinitylib.machines.AbstractMachineBlock;
 import io.github.mooy1.infinityexpansion.utils.Util;
 import io.github.thebusybiscuit.slimefun4.api.items.ItemGroup;
 import io.github.thebusybiscuit.slimefun4.api.items.SlimefunItemStack;
@@ -14,14 +13,12 @@ import io.github.thebusybiscuit.slimefun4.api.recipes.RecipeType;
 import io.github.thebusybiscuit.slimefun4.core.attributes.RecipeDisplayItem;
 import io.github.thebusybiscuit.slimefun4.libraries.dough.collections.Pair;
 import lombok.AllArgsConstructor;
+import lombok.Setter;
 import me.mrCookieSlime.Slimefun.api.BlockStorage;
 import me.mrCookieSlime.Slimefun.api.inventory.BlockMenu;
 import me.mrCookieSlime.Slimefun.api.inventory.BlockMenuPreset;
-import me.mrCookieSlime.Slimefun.api.inventory.DirtyChestMenu;
-import me.mrCookieSlime.Slimefun.api.item_transport.ItemTransportFlow;
 import org.bukkit.Location;
 import org.bukkit.Material;
-import org.bukkit.NamespacedKey;
 import org.bukkit.block.Block;
 import org.bukkit.event.block.BlockBreakEvent;
 import org.bukkit.inventory.ItemStack;
@@ -33,24 +30,19 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-/**
- * Constructs singularities form many items
- *
- * @author Mooy1
- */
-public final class NewSingConer extends AbstractMachine implements RecipeDisplayItem {
+public class NewSingConer extends AbstractMachineBlock implements RecipeDisplayItem {
 
     private static final List<Recipe> RECIPE_LIST = new ArrayList<>();
     private static final Map<String, Pair<Integer, Recipe>> RECIPE_MAP = new HashMap<>();
-    public static final RecipeType TYPE = new RecipeType(new NamespacedKey(SlimefunZT.getInstance(), "ZIM_SING_CONER"),
-                        IEItem.SingCrafter, (stacks, itemStack) -> {
+    public static final RecipeType TYPE = new RecipeType(SlimefunZT.getKey("sc_singularity_constructor"),
+            Items.IE_SING_Craft, (stacks, itemStack) -> {
         int amt = 0;
         for (ItemStack item : stacks) {
             if (item != null) {
                 amt += item.getAmount();
             }
         }
-        String id = StackUtils.getIDorType(stacks[0]);
+        String id = StackUtils.getIdOrType(stacks[0]);
         Recipe recipe = new Recipe((SlimefunItemStack) itemStack, stacks[0], id, amt);
         RECIPE_LIST.add(recipe);
         RECIPE_MAP.put(id, new Pair<>(RECIPE_LIST.size() - 1, recipe));
@@ -58,24 +50,22 @@ public final class NewSingConer extends AbstractMachine implements RecipeDisplay
 
     private static final String PROGRESS = "progress";
     private static final int STATUS_SLOT = 13;
-    private static final int INPUT_SLOT = 10;
-    private static final int OUTPUT_SLOT = 16;
+    private static final int[] INPUT_SLOT = {10};
+    private static final int[] OUTPUT_SLOT = {16};
 
-    private final int speed;
-    private final int energy;
+    @Setter
+    private int speed;
 
-    public NewSingConer(ItemGroup category, SlimefunItemStack item, RecipeType type, ItemStack[] recipe, int energy, int speed) {
+    public NewSingConer(ItemGroup category, SlimefunItemStack item, RecipeType type, ItemStack[] recipe) {
         super(category, item, type, recipe);
-        this.speed = speed;
-        this.energy = energy;
     }
 
     @Override
-    protected void onBreak(@Nonnull BlockBreakEvent e, @Nonnull BlockMenu menu, @Nonnull Location l) {
+    protected void onBreak(@Nonnull BlockBreakEvent e, @Nonnull BlockMenu menu) {
+        super.onBreak(e, menu);
+        Location l = menu.getLocation();
         int progress = Util.getIntData(PROGRESS, l);
         Integer progressID = getProgressID(l);
-
-        menu.dropItems(l, OUTPUT_SLOT, INPUT_SLOT);
 
         if (progress > 0 && progressID != null) {
 
@@ -106,13 +96,14 @@ public final class NewSingConer extends AbstractMachine implements RecipeDisplay
     }
 
     @Override
-    protected boolean process(@Nonnull BlockMenu menu, @Nonnull Block b) {
-        ItemStack input = menu.getItemInSlot(INPUT_SLOT);
-        String  inputID;
+    protected boolean process(@Nonnull Block b, @Nonnull BlockMenu menu) {
+        ItemStack input = menu.getItemInSlot(INPUT_SLOT[0]);
+        String inputID;
         if (input == null) {
             inputID = null;
-        } else {
-            inputID = StackUtils.getIDorType(input);
+        }
+        else {
+            inputID = StackUtils.getIdOrType(input);
         }
 
         // load data
@@ -132,15 +123,18 @@ public final class NewSingConer extends AbstractMachine implements RecipeDisplay
                     progressID = pair.getFirstValue();
                     triplet = pair.getSecondValue();
                     takeCharge = true;
-                } else {
+                }
+                else {
                     // invalid input
                     triplet = null;
                 }
-            } else {
+            }
+            else {
                 // still haven't started
                 triplet = null;
             }
-        } else {
+        }
+        else {
             // started
             triplet = RECIPE_LIST.get(progressID);
             if (inputID != null) {
@@ -165,18 +159,20 @@ public final class NewSingConer extends AbstractMachine implements RecipeDisplay
                 if (menu.hasViewer()) {
                     menu.replaceExistingItem(STATUS_SLOT, new CustomItemStack(
                             Material.LIME_STAINED_GLASS_PANE,
-                            "&a建造中 " + triplet.output.getDisplayName() + "...",
-                            "&7复合"
+                            "&a构造中 " + triplet.output.getDisplayName() + "...",
+                            "&7完成"
                     ));
                 }
-            } else if (menu.hasViewer()) {
+            }
+            else if (menu.hasViewer()) {
                 menu.replaceExistingItem(STATUS_SLOT, new CustomItemStack(
                         Material.LIME_STAINED_GLASS_PANE,
                         "&a构造中 " + triplet.output.getDisplayName() + "...",
                         "&7" + progress + " / " + triplet.amount
                 ));
             }
-        } else if (menu.hasViewer()) {
+        }
+        else if (menu.hasViewer()) {
             invalidInput(menu);
         }
 
@@ -188,11 +184,22 @@ public final class NewSingConer extends AbstractMachine implements RecipeDisplay
     }
 
     @Override
-    protected void setupMenu(@Nonnull BlockMenuPreset blockMenuPreset) {
-        super.setupMenu(blockMenuPreset);
-        blockMenuPreset.drawBackground(MenuPreset.INPUT_ITEM, MenuPreset.INPUT_BORDER);
-        blockMenuPreset.drawBackground(MenuPreset.STATUS_ITEM, MenuPreset.STATUS_BORDER);
-        blockMenuPreset.drawBackground(MenuPreset.OUTPUT_ITEM, MenuPreset.OUTPUT_BORDER);
+    protected void setup(@Nonnull BlockMenuPreset blockMenuPreset) {
+        blockMenuPreset.drawBackground(INPUT_BORDER, new int[] {
+                0, 1, 2,
+                9, 11,
+                18, 19, 20
+        });
+        blockMenuPreset.drawBackground(new int[] {
+                3, 4, 5,
+                12, 13, 14,
+                21, 22, 23
+        });
+        blockMenuPreset.drawBackground(OUTPUT_BORDER, new int[] {
+                6, 7, 8,
+                15, 17,
+                24, 25, 26
+        });
     }
 
     @Override
@@ -201,20 +208,13 @@ public final class NewSingConer extends AbstractMachine implements RecipeDisplay
     }
 
     @Override
-    protected int getEnergyConsumption() {
-        return this.energy;
+    protected int[] getInputSlots() {
+        return INPUT_SLOT;
     }
 
-    @Nonnull
     @Override
-    protected int[] getTransportSlots(@Nonnull DirtyChestMenu menu, @Nonnull ItemTransportFlow flow, ItemStack item) {
-        if (flow == ItemTransportFlow.INSERT) {
-            return new int[] {INPUT_SLOT};
-        } else if (flow == ItemTransportFlow.WITHDRAW) {
-            return new int[] {OUTPUT_SLOT};
-        } else {
-            return new int[0];
-        }
+    protected int[] getOutputSlots() {
+        return OUTPUT_SLOT;
     }
 
     @Override
@@ -225,7 +225,7 @@ public final class NewSingConer extends AbstractMachine implements RecipeDisplay
     private static void invalidInput(BlockMenu menu) {
         menu.replaceExistingItem(STATUS_SLOT, new CustomItemStack(
                 Material.RED_STAINED_GLASS_PANE,
-                "&c输入有效的材料 并开始"
+                "&c请输入一个有效的物品"
         ));
     }
 
@@ -236,7 +236,8 @@ public final class NewSingConer extends AbstractMachine implements RecipeDisplay
     private static void setProgressID(Location l, @Nullable Integer progressID) {
         if (progressID == null) {
             BlockStorage.addBlockInfo(l, "progressid", null);
-        } else {
+        }
+        else {
             BlockStorage.addBlockInfo(l, "progressid", String.valueOf(progressID));
         }
     }
@@ -246,17 +247,15 @@ public final class NewSingConer extends AbstractMachine implements RecipeDisplay
         String id = BlockStorage.getLocationInfo(l, "progressid");
         if (id == null) {
             return null;
-        } else try {
-            return Integer.parseInt(id);
-        } catch (NumberFormatException e) {
-            setProgressID(l, null);
-            return null;
         }
-    }
-
-    @Override
-    public int getCapacity() {
-        return this.energy * 2;
+        else {
+            try {
+                return Integer.parseInt(id);
+            } catch (NumberFormatException e) {
+                setProgressID(l, null);
+                return null;
+            }
+        }
     }
 
     @Nonnull

@@ -1,35 +1,24 @@
 package cn.zimzaza4.slimefunzt.machines;
 
-import cn.zimzaza4.slimefunzt.SlimefunZT;
 import cn.zimzaza4.slimefunzt.lists.Items;
-import io.github.mooy1.infinitylib.items.StackUtils;
-import io.github.mooy1.infinitylib.recipes.RecipeMap;
-import io.github.mooy1.infinitylib.recipes.RecipeOutput;
-import io.github.mooy1.infinitylib.recipes.ShapedRecipe;
-import io.github.mooy1.infinitylib.slimefun.AbstractTickingContainer;
-import io.github.thebusybiscuit.slimefun4.implementation.SlimefunPlugin;
+import io.github.bakedlibs.dough.items.CustomItemStack;
+import io.github.mooy1.infinitylib.machines.CraftingBlock;
+import io.github.mooy1.infinitylib.machines.MachineLayout;
+import io.github.mooy1.infinitylib.machines.MachineRecipeType;
+import io.github.thebusybiscuit.slimefun4.api.items.ItemGroup;
+import io.github.thebusybiscuit.slimefun4.api.items.SlimefunItemStack;
+import io.github.thebusybiscuit.slimefun4.api.recipes.RecipeType;
 import io.github.thebusybiscuit.slimefun4.utils.ChestMenuUtils;
-import lombok.NonNull;
-import me.mrCookieSlime.Slimefun.Lists.RecipeType;
-import me.mrCookieSlime.Slimefun.Objects.Category;
-import me.mrCookieSlime.Slimefun.Objects.SlimefunItem.SlimefunItem;
 import me.mrCookieSlime.Slimefun.api.BlockStorage;
-import me.mrCookieSlime.Slimefun.api.SlimefunItemStack;
 import me.mrCookieSlime.Slimefun.api.inventory.BlockMenu;
 import me.mrCookieSlime.Slimefun.api.inventory.BlockMenuPreset;
-import me.mrCookieSlime.Slimefun.api.inventory.DirtyChestMenu;
-import me.mrCookieSlime.Slimefun.api.item_transport.ItemTransportFlow;
-import me.mrCookieSlime.Slimefun.cscorelib2.item.CustomItem;
-import me.mrCookieSlime.Slimefun.cscorelib2.protection.ProtectableAction;
-import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.block.Block;
 import org.bukkit.entity.Player;
-import org.bukkit.event.block.BlockBreakEvent;
 import org.bukkit.inventory.ItemStack;
-import org.jetbrains.annotations.NotNull;
 
-public class SoulInfinityMageTable extends AbstractTickingContainer {
+public class SoulInfinityMageTable extends CraftingBlock {
+    /*
     public final static int[] BOARD = new int []{
         0, 1, 2, 3, 4, 5, 6, 7, 8,
         9,         13     ,16,17,
@@ -40,13 +29,12 @@ public class SoulInfinityMageTable extends AbstractTickingContainer {
     public final static int[] INPUT = new int []{
             10,11,12,19,20,21,28,29,30
     };
-    public static final RecipeMap<SlimefunItemStack> RECIPE_MAP = new RecipeMap<>(ShapedRecipe::new);
-
+    public static final List<CraftingBlockRecipe> RECIPE = new ArrayList<>();
      public static final RecipeType Type = new RecipeType(SlimefunZT.getInstance().getKey("soul_infinity_magic_table"), Items.Soul_IE_mage_table,(stacks, stack) -> {
          SlimefunItemStack item = (SlimefunItemStack) stack;
-         RECIPE_MAP.put(stacks, item);
+         CraftingBlockRecipe recipe = new CraftingBlockRecipe()
      }, "");
-    public SoulInfinityMageTable(Category category, SlimefunItemStack item, RecipeType recipeType, ItemStack[] recipe) {
+    public SoulInfinityMageTable(ItemGroup category, SlimefunItemStack item, RecipeType recipeType, ItemStack[] recipe) {
         super(category, item, recipeType, recipe);
         new BlockMenuPreset(getId(), "&c&l无尽魔法桌") {
             @Override
@@ -86,77 +74,89 @@ public class SoulInfinityMageTable extends AbstractTickingContainer {
                 }else{return false;}
             }
 
-            @Override
-            public int[] getSlotsAccessedByItemTransport(ItemTransportFlow itemTransportFlow) {
-                return new int[0];
-            }
-        };
+
+        */
+
+
+
+    public static final int[] INPUT_SLOTS = {
+
+            10, 11 ,12,
+            19, 20, 21,
+            28, 29, 30
+
+    };
+    private static final int RECIPE_SLOT = 7;
+    public static final MachineRecipeType TYPE = new MachineRecipeType("sc_armor",
+            Items.ArmorCrafter);
+
+
+    public SoulInfinityMageTable(ItemGroup category, SlimefunItemStack item, RecipeType type, ItemStack[] recipe) {
+        super(category, item, type, recipe);
+        addRecipesFrom(TYPE);
+        layout(new MachineLayout()
+                .inputSlots(INPUT_SLOTS)
+                .outputSlots(new int[] { 43 })
+                .statusSlot(16)
+                .inputBorder(new int[] {0,2,3,4,5,9,13, 18, 22, 27, 31, 36, 37,38,39, 40,41, 45, 46, 47,48,49,50})
+                .outputBorder(new int[] {
+                        33, 34, 35,
+                        42, 44,
+                        51, 52, 53
+                }).background(new int[] {
+                        6, 8, 15, 17, 24, 25, 26
+                })
+        );
+
+    }
+
+
+
+
+    @Override
+    protected void setup(BlockMenuPreset preset) {
+        super.setup(preset);
+        preset.addItem(RECIPE_SLOT, new CustomItemStack(Material.BOOK, "&6合成"), ChestMenuUtils.getEmptyClickHandler());
     }
 
     @Override
-    protected void tick(@NotNull BlockMenu blockMenu, @NotNull Block block) {
+    protected void onNewInstance(BlockMenu menu, Block b) {
+        super.onNewInstance(menu, b);
+        menu.addMenuClickHandler(RECIPE_SLOT, (p, slot, item, action) -> {
 
+            return false;
+        });
     }
 
     @Override
-    protected void setupMenu(@NotNull BlockMenuPreset preset) {
-        for (int i : BOARD) {
-            preset.addItem(i, new CustomItem(Material.BLUE_STAINED_GLASS_PANE), ChestMenuUtils.getEmptyClickHandler());
-        }
-        preset.addItem(14, new CustomItem(Material.ORANGE_STAINED_GLASS_PANE, "输入灵魂合成剂>>>"), ChestMenuUtils.getEmptyClickHandler());
-        preset.addItem(32, new CustomItem(Material.GREEN_STAINED_GLASS_PANE, "&c合成"));
-
+    protected void craft(Block block, BlockMenu menu, Player p) {
+        if (BlockStorage.checkID(block.getLocation().add(0,-1,0)).equals("ZIM_SOUL_FLOOR")&&
+                BlockStorage.checkID(block.getLocation().add(1,-1,0)).equals("ZIM_SOUL_FLOOR")&&
+                BlockStorage.checkID(block.getLocation().add(2,-1,0)).equals("ZIM_SOUL_FLOOR")&&
+                BlockStorage.checkID(block.getLocation().add(-1,-1,0)).equals("ZIM_SOUL_FLOOR")&&
+                BlockStorage.checkID(block.getLocation().add(-2,-1,0)).equals("ZIM_SOUL_FLOOR")&&
+                BlockStorage.checkID(block.getLocation().add(0,-1,1)).equals("ZIM_SOUL_FLOOR")&&
+                BlockStorage.checkID(block.getLocation().add(0,-1,2)).equals("ZIM_SOUL_FLOOR")&&
+                BlockStorage.checkID(block.getLocation().add(0,-1,-1)).equals("ZIM_SOUL_FLOOR")&&
+                BlockStorage.checkID(block.getLocation().add(0,-1,-2)).equals("ZIM_SOUL_FLOOR")&&
+                BlockStorage.checkID(block.getLocation().add(1,0,0)).equals("ZIM_SOUL_GLASS")&&
+                BlockStorage.checkID(block.getLocation().add(-1,0,0)).equals("ZIM_SOUL_GLASS")&&
+                BlockStorage.checkID(block.getLocation().add(0,0,1)).equals("ZIM_SOUL_GLASS")&&
+                BlockStorage.checkID(block.getLocation().add(0,0,-1)).equals("ZIM_SOUL_GLASS")&&
+                BlockStorage.checkID(block.getLocation().add(2,0,0)).equals("ZIM_SOUL_TORCH")&&
+                BlockStorage.checkID(block.getLocation().add(-2,0,0)).equals("ZIM_SOUL_TORCH")&&
+                BlockStorage.checkID(block.getLocation().add(0,0,2)).equals("ZIM_SOUL_TORCH")&&
+                BlockStorage.checkID(block.getLocation().add(0,0,-2)).equals("ZIM_SOUL_TORCH")
+        ) {
+            super.craft(block, menu, p);
+        }else {p.sendMessage("§c结构不完整");}
     }
 
-    @NotNull
     @Override
-    protected int[] getTransportSlots(@NotNull DirtyChestMenu dirtyChestMenu, @NotNull ItemTransportFlow itemTransportFlow, ItemStack itemStack) {
-        return new int[0];
+    protected void onSuccessfulCraft(BlockMenu menu, ItemStack toOutput) {
+
     }
 
-
-
-    @Override
-    protected void onBreak(@NonNull BlockBreakEvent event, @NonNull BlockMenu inv, @NonNull Location loc){
-        inv.dropItems(loc, INPUT);
-        inv.dropItems(loc, 33);
-        inv.dropItems(loc, 15);
-    }
-
-
-
-    public void craft(@NonNull Block b, @NonNull BlockMenu inventory, @NonNull Player player){
-        ItemStack Energy = inventory.getItemInSlot(15);
-
-        if (Energy==null){
-            player.sendMessage("§c缺少灵魂合成剂");
-            return;
-        }
-
-
-
-
-        if (SlimefunItem.getByItem(Energy)!=null&&SlimefunItem.getByItem(Energy).getId().equals("SOUL_AMEY")){
-
-
-            RecipeOutput<SlimefunItemStack> output = RECIPE_MAP.get(StackUtils.arrayFrom(inventory, INPUT));
-            if (output==null){
-                player.sendMessage("§c配方错误");
-                return;
-            }
-            if (!inventory.fits(output.getOutput(), 33) ){
-                player.sendMessage("§c空间不足");
-                return;
-            }
-            inventory.consumeItem(15);
-            output.consumeInput();
-            player.sendMessage("§a成功合成");
-            inventory.pushItem(output.getOutput().clone(), 33);
-        }else{
-            player.sendMessage("§c请放入正确的灵魂合成剂!");
-
-        }
-    }
 
 
 }
