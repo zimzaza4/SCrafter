@@ -14,6 +14,8 @@ import org.bukkit.block.Block;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 
+import java.util.Objects;
+
 public class SoulInfinityMageTable extends CraftingBlock {
     /*
     public final static int[] BOARD = new int []{
@@ -83,7 +85,6 @@ public class SoulInfinityMageTable extends CraftingBlock {
             28, 29, 30
 
     };
-    private static final int RECIPE_SLOT = 7;
     public static final MachineRecipeType TYPE = new MachineRecipeType("sc_infinity_soul",
             Items.ArmorCrafter);
 
@@ -123,41 +124,25 @@ public class SoulInfinityMageTable extends CraftingBlock {
     @Override
     protected void craft(Block block, BlockMenu menu, Player p) {
 
-        if (!BlockStorage.checkID(block.getLocation().add(0,-1,0)).equals(null)&&
-                !BlockStorage.checkID(block.getLocation().add(1,-1,0)).equals(null)&&
-                !BlockStorage.checkID(block.getLocation().add(2,-1,0)).equals(null)&&
-                !BlockStorage.checkID(block.getLocation().add(-1,-1,0)).equals(null)&&
-                !BlockStorage.checkID(block.getLocation().add(-2,-1,0)).equals(null)&&
-                !BlockStorage.checkID(block.getLocation().add(0,-1,1)).equals(null)&&
-                !BlockStorage.checkID(block.getLocation().add(0,-1,2)).equals(null)&&
-                !BlockStorage.checkID(block.getLocation().add(0,-1,-1)).equals(null)&&
-                !BlockStorage.checkID(block.getLocation().add(0,-1,-2)).equals(null)&&
-                !BlockStorage.checkID(block.getLocation().add(1,0,0)).equals(null)&&
-                !BlockStorage.checkID(block.getLocation().add(-1,0,0)).equals(null)&&
-                !BlockStorage.checkID(block.getLocation().add(0,0,1)).equals(null)&&
-                !BlockStorage.checkID(block.getLocation().add(0,0,-1)).equals(null)&&
-                !BlockStorage.checkID(block.getLocation().add(2,0,0)).equals(null)&&
-                !BlockStorage.checkID(block.getLocation().add(-2,0,0)).equals(null)&&
-                !BlockStorage.checkID(block.getLocation().add(0,0,2)).equals(null)&&
-                !BlockStorage.checkID(block.getLocation().add(0,0,-2)).equals(null)&&
+        if (
 
-                BlockStorage.checkID(block.getLocation().add(0,-1,0)).equals("ZIM_SOUL_FLOOR")&&
-                BlockStorage.checkID(block.getLocation().add(1,-1,0)).equals("ZIM_SOUL_FLOOR")&&
-                BlockStorage.checkID(block.getLocation().add(2,-1,0)).equals("ZIM_SOUL_FLOOR")&&
-                BlockStorage.checkID(block.getLocation().add(-1,-1,0)).equals("ZIM_SOUL_FLOOR")&&
-                BlockStorage.checkID(block.getLocation().add(-2,-1,0)).equals("ZIM_SOUL_FLOOR")&&
-                BlockStorage.checkID(block.getLocation().add(0,-1,1)).equals("ZIM_SOUL_FLOOR")&&
-                BlockStorage.checkID(block.getLocation().add(0,-1,2)).equals("ZIM_SOUL_FLOOR")&&
-                BlockStorage.checkID(block.getLocation().add(0,-1,-1)).equals("ZIM_SOUL_FLOOR")&&
-                BlockStorage.checkID(block.getLocation().add(0,-1,-2)).equals("ZIM_SOUL_FLOOR")&&
-                BlockStorage.checkID(block.getLocation().add(1,0,0)).equals("ZIM_SOUL_GLASS")&&
-                BlockStorage.checkID(block.getLocation().add(-1,0,0)).equals("ZIM_SOUL_GLASS")&&
-                BlockStorage.checkID(block.getLocation().add(0,0,1)).equals("ZIM_SOUL_GLASS")&&
-                BlockStorage.checkID(block.getLocation().add(0,0,-1)).equals("ZIM_SOUL_GLASS")&&
-                BlockStorage.checkID(block.getLocation().add(2,0,0)).equals("ZIM_SOUL_TORCH")&&
-                BlockStorage.checkID(block.getLocation().add(-2,0,0)).equals("ZIM_SOUL_TORCH")&&
-                BlockStorage.checkID(block.getLocation().add(0,0,2)).equals("ZIM_SOUL_TORCH")&&
-                BlockStorage.checkID(block.getLocation().add(0,0,-2)).equals("ZIM_SOUL_TORCH")
+                Objects.equals(BlockStorage.checkID(block.getLocation().add(0, -1, 0)), "ZIM_SOUL_FLOOR") &&
+                        Objects.equals(BlockStorage.checkID(block.getLocation().add(1, -1, 0)), "ZIM_SOUL_FLOOR") &&
+                        Objects.equals(BlockStorage.checkID(block.getLocation().add(2, -1, 0)), "ZIM_SOUL_FLOOR") &&
+                        Objects.equals(BlockStorage.checkID(block.getLocation().add(-1, -1, 0)), "ZIM_SOUL_FLOOR") &&
+                        Objects.equals(BlockStorage.checkID(block.getLocation().add(-2, -1, 0)), "ZIM_SOUL_FLOOR") &&
+                        Objects.equals(BlockStorage.checkID(block.getLocation().add(0, -1, 1)), "ZIM_SOUL_FLOOR") &&
+                        Objects.equals(BlockStorage.checkID(block.getLocation().add(0, -1, 2)), "ZIM_SOUL_FLOOR") &&
+                        Objects.equals(BlockStorage.checkID(block.getLocation().add(0, -1, -1)), "ZIM_SOUL_FLOOR") &&
+                        Objects.equals(BlockStorage.checkID(block.getLocation().add(0, -1, -2)), "ZIM_SOUL_FLOOR") &&
+                        Objects.equals(BlockStorage.checkID(block.getLocation().add(1, 0, 0)), "ZIM_SOUL_GLASS") &&
+                        Objects.equals(BlockStorage.checkID(block.getLocation().add(-1, 0, 0)), "ZIM_SOUL_GLASS") &&
+                        Objects.equals(BlockStorage.checkID(block.getLocation().add(0, 0, 1)), "ZIM_SOUL_GLASS") &&
+                        Objects.equals(BlockStorage.checkID(block.getLocation().add(0, 0, -1)), "ZIM_SOUL_GLASS") &&
+                        Objects.equals(BlockStorage.checkID(block.getLocation().add(2, 0, 0)), "ZIM_SOUL_TORCH") &&
+                        Objects.equals(BlockStorage.checkID(block.getLocation().add(-2, 0, 0)), "ZIM_SOUL_TORCH") &&
+                        Objects.equals(BlockStorage.checkID(block.getLocation().add(0, 0, 2)), "ZIM_SOUL_TORCH") &&
+                        Objects.equals(BlockStorage.checkID(block.getLocation().add(0, 0, -2)), "ZIM_SOUL_TORCH")
         ) {
             super.craft(block, menu, p);
         }else {p.sendMessage("§c结构不完整");}

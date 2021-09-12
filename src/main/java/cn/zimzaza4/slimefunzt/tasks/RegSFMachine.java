@@ -110,11 +110,9 @@ public class RegSFMachine {
                                                 .register(SlimefunZT.getInstance());
                 new SCArmorCrafter(Items.WeaponCate, Items.ArmorCrafter, RecipeType.ENHANCED_CRAFTING_TABLE,
                                 ZIM_ARMOR_CRAFTER, 100).register(SlimefunZT.inst);
-                new ZMCrafter(Items.Cate, Items.SoulCrafter, RecipeType.ENHANCED_CRAFTING_TABLE, ZIM_SOUL_CRAFTER, 50)
-                                .register(SlimefunZT.getInstance());
 
                 AContainer autosoulcraft = new AutoSoulCrafter(Items.Cate, Items.AutoSoulCrafter, RecipeType.ENHANCED_CRAFTING_TABLE, new ItemStack[]{null, SlimefunItems.ADVANCED_CIRCUIT_BOARD, null,
-                null, Items.SoulCrafter, null,
+                        SlimefunItems.REINFORCED_ALLOY_INGOT, Items.EM_bit, SlimefunItems.REINFORCED_ALLOY_INGOT,
                 null, SlimefunItems.SMALL_CAPACITOR, new ItemStack(Material.IRON_BLOCK)}).setCapacity(512).setProcessingSpeed(1)
                         .setEnergyConsumption(50);
                         autosoulcraft.registerRecipe(3, new SlimefunItemStack(Items.EM_dust, 9), Items.EM_bit);

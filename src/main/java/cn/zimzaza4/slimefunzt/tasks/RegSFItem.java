@@ -9,7 +9,6 @@ import cn.zimzaza4.slimefunzt.items.material.NetherOre;
 import cn.zimzaza4.slimefunzt.lists.Items;
 import cn.zimzaza4.slimefunzt.machines.SCArmorCrafter;
 import cn.zimzaza4.slimefunzt.machines.SoulInfinityMageTable;
-import cn.zimzaza4.slimefunzt.machines.ZMCrafter;
 import cn.zimzaza4.slimefunzt.util.RecipeTypes;
 import cn.zimzaza4.slimefunzt.util.SkUtils;
 import io.github.mooy1.infinityexpansion.items.materials.Materials;
@@ -186,7 +185,7 @@ public class RegSFItem {
 
     private static void SoulMatReg(SlimefunItemStack input, SlimefunItemStack output) {
         ItemStack[] soul = new ItemStack[] { input, input, input, input, input, input, input, input, input };
-        new SlimefunItem(Items.MatCate, output, ZMCrafter.TYPE, soul).register(SlimefunZT.getInstance());
+        new SlimefunItem(Items.MatCate, output, RecipeTypes.SoulCraft, soul).register(SlimefunZT.getInstance());
 
     }
 
