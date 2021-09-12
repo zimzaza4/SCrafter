@@ -31,7 +31,7 @@ public final class ZMCrafter extends CraftingBlock implements EnergyNetComponent
     };
     private static final int RECIPE_SLOT = 7;
     public static final MachineRecipeType TYPE = new MachineRecipeType("sc_soul_crafter",
-            Items.ArmorCrafter);
+            Items.SoulCrafter);
 
     private final int energy;
 
@@ -48,7 +48,7 @@ public final class ZMCrafter extends CraftingBlock implements EnergyNetComponent
                         42, 44,
                         51, 52, 53
                 }).background(new int[] {
-                        5, 6,7, 8, 14, 15,16, 17,23,32,41, 24, 25, 26
+                        5,6,7, 8, 14, 15,16, 17,23,32,41, 24, 25, 26
                 })
         );
         this.energy = energy;

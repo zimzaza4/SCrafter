@@ -122,7 +122,26 @@ public class SoulInfinityMageTable extends CraftingBlock {
 
     @Override
     protected void craft(Block block, BlockMenu menu, Player p) {
-        if (BlockStorage.checkID(block.getLocation().add(0,-1,0)).equals("ZIM_SOUL_FLOOR")&&
+
+        if (!BlockStorage.checkID(block.getLocation().add(0,-1,0)).equals(null)&&
+                !BlockStorage.checkID(block.getLocation().add(1,-1,0)).equals(null)&&
+                !BlockStorage.checkID(block.getLocation().add(2,-1,0)).equals(null)&&
+                !BlockStorage.checkID(block.getLocation().add(-1,-1,0)).equals(null)&&
+                !BlockStorage.checkID(block.getLocation().add(-2,-1,0)).equals(null)&&
+                !BlockStorage.checkID(block.getLocation().add(0,-1,1)).equals(null)&&
+                !BlockStorage.checkID(block.getLocation().add(0,-1,2)).equals(null)&&
+                !BlockStorage.checkID(block.getLocation().add(0,-1,-1)).equals(null)&&
+                !BlockStorage.checkID(block.getLocation().add(0,-1,-2)).equals(null)&&
+                !BlockStorage.checkID(block.getLocation().add(1,0,0)).equals(null)&&
+                !BlockStorage.checkID(block.getLocation().add(-1,0,0)).equals(null)&&
+                !BlockStorage.checkID(block.getLocation().add(0,0,1)).equals(null)&&
+                !BlockStorage.checkID(block.getLocation().add(0,0,-1)).equals(null)&&
+                !BlockStorage.checkID(block.getLocation().add(2,0,0)).equals(null)&&
+                !BlockStorage.checkID(block.getLocation().add(-2,0,0)).equals(null)&&
+                !BlockStorage.checkID(block.getLocation().add(0,0,2)).equals(null)&&
+                !BlockStorage.checkID(block.getLocation().add(0,0,-2)).equals(null)&&
+
+                BlockStorage.checkID(block.getLocation().add(0,-1,0)).equals("ZIM_SOUL_FLOOR")&&
                 BlockStorage.checkID(block.getLocation().add(1,-1,0)).equals("ZIM_SOUL_FLOOR")&&
                 BlockStorage.checkID(block.getLocation().add(2,-1,0)).equals("ZIM_SOUL_FLOOR")&&
                 BlockStorage.checkID(block.getLocation().add(-1,-1,0)).equals("ZIM_SOUL_FLOOR")&&
