@@ -20,7 +20,7 @@ import java.io.IOException;
 import java.util.Locale;
 import java.util.Random;
 
-public class SlimefunZT extends JavaPlugin implements SlimefunAddon {
+public class SlimefunZT extends JavaPlugin implements SlimefunAddon{
     public Boolean isFAME;
     public Boolean isDebug;
     public static SlimefunZT inst;

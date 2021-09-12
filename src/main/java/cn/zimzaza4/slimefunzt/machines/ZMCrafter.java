@@ -21,11 +21,7 @@ import org.bukkit.inventory.ItemStack;
 
 import javax.annotation.Nonnull;
 
-/**
- * A 6x6 crafting table O.o
- *
- * @author Mooy1
- */
+
 public final class ZMCrafter extends CraftingBlock implements EnergyNetComponent {
 
 
