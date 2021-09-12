@@ -95,13 +95,13 @@ public class SoulInfinityMageTable extends CraftingBlock {
                 .inputSlots(INPUT_SLOTS)
                 .outputSlots(new int[] { 43 })
                 .statusSlot(16)
-                .inputBorder(new int[] {0,1,2,3,4,9,13, 18, 22, 27, 31, 36, 37,38,39, 40,41, 45, 46, 47,48,49,50})
+                .inputBorder(new int[] {0,1,2,3,4,9,13, 18, 22, 27, 31, 36, 37,38,39, 40,41, 45, 46, 47,48,49})
                 .outputBorder(new int[] {
                         33, 34, 35,
                         42, 44,
                         51, 52, 53
                 }).background(new int[] {
-                        5, 6,7, 8, 14, 15,16, 17,23,32,41, 24, 25, 26
+                        5, 6,7, 8, 14, 15,16, 17,23,32,41, 24, 25, 26,50
                 })
         );
 
