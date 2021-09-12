@@ -97,7 +97,7 @@ public class SlimefunZT extends AbstractAddon {
     }
 
 
-    public   static NamespacedKey getKey(String key){
+    public static NamespacedKey getKey(String key){
         return new NamespacedKey(Instance, key.toUpperCase(Locale.ROOT));
     }
 

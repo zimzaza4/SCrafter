@@ -174,19 +174,14 @@
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-shade-plugin</artifactId>
         <version>3.2.4</version>
-        <executions>
-          <execution>
-            <phase>package</phase>
-            <goals>
-              <goal>shade</goal>
-            </goals>
-          </execution>
-        </executions>
         <configuration>
+          <!-- This will exclude any unused classes from libraries to reduce file size, not required -->
+          <minimizeJar>true</minimizeJar>
           <relocations>
+            <!-- This is the relocation, make sure to replace the package name, REQUIRED -->
             <relocation>
               <pattern>io.github.mooy1.infinitylib</pattern>
-              <shadedPattern>cn.zimzaza4.slimefunzt.SlimefunZT.infinitylib</shadedPattern>
+              <shadedPattern>cn.zimzaza4.slimefunzt.infinitylib</shadedPattern>
             </relocation>
           </relocations>
           <filters>
@@ -198,6 +193,14 @@
             </filter>
           </filters>
         </configuration>
+        <executions>
+          <execution>
+            <phase>package</phase>
+            <goals>
+              <goal>shade</goal>
+            </goals>
+          </execution>
+        </executions>
       </plugin>
     </plugins>
   </build>
