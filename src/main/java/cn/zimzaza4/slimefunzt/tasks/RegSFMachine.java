@@ -108,8 +108,8 @@ public class RegSFMachine {
                 new Antier(Items.ToolCate, Items.Antier, RecipeType.ENHANCED_CRAFTING_TABLE, ZIM_ANTIER, 60, 8, 13,
                                 Color.RED, Material.IRON_BLOCK, Material.REDSTONE_BLOCK, 1)
                                                 .register(SlimefunZT.getInstance());
-               // new SCArmorCrafter(Items.Cate, Items.ArmorCrafter, RecipeType.ENHANCED_CRAFTING_TABLE,
-               //                 ZIM_ARMOR_CRAFTER, 100);
+                new SCArmorCrafter(Items.WeaponCate, Items.ArmorCrafter, RecipeType.ENHANCED_CRAFTING_TABLE,
+                                ZIM_ARMOR_CRAFTER, 100).register(SlimefunZT.inst);
                 new ZMCrafter(Items.Cate, Items.SoulCrafter, RecipeType.ENHANCED_CRAFTING_TABLE, ZIM_SOUL_CRAFTER, 50)
                                 .register(SlimefunZT.getInstance());
 
