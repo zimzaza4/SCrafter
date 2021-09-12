@@ -119,7 +119,7 @@ public class SlimefunZT extends AbstractAddon {
         System.out.println("Loading "+f.getPath());
         this.void_tree_large = SchematicUtil.LoadSchmatic(f);
 
-        f = new File (getDataFolder(),"stone_natural_1,schem");
+        f = new File (getDataFolder(),"stone_natural_1.schem");
         System.out.println("Loading "+f.getPath());
         this.stone_1 = SchematicUtil.LoadSchmatic(f);
 
