@@ -1,18 +1,15 @@
 package cn.zimzaza4.slimefunzt.machines;
 
 import cn.zimzaza4.slimefunzt.lists.Items;
-import io.github.bakedlibs.dough.items.CustomItemStack;
 import io.github.mooy1.infinitylib.machines.CraftingBlock;
 import io.github.mooy1.infinitylib.machines.MachineLayout;
 import io.github.mooy1.infinitylib.machines.MachineRecipeType;
 import io.github.thebusybiscuit.slimefun4.api.items.ItemGroup;
 import io.github.thebusybiscuit.slimefun4.api.items.SlimefunItemStack;
 import io.github.thebusybiscuit.slimefun4.api.recipes.RecipeType;
-import io.github.thebusybiscuit.slimefun4.utils.ChestMenuUtils;
 import me.mrCookieSlime.Slimefun.api.BlockStorage;
 import me.mrCookieSlime.Slimefun.api.inventory.BlockMenu;
 import me.mrCookieSlime.Slimefun.api.inventory.BlockMenuPreset;
-import org.bukkit.Material;
 import org.bukkit.block.Block;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
@@ -98,13 +95,13 @@ public class SoulInfinityMageTable extends CraftingBlock {
                 .inputSlots(INPUT_SLOTS)
                 .outputSlots(new int[] { 43 })
                 .statusSlot(16)
-                .inputBorder(new int[] {0,2,3,4,5,9,13, 18, 22, 27, 31, 36, 37,38,39, 40,41, 45, 46, 47,48,49,50})
+                .inputBorder(new int[] {0,1,2,3,4,9,13, 18, 22, 27, 31, 36, 37,38,39, 40,41, 45, 46, 47,48,49,50})
                 .outputBorder(new int[] {
                         33, 34, 35,
                         42, 44,
                         51, 52, 53
                 }).background(new int[] {
-                        6, 8, 15, 17, 24, 25, 26
+                        56,7, 8, 14, 15,16, 17,23,32,41, 24, 25, 26
                 })
         );
 
@@ -116,16 +113,12 @@ public class SoulInfinityMageTable extends CraftingBlock {
     @Override
     protected void setup(BlockMenuPreset preset) {
         super.setup(preset);
-        preset.addItem(RECIPE_SLOT, new CustomItemStack(Material.BOOK, "&6合成"), ChestMenuUtils.getEmptyClickHandler());
     }
 
     @Override
     protected void onNewInstance(BlockMenu menu, Block b) {
         super.onNewInstance(menu, b);
-        menu.addMenuClickHandler(RECIPE_SLOT, (p, slot, item, action) -> {
-
-            return false;
-        });
+       ;
     }
 
     @Override
@@ -156,7 +149,6 @@ public class SoulInfinityMageTable extends CraftingBlock {
     protected void onSuccessfulCraft(BlockMenu menu, ItemStack toOutput) {
 
     }
-
 
 
 }
