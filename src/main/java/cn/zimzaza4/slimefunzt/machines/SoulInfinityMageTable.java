@@ -101,7 +101,7 @@ public class SoulInfinityMageTable extends CraftingBlock {
                         42, 44,
                         51, 52, 53
                 }).background(new int[] {
-                        56,7, 8, 14, 15,16, 17,23,32,41, 24, 25, 26
+                        5, 6,7, 8, 14, 15,16, 17,23,32,41, 24, 25, 26
                 })
         );
 
@@ -118,7 +118,6 @@ public class SoulInfinityMageTable extends CraftingBlock {
     @Override
     protected void onNewInstance(BlockMenu menu, Block b) {
         super.onNewInstance(menu, b);
-       ;
     }
 
     @Override
