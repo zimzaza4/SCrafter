@@ -30,7 +30,7 @@ public final class ZMCrafter extends CraftingBlock implements EnergyNetComponent
 
     };
     private static final int RECIPE_SLOT = 7;
-    public static final MachineRecipeType TYPE = new MachineRecipeType("sc_s_crafter",
+    public static final MachineRecipeType TYPE = new MachineRecipeType("sc_soul_crafter",
             Items.ArmorCrafter);
 
     private final int energy;

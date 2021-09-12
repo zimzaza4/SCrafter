@@ -84,7 +84,7 @@ public class SoulInfinityMageTable extends CraftingBlock {
 
     };
     private static final int RECIPE_SLOT = 7;
-    public static final MachineRecipeType TYPE = new MachineRecipeType("sc_armor",
+    public static final MachineRecipeType TYPE = new MachineRecipeType("sc_infinity_soul",
             Items.ArmorCrafter);
 
 
