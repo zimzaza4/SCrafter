@@ -64,7 +64,7 @@ public class VoidWorld extends ChunkGenerator {
 
                 int realX = x * 16 + x1;
                 int realZ = z * 16 + z1;
-                if (biomenoise.noise(realX, realZ, 1.5D, 2D)>0.4) {
+                if (biomenoise.noise(realX, realZ, 2D, 2D)>0.7) {
                     double noiseValue = noise.noise(realX, realZ, 1.5D, 0.5D);
 
                     int height = (int) (noiseValue * 40 + 100);
@@ -88,19 +88,19 @@ public class VoidWorld extends ChunkGenerator {
                 }else {
                     double noiseValue = noise.noise(realX, realZ, 2D, 0.2D);
 
-                    int height = (int) (noiseValue * 40 + 100);
+                    int height = (int) ((noiseValue +1)*20);
 
-                    if (height < 130) {
+                    if (height <30) {
 
-                        for (int y = 72; y > height - 110; y--) {
+                        for (int y = 70; y > height+30 ; y--) {
 
 
                             data.setBlock(x1, y, z1, Material.OBSIDIAN);
                         }
 
-                        int Fh = 14 - height / 10;
+                        int Fh = 14 - height / 5;
 
-                        for (int y = 73; y < Fh + 71; y++) {
+                        for (int y = 71; y < Fh + 71; y++) {
                             data.setBlock(x1, y, z1, Material.BLACKSTONE);
                         }
                         data.setBlock(x1, Fh + 70, z1, Material.CRYING_OBSIDIAN);
