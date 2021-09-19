@@ -50,8 +50,8 @@ public class VoidWorld extends ChunkGenerator {
         }
 
         if (biomenoise==null){
-            biomenoise = new SimplexOctaveGenerator(world.getSeed(), 1);
-            biomenoise.setScale(0.0001D);
+            biomenoise = new SimplexOctaveGenerator(world.getSeed()+6, 1);
+            biomenoise.setScale(0.006D);
 
         }
 
@@ -64,7 +64,7 @@ public class VoidWorld extends ChunkGenerator {
 
                 int realX = x * 16 + x1;
                 int realZ = z * 16 + z1;
-                if ((int)(biomenoise.noise(realX, realZ, 1.5D, 0.9D)+1*2)<3) {
+                if ((int)(biomenoise.noise(realX, realZ, 1.5D, 0.9D))<0) {
 
                     double noiseValue = noise.noise(realX, realZ, 1.5D, 0.5D);
 
