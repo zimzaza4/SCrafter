@@ -9,16 +9,15 @@ import cn.zimzaza4.slimefunzt.items.material.NetherOre;
 import cn.zimzaza4.slimefunzt.lists.Items;
 import cn.zimzaza4.slimefunzt.machines.SCArmorCrafter;
 import cn.zimzaza4.slimefunzt.machines.SoulInfinityMageTable;
-import cn.zimzaza4.slimefunzt.machines.ZMCrafter;
 import cn.zimzaza4.slimefunzt.util.RecipeTypes;
 import cn.zimzaza4.slimefunzt.util.SkUtils;
-import io.github.mooy1.infinityexpansion.items.Materials;
+import io.github.mooy1.infinityexpansion.items.materials.Materials;
 import io.github.thebusybiscuit.slimefun4.api.SlimefunAddon;
+import io.github.thebusybiscuit.slimefun4.api.items.SlimefunItem;
+import io.github.thebusybiscuit.slimefun4.api.items.SlimefunItemStack;
+import io.github.thebusybiscuit.slimefun4.api.recipes.RecipeType;
 import io.github.thebusybiscuit.slimefun4.implementation.SlimefunItems;
 import io.github.thebusybiscuit.slimefun4.implementation.items.armor.SlimefunArmorPiece;
-import me.mrCookieSlime.Slimefun.Lists.RecipeType;
-import me.mrCookieSlime.Slimefun.Objects.SlimefunItem.SlimefunItem;
-import me.mrCookieSlime.Slimefun.api.SlimefunItemStack;
 import org.bukkit.Material;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.potion.PotionEffect;
@@ -186,7 +185,7 @@ public class RegSFItem {
 
     private static void SoulMatReg(SlimefunItemStack input, SlimefunItemStack output) {
         ItemStack[] soul = new ItemStack[] { input, input, input, input, input, input, input, input, input };
-        new SlimefunItem(Items.MatCate, output, ZMCrafter.TYPE, soul).register(SlimefunZT.getInstance());
+        new SlimefunItem(Items.MatCate, output, RecipeTypes.SoulCraft, soul).register(SlimefunZT.getInstance());
 
     }
 

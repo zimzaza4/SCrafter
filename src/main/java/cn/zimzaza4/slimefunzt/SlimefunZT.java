@@ -8,19 +8,16 @@ import cn.zimzaza4.slimefunzt.tasks.RegSFItem;
 import cn.zimzaza4.slimefunzt.tasks.RegSFMachine;
 import cn.zimzaza4.slimefunzt.util.SchematicUtil;
 import com.sk89q.worldedit.extent.clipboard.Clipboard;
-import io.github.thebusybiscuit.slimefun4.api.SlimefunAddon;
+import io.github.mooy1.infinitylib.core.AbstractAddon;
 import org.bukkit.*;
 import org.bukkit.generator.ChunkGenerator;
-import org.bukkit.plugin.java.JavaPlugin;
-import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
 
 import java.io.File;
 import java.io.IOException;
 import java.util.Locale;
 import java.util.Random;
 
-public class SlimefunZT extends JavaPlugin implements SlimefunAddon {
+public class SlimefunZT extends AbstractAddon {
     public Boolean isFAME;
     public Boolean isDebug;
     public static SlimefunZT inst;
@@ -33,20 +30,18 @@ public class SlimefunZT extends JavaPlugin implements SlimefunAddon {
 
     public String void_world;
 
-
-    public @NotNull JavaPlugin getJavaPlugin() {
-        return this;
-    }
-
-    @Nullable
-    @Override
-    public String getBugTrackerURL() {
-        return null;
+    public SlimefunZT(String githubUserName, String githubRepo, String autoUpdateBranch, String autoUpdateKey) {
+        super(githubUserName, githubRepo, autoUpdateBranch, autoUpdateKey);
     }
 
 
+
+    public SlimefunZT(){
+        super("zimzaza4", "Slimefun-SCraft", "main", "auto-update");
+    }
+
     @Override
-    public void onEnable() {
+    protected void enable() {
         isDebug = getConfig().getBoolean("debug-mode", false);
 
         Instance = this;
@@ -81,6 +76,11 @@ public class SlimefunZT extends JavaPlugin implements SlimefunAddon {
 
     }
 
+    @Override
+    protected void disable() {
+
+    }
+
     public static SlimefunZT getInstance() {
 
         return Instance;
@@ -97,7 +97,7 @@ public class SlimefunZT extends JavaPlugin implements SlimefunAddon {
     }
 
 
-    public   static NamespacedKey getKey(String key){
+    public static NamespacedKey getKey(String key){
         return new NamespacedKey(Instance, key.toUpperCase(Locale.ROOT));
     }
 
@@ -119,7 +119,7 @@ public class SlimefunZT extends JavaPlugin implements SlimefunAddon {
         System.out.println("Loading "+f.getPath());
         this.void_tree_large = SchematicUtil.LoadSchmatic(f);
 
-        f = new File (getDataFolder(),"stone_natural_1,schem");
+        f = new File (getDataFolder(),"stone_natural_1.schem");
         System.out.println("Loading "+f.getPath());
         this.stone_1 = SchematicUtil.LoadSchmatic(f);
 

@@ -3,11 +3,11 @@ package cn.zimzaza4.slimefunzt.tasks;
 import cn.zimzaza4.slimefunzt.SlimefunZT;
 import cn.zimzaza4.slimefunzt.lists.Items;
 import cn.zimzaza4.slimefunzt.machines.*;
+import io.github.thebusybiscuit.slimefun4.api.items.SlimefunItemStack;
+import io.github.thebusybiscuit.slimefun4.api.recipes.RecipeType;
 import io.github.thebusybiscuit.slimefun4.implementation.SlimefunItems;
 import io.github.thebusybiscuit.slimefun4.implementation.items.electric.machines.ElectricIngotFactory;
-import me.mrCookieSlime.Slimefun.Lists.RecipeType;
 import me.mrCookieSlime.Slimefun.Objects.SlimefunItem.abstractItems.AContainer;
-import me.mrCookieSlime.Slimefun.api.SlimefunItemStack;
 import org.bukkit.Bukkit;
 import org.bukkit.Color;
 import org.bukkit.Material;
@@ -108,13 +108,11 @@ public class RegSFMachine {
                 new Antier(Items.ToolCate, Items.Antier, RecipeType.ENHANCED_CRAFTING_TABLE, ZIM_ANTIER, 60, 8, 13,
                                 Color.RED, Material.IRON_BLOCK, Material.REDSTONE_BLOCK, 1)
                                                 .register(SlimefunZT.getInstance());
-                new SCArmorCrafter(Items.Cate, Items.ArmorCrafter, RecipeType.ENHANCED_CRAFTING_TABLE,
-                                ZIM_ARMOR_CRAFTER, 100);
-                new ZMCrafter(Items.Cate, Items.SoulCrafter, RecipeType.ENHANCED_CRAFTING_TABLE, ZIM_SOUL_CRAFTER, 50)
-                                .register(SlimefunZT.getInstance());
+                new SCArmorCrafter(Items.WeaponCate, Items.ArmorCrafter, RecipeType.ENHANCED_CRAFTING_TABLE,
+                                ZIM_ARMOR_CRAFTER, 100).register(SlimefunZT.inst);
 
                 AContainer autosoulcraft = new AutoSoulCrafter(Items.Cate, Items.AutoSoulCrafter, RecipeType.ENHANCED_CRAFTING_TABLE, new ItemStack[]{null, SlimefunItems.ADVANCED_CIRCUIT_BOARD, null,
-                null, Items.SoulCrafter, null,
+                        SlimefunItems.REINFORCED_ALLOY_INGOT, Items.EM_bit, SlimefunItems.REINFORCED_ALLOY_INGOT,
                 null, SlimefunItems.SMALL_CAPACITOR, new ItemStack(Material.IRON_BLOCK)}).setCapacity(512).setProcessingSpeed(1)
                         .setEnergyConsumption(50);
                         autosoulcraft.registerRecipe(3, new SlimefunItemStack(Items.EM_dust, 9), Items.EM_bit);

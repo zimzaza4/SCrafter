@@ -1,11 +1,11 @@
 package cn.zimzaza4.slimefunzt.lists;
 
 import cn.zimzaza4.slimefunzt.SlimefunZT;
-import io.github.thebusybiscuit.slimefun4.core.categories.MultiCategory;
-import io.github.thebusybiscuit.slimefun4.core.categories.SubCategory;
+import io.github.bakedlibs.dough.items.CustomItemStack;
+import io.github.thebusybiscuit.slimefun4.api.items.SlimefunItemStack;
+import io.github.thebusybiscuit.slimefun4.api.items.groups.NestedItemGroup;
+import io.github.thebusybiscuit.slimefun4.api.items.groups.SubItemGroup;
 import io.github.thebusybiscuit.slimefun4.utils.LoreBuilder;
-import me.mrCookieSlime.Slimefun.api.SlimefunItemStack;
-import me.mrCookieSlime.Slimefun.cscorelib2.item.CustomItem;
 import org.bukkit.Material;
 import org.bukkit.NamespacedKey;
 import org.bukkit.enchantments.Enchantment;
@@ -14,70 +14,70 @@ import org.bukkit.inventory.ItemStack;
 
 public class Items {
 
-        public static MultiCategory Main_Cate = new MultiCategory(new NamespacedKey(SlimefunZT.getInstance(), "ZIM_MAIN_CATE"), new CustomItem(Material.NETHERITE_BLOCK, "&cSiciliaCraft"));
-        public static SubCategory Cate = new SubCategory(new NamespacedKey(SlimefunZT.getInstance(), "ZIM_MA_D"),Main_Cate,
-                        new CustomItem(Material.BLACK_STAINED_GLASS, "&e&l SC拓展 &7- &6机器"));
+        public static NestedItemGroup Main_Cate = new NestedItemGroup(new NamespacedKey(SlimefunZT.getInstance(), "ZIM_MAIN_CATE"), new CustomItemStack(Material.NETHERITE_BLOCK, "&cSiciliaCraft"));
+        public static SubItemGroup Cate = new SubItemGroup(new NamespacedKey(SlimefunZT.getInstance(), "ZIM_MA_D"),Main_Cate,
+                        new CustomItemStack(Material.BLACK_STAINED_GLASS, "&e&l SC拓展 &7- &6机器"));
 
-        public static SubCategory MatCate = new SubCategory(new NamespacedKey(SlimefunZT.getInstance(), "ZIM_MAT"),Main_Cate,
-                        new CustomItem(Material.GOLD_ORE, "&e&l SC拓展 &7- &d材料"));
+        public static SubItemGroup MatCate = new SubItemGroup(new NamespacedKey(SlimefunZT.getInstance(), "ZIM_MAT"),Main_Cate,
+                        new CustomItemStack(Material.GOLD_ORE, "&e&l SC拓展 &7- &d材料"));
 
-        public static SubCategory crystal = new SubCategory(new NamespacedKey(SlimefunZT.getInstance(), "ZIM_MA_D_C"),Main_Cate,
-                        new CustomItem(Material.DIAMOND, "&e&l SC拓展 &7- &9强化"));
+        public static SubItemGroup crystal = new SubItemGroup(new NamespacedKey(SlimefunZT.getInstance(), "ZIM_MA_D_C"),Main_Cate,
+                        new CustomItemStack(Material.DIAMOND, "&e&l SC拓展 &7- &9强化"));
 
-        public static SubCategory ToolCate = new SubCategory(new NamespacedKey(SlimefunZT.getInstance(), "ZIM_MA_TOOL"),Main_Cate,
-                        new CustomItem(Material.DIAMOND_PICKAXE, "&b&l SC拓展 &7- &6工具"));
+        public static SubItemGroup ToolCate = new SubItemGroup(new NamespacedKey(SlimefunZT.getInstance(), "ZIM_MA_TOOL"),Main_Cate,
+                        new CustomItemStack(Material.DIAMOND_PICKAXE, "&b&l SC拓展 &7- &6工具"));
 
-        public static SubCategory WeaponCate = new SubCategory(new NamespacedKey(SlimefunZT.getInstance(), "ZIM_WEAPONS"),Main_Cate,
-            new CustomItem(Material.IRON_SWORD, "&b&l SC拓展 &7- &e武器和锻造"));
+        public static SubItemGroup WeaponCate = new SubItemGroup(new NamespacedKey(SlimefunZT.getInstance(), "ZIM_WEAPONS"),Main_Cate,
+            new CustomItemStack(Material.IRON_SWORD, "&b&l SC拓展 &7- &e武器和锻造"));
 
-        public static SubCategory IE = new SubCategory(new NamespacedKey(SlimefunZT.getInstance(), "ZIM_MA_IE"),Main_Cate,
-                        new CustomItem(Material.NETHERITE_BLOCK, "&e&l SC拓展 &7- &c疯狂无限"));
+        public static SubItemGroup IE = new SubItemGroup(new NamespacedKey(SlimefunZT.getInstance(), "ZIM_MA_IE"),Main_Cate,
+                        new CustomItemStack(Material.NETHERITE_BLOCK, "&e&l SC拓展 &7- &c疯狂无限"));
 
-        public static SubCategory NB = new SubCategory(new NamespacedKey(SlimefunZT.getInstance(), "ZIM_NEW_B"),Main_Cate,
-            new CustomItem(Material.BEDROCK, "&e&l SC拓展 &7- &a结束了?"));
+        public static SubItemGroup NB = new SubItemGroup(new NamespacedKey(SlimefunZT.getInstance(), "ZIM_NEW_B"),Main_Cate,
+            new CustomItemStack(Material.BEDROCK, "&e&l SC拓展 &7- &a结束了?"));
     // -------------------------------------------------------------------------------------------------------------------------------------------
 
     // 多方块结构
-        public static SlimefunItemStack Soul_Amey = new SlimefunItemStack("SOUL_AMEY", new CustomItem(Material.AMETHYST_SHARD),
+        public static SlimefunItemStack Soul_Amey = new SlimefunItemStack("SOUL_AMEY", new CustomItemStack(Material.AMETHYST_SHARD),
                 "&7&l灵魂合成剂");
 
-        public static SlimefunItemStack Soul_IE_mage_table = new SlimefunItemStack("SOUL_IE_MAGIC_TABLE", new CustomItem(Material.RESPAWN_ANCHOR,
+        public static SlimefunItemStack Soul_IE_mage_table = new SlimefunItemStack("SOUL_IE_MAGIC_TABLE", new CustomItemStack(Material.RESPAWN_ANCHOR,
                 "&c&l灵魂无尽魔法台",
                 "&7多方块结构"));
 
-        public static SlimefunItemStack IE_SING_Craft = new SlimefunItemStack("ZIM_SING_IE_CRAFT", new CustomItem(Material.NETHERITE_BLOCK,
+        public static SlimefunItemStack IE_SING_Craft = new SlimefunItemStack("ZIM_SING_IE_CRAFT", new CustomItemStack(Material.NETHERITE_BLOCK,
                 "&c&l灵魂奇点构造机 &7[&c普通&7]",
                 "&c加强版!"));
 
-        public static SlimefunItemStack IE_Soul_Mac_Core = new SlimefunItemStack("ZIM_SOUL_MACE_CORE", new CustomItem(Material.AMETHYST_BLOCK),
+        public static SlimefunItemStack IE_Soul_Mac_Core = new SlimefunItemStack("ZIM_SOUL_MACE_CORE", new CustomItemStack(Material.AMETHYST_BLOCK),
                 "&7&l灵魂机器核心");
 
-        public static SlimefunItemStack IE_Soul_f = new SlimefunItemStack("ZIM_SOUL_FLOOR",new CustomItem(Material.NETHERITE_BLOCK,
+        public static SlimefunItemStack IE_Soul_f = new SlimefunItemStack("ZIM_SOUL_FLOOR",new CustomItemStack(Material.NETHERITE_BLOCK,
                 "&c灵魂地基"));
 
-        public static SlimefunItemStack IE_Soul_torch = new SlimefunItemStack("ZIM_SOUL_TORCH", new CustomItem(Material.SOUL_TORCH,
+        public static SlimefunItemStack IE_Soul_torch = new SlimefunItemStack("ZIM_SOUL_TORCH", new CustomItemStack(Material.SOUL_TORCH,
                 "&9灵魂无尽火把"));
 
-        public static SlimefunItemStack IE_Soul_Glass = new SlimefunItemStack("ZIM_SOUL_GLASS", new CustomItem(Material.BLACK_STAINED_GLASS,
+        public static SlimefunItemStack IE_Soul_Glass = new SlimefunItemStack("ZIM_SOUL_GLASS", new CustomItemStack(Material.BLACK_STAINED_GLASS,
                 "&e亡魂玻璃"));
 
         // ------------------------------------------------------------------------------------------------------------------------------------------
         // 普通物品/机器
-        public static ItemStack FruitMachine = new CustomItem(Material.GRAY_STAINED_GLASS,
+        public static ItemStack FruitMachine = new CustomItemStack(Material.GRAY_STAINED_GLASS,
                 "&e糖提取机",
                 "&7从水果里提取糖",
                 "",
                 "&7⇨ &e⚡ &730J/s",
                 "&7⇨ &e⚡ &7300J 可储存");
 
-        public static ItemStack ShaiKTQMachine = new CustomItem(Material.IRON_BLOCK,
+        public static ItemStack ShaiKTQMachine = new CustomItemStack(Material.IRON_BLOCK,
                 "&a筛矿提取机 &7[&cI&7]",
                 "&7从圆石提取筛矿,每秒二个",
                 "",
                 "&7⇨ &e⚡ &73J/s",
                 "&7⇨ &e⚡ &7300J 可储存");
 
-        public static ItemStack ShaiKTQMachineII = new CustomItem(Material.GOLD_BLOCK,
+        public static ItemStack ShaiKTQMachineII = new CustomItemStack(Material.GOLD_BLOCK,
                 "&a筛矿提取机 &7[&cII&7]",
                 "&7从原石提取筛矿,每秒十个",
                 "",
@@ -113,14 +113,14 @@ public class Items {
                 "",
                 "&7烫手的&c熔岩锭!");
 
-        public static final SlimefunItemStack FastIngotFactory = new SlimefunItemStack("ZIM_FAST_INGOT_FACTORY",  new CustomItem(Material.SMITHING_TABLE,
+        public static final SlimefunItemStack FastIngotFactory = new SlimefunItemStack("ZIM_FAST_INGOT_FACTORY",  new CustomItemStack(Material.SMITHING_TABLE,
                 "&a加强电动铸锭机 &7[&cI&7]",
                 "",
                 "&c一级机器",
                 "&7⇨ &e⚡ &7512J 可储存",
                 "&7⇨ &e⚡ &730J/s"));
 
-        public static final SlimefunItemStack FastIngotFactory_II = new SlimefunItemStack("ZIM_FAST_INGOT_FACTORY_2",  new CustomItem(Material.SMITHING_TABLE,
+        public static final SlimefunItemStack FastIngotFactory_II = new SlimefunItemStack("ZIM_FAST_INGOT_FACTORY_2",  new CustomItemStack(Material.SMITHING_TABLE,
                 "&a加强电动铸锭机 &7[&cII&7]",
                 "",
                 "&c二级机器",
@@ -139,7 +139,7 @@ public class Items {
             Material.BLUE_WOOL,
                 "&b&l魂奇点");
 
-        public static ItemStack ZIMysger = new CustomItem(Material.BLACK_STAINED_GLASS,
+        public static ItemStack ZIMysger = new CustomItemStack(Material.BLACK_STAINED_GLASS,
                 "&a&l元素发电机",
                 "&7将石头,泥土,沙子等作为燃料",
                 "",
@@ -151,11 +151,11 @@ public class Items {
                 "",
                 "&7⇨ &e⚡ &7512J 可储存");
 
-        public static SlimefunItemStack GhostIngot = new SlimefunItemStack("Z_GHOST_INGOT", new CustomItem(Material.IRON_INGOT,
+        public static SlimefunItemStack GhostIngot = new SlimefunItemStack("Z_GHOST_INGOT", new CustomItemStack(Material.IRON_INGOT,
                 "&7魂锭"));
 
         public static SlimefunItemStack ArmorCrafter = new SlimefunItemStack("ARMOR_CRAFTER",
-                        new CustomItem(Material.BLACK_STAINED_GLASS,
+                        new CustomItemStack(Material.BLACK_STAINED_GLASS,
                 "&cSC装备制作机 &7[&cI&7]",
                 "",
                 "&c一级机器",
@@ -163,7 +163,7 @@ public class Items {
                 "&7⇨ &e⚡ &7200J 可储存"));
 
         public static SlimefunItemStack SoulCrafter = new SlimefunItemStack("SOUL_CRAFTER",
-                        new CustomItem(Material.SMITHING_TABLE,
+                        new CustomItemStack(Material.SMITHING_TABLE,
                 "&c灵魂处理器 &7[&cI&7]",
                 "",
                 "&c一级机器",
@@ -186,7 +186,7 @@ public class Items {
                  "&c一级机器",
                  "&7⇨ &e⚡ &750J/s");
 
-        public static ItemStack GoldCrafter = new CustomItem(Material.GOLD_BLOCK,
+        public static ItemStack GoldCrafter = new CustomItemStack(Material.GOLD_BLOCK,
                  "&e&l24K金制造机",
                  "&7全自动金粉转为24K金",
                  "",
@@ -194,7 +194,7 @@ public class Items {
                  "&7⇨ &e⚡ &750J/s",
                  "&7⇨ &e⚡ &7200J 可储存");
 
-        public static ItemStack CarbonCrafter = new CustomItem(Material.WHITE_STAINED_GLASS,
+        public static ItemStack CarbonCrafter = new CustomItemStack(Material.WHITE_STAINED_GLASS,
                  "&7&l解压机 &7[&cI&7]",
                  "&7钻石转换为128个煤",
                  "",
@@ -202,7 +202,7 @@ public class Items {
                  "&7⇨ &e⚡ &790J/s",
                  "&7⇨ &e⚡ &7200J 可储存");
 
-        public static ItemStack CarbonCrafter_II = new CustomItem(Material.WHITE_STAINED_GLASS,
+        public static ItemStack CarbonCrafter_II = new CustomItemStack(Material.WHITE_STAINED_GLASS,
                  "&7&l解压机 &7[&cII&7]",
                  "&7钻石或128个煤转换为12个碳",
                  "",
@@ -210,7 +210,7 @@ public class Items {
                  "&7⇨ &e⚡ &7100J/s",
                  "&7⇨ &e⚡ &7400J 可储存");
 
-        public static ItemStack ImproveCry = new CustomItem(Material.DIAMOND,
+        public static ItemStack ImproveCry = new CustomItemStack(Material.DIAMOND,
                  "&b&l水晶强化物",
                  "",
                  "&7升级你的强化水晶");
@@ -241,7 +241,7 @@ public class Items {
                  "&7&o貌似很恐怖的样子");
 
         public static SlimefunItemStack Tester = new SlimefunItemStack("TESTER_SAVE",
-                        new CustomItem(Material.GOLD_BLOCK,
+                        new CustomItemStack(Material.GOLD_BLOCK,
                  "OK",
                  ":P"));
 

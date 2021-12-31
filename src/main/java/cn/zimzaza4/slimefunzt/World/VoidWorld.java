@@ -15,12 +15,14 @@ import java.util.Random;
 public class VoidWorld extends ChunkGenerator {
     private SimplexOctaveGenerator noise;
     private SimplexOctaveGenerator fognoise;
+    public SimplexOctaveGenerator biomenoise;
     private SimplexOctaveGenerator landnoise;
     private SimplexOctaveGenerator webnoise;
     @Override
     public ChunkData generateChunkData(World world, Random random, int x, int z, BiomeGrid biome) {
         ChunkData data = createChunkData(world);
         data.setRegion(0, 255,0, 16,256, 16, Material.BEDROCK);
+
         for (int i = 0; i < 16; i++) {
             for (int j = 0; j < 16; j++) {
                 biome.setBiome(i, j, Biome.THE_VOID);
@@ -47,33 +49,64 @@ public class VoidWorld extends ChunkGenerator {
             webnoise.setScale(0.2D);
         }
 
+        if (biomenoise==null){
+            biomenoise = new SimplexOctaveGenerator(world.getSeed()+6, 1);
+            biomenoise.setScale(0.005D);
+
+        }
+
+
 
 
         for (int x1 = 0; x1 < 16; x1++) {
-            for (int z1 = 0; z1 < 16; z1++) {
+
+            for (int z1 = 0; z1 < 16; z1++){
+
                 int realX = x * 16 + x1;
                 int realZ = z * 16 + z1;
-                double noiseValue = noise.noise(realX, realZ, 1.5D, 0.5D);
+                if ((int)(biomenoise.noise(realX, realZ, 1.5D, 0.9D))>-0.7) {
 
-                int height = (int) (noiseValue * 40 +100);
+                    double noiseValue = noise.noise(realX, realZ, 1.5D, 0.5D);
 
-                if (height<76) {
+                    int height = (int) (noiseValue * 40 + 100);
 
-                for (int y =70; y > height-6 ; y--) {
+                    if (height < 76) {
+
+                        for (int y = 70; y > height - 6; y--) {
 
 
-                    data.setBlock(x1, y, z1, Material.BLACKSTONE);
+                            data.setBlock(x1, y, z1, Material.BLACKSTONE);
+                        }
+
+                        int Fh = 9 - height / 8;
+
+                        for (int y = 71; y < Fh + 71; y++) {
+                            data.setBlock(x1, y, z1, Material.DEAD_BRAIN_CORAL_BLOCK);
+                        }
+                        data.setBlock(x1, Fh + 70, z1, Material.STONE);
+
+                    }
+                }else {
+                    double noiseValue = noise.noise(realX, realZ, 1.5D, 0.5D);
+
+                    int height = (int) (noiseValue * 40 + 100);
+
+                    if (height < 80) {
+
+                        for (int y = 70; y > height - 10; y--) {
+
+
+                            data.setBlock(x1, y, z1, Material.OBSIDIAN);
+                        }
+
+                        int Fh = 9 - height / 8;
+
+                        for (int y = 71; y < Fh + 71; y++) {
+                            data.setBlock(x1, y, z1, Material.OBSIDIAN);
+                        }
+                        data.setBlock(x1, Fh + 70, z1, Material.CRYING_OBSIDIAN);
+                    }
                 }
-
-                int Fh = 9-height/8;
-
-                for (int y = 71; y< Fh+71; y++){
-                    data.setBlock(x1, y, z1, Material.DEAD_BRAIN_CORAL_BLOCK);
-                }
-                data.setBlock(x1,Fh+70, z1, Material.STONE );
-
-                }
-
                 double noiseValue2 = landnoise.noise(realX, realZ ,1.5D, 0.5D);
                 int heig = (int) (noiseValue2 * 40 + 100);
                 if (heig<75) {
@@ -111,4 +144,5 @@ public class VoidWorld extends ChunkGenerator {
     public List<BlockPopulator> getDefaultPopulators(@Nonnull World world){
         return Collections.singletonList(new VoidPopulator());
     }
+
 }

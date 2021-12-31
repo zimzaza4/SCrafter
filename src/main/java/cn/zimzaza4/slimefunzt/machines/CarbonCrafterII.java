@@ -1,14 +1,15 @@
 package cn.zimzaza4.slimefunzt.machines;
+
+import io.github.thebusybiscuit.slimefun4.api.items.ItemGroup;
+import io.github.thebusybiscuit.slimefun4.api.items.SlimefunItemStack;
+import io.github.thebusybiscuit.slimefun4.api.recipes.RecipeType;
 import io.github.thebusybiscuit.slimefun4.implementation.SlimefunItems;
-import me.mrCookieSlime.Slimefun.Lists.RecipeType;
-import me.mrCookieSlime.Slimefun.Objects.Category;
 import me.mrCookieSlime.Slimefun.Objects.SlimefunItem.abstractItems.AContainer;
-import me.mrCookieSlime.Slimefun.api.SlimefunItemStack;
 import org.bukkit.Material;
 import org.bukkit.inventory.ItemStack;
 
 public class CarbonCrafterII extends AContainer {
-    public CarbonCrafterII(Category category, String id, ItemStack item, RecipeType recipeType, ItemStack[] recipe) {
+    public CarbonCrafterII(ItemGroup category, String id, ItemStack item, RecipeType recipeType, ItemStack[] recipe) {
         super(category, new SlimefunItemStack(id, item), recipeType, recipe);
     }
 
