@@ -15,8 +15,8 @@
   <repositories>
     <!-- FAWE API-->
     <repository>
-      <id>IntellectualSites</id>
-      <url>https://mvn.intellectualsites.com/content/groups/public/</url>
+      <id>S01 Sonatype Snapshots</id>
+      <url>https://s01.oss.sonatype.org/content/repositories/snapshots/</url>
     </repository>
     <repository>
       <id>papermc</id>
